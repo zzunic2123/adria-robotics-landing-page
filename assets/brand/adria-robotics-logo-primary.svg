@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240">
+<rect width="900" height="240" fill="white"/>
+<g transform="translate(40 40)">
+  <rect width="160" height="160" rx="32" fill="#0E1B2B"/>
+  <path d="M37 122 L69 38 H86 L54 122 Z" fill="#FFFFFF"/>
+  <path d="M80 38 H98 L130 122 H109 Z" fill="#FFFFFF"/>
+  <path d="M55 91 H112" stroke="#11A7A5" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="124" cy="91" r="9" fill="#11A7A5"/>
+</g>
+<text x="245" y="116" font-family="DM Sans, Inter, Arial, sans-serif" font-size="68" font-weight="800" letter-spacing="2" fill="#0E1B2B">ADRIA</text>
+<text x="248" y="166" font-family="DM Sans, Inter, Arial, sans-serif" font-size="31" font-weight="600" letter-spacing="8" fill="#11A7A5">ROBOTICS</text>
+</svg>
