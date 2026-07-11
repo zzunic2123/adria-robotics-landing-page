@@ -22,6 +22,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -31,6 +33,8 @@ body {
   font-family: var(--ar-font);
   font-size: 16px;
   line-height: 1.55;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img,
@@ -978,6 +982,12 @@ output {
   align-items: start;
 }
 
+.demo-grid > *,
+.finder-layout > *,
+.video-grid > * {
+  min-width: 0;
+}
+
 .demo-points {
   display: grid;
   gap: 10px;
@@ -1006,6 +1016,8 @@ output {
 }
 
 .demo-form {
+  width: 100%;
+  justify-self: stretch;
   box-shadow: var(--ar-shadow);
 }
 
@@ -1233,6 +1245,16 @@ output {
   .hero-actions,
   .hero-actions .button {
     width: 100%;
+  }
+
+  .demo-grid {
+    gap: 18px;
+  }
+
+  .demo-grid > div,
+  .demo-form {
+    width: 100%;
+    justify-self: stretch;
   }
 
   .brand-grid,
@@ -1519,7 +1541,7 @@ output {
 
   .brand-grid article {
     display: grid;
-    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-columns: minmax(76px, 0.36fr) minmax(0, 1fr);
     gap: 10px;
     align-items: start;
     padding: 11px 12px;
