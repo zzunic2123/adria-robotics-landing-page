@@ -6,7 +6,7 @@
     <title>Adria Robotics | Autonomni roboti za profesionalno čišćenje</title>
     <meta
       name="description"
-      content="Adria Robotics pomaže organizacijama odabrati, demonstrirati, implementirati i servisirati autonomne robote za profesionalno čišćenje."
+      content="Odabir, demonstracija, implementacija i servis autonomnih robota za profesionalno čišćenje u Adria regiji."
     />
     <link rel="icon" href="assets/brand/adria-robotics-icon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,14 +17,15 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body data-page="home" data-meta-key="pageMeta.home">
     <a class="skip-link" href="#main" data-i18n="accessibility.skip">Preskoči na sadržaj</a>
 
     <header class="site-header" data-header>
       <div class="container header-inner">
         <a
           class="brand"
-          href="#top"
+          href="index.html?lang=hr"
+          data-page-link="index.html"
           aria-label="Adria Robotics početna stranica"
           data-i18n-aria-label="accessibility.home"
         >
@@ -44,42 +45,18 @@
           data-nav-toggle
           data-i18n-aria-label="accessibility.openNav"
         >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span><span aria-hidden="true"></span
+          ><span aria-hidden="true"></span>
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Glavna navigacija" data-nav>
-          <a href="#robots" data-i18n="nav.robots">Roboti</a>
-          <a href="#industries" data-i18n="nav.industries">Industrije</a>
-          <a href="#process" data-i18n="nav.implementation">Implementacija</a>
-          <a href="#faq" data-i18n="nav.faq">Česta pitanja</a>
-          <a class="nav-cta" href="#demo" data-i18n="nav.demo">Zatražite demo</a>
-          <div
-            class="language-switcher"
-            role="group"
-            aria-label="Odabir jezika"
-            data-i18n-aria-label="language.label"
-          >
-            <button
-              type="button"
-              class="lang-button is-active"
-              aria-pressed="true"
-              aria-label="Hrvatski"
-              data-lang-button="hr"
-              data-i18n-aria-label="language.hr"
-            >
-              HR
-            </button>
-            <button
-              type="button"
-              class="lang-button"
-              aria-pressed="false"
-              aria-label="Engleski"
-              data-lang-button="en"
-              data-i18n-aria-label="language.en"
-            >
-              EN
-            </button>
+          <a href="index.html?lang=hr" data-page-link="index.html" data-nav-page="home" data-i18n="nav.home">Početna</a>
+          <a href="robots.html?lang=hr" data-page-link="robots.html" data-nav-page="robots" data-i18n="nav.robots">Roboti</a>
+          <a href="roi.html?lang=hr" data-page-link="roi.html" data-nav-page="roi" data-i18n="nav.roi">ROI kalkulator</a>
+          <a href="service-plans.html?lang=hr" data-page-link="service-plans.html" data-nav-page="services" data-i18n="nav.plans">Paketi</a>
+          <a class="nav-cta" href="contact.html?lang=hr" data-page-link="contact.html" data-nav-page="contact" data-i18n="nav.contact">Kontakt</a>
+          <div class="language-switcher" role="group" aria-label="Odabir jezika" data-i18n-aria-label="language.label">
+            <button type="button" class="lang-button is-active" aria-pressed="true" aria-label="Hrvatski" data-lang-button="hr" data-i18n-aria-label="language.hr">HR</button>
+            <button type="button" class="lang-button" aria-pressed="false" aria-label="Engleski" data-lang-button="en" data-i18n-aria-label="language.en">EN</button>
           </div>
         </nav>
       </div>
@@ -90,61 +67,32 @@
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow" data-i18n="hero.eyebrow">
-              Globalna tehnologija. Lokalna implementacija.
-            </p>
-            <h1 id="hero-title" data-i18n="hero.title">
-              Autonomni roboti za profesionalno čišćenje.
-            </h1>
+            <p class="eyebrow" data-i18n="hero.eyebrow">Globalna tehnologija. Lokalna implementacija.</p>
+            <h1 id="hero-title" data-i18n="hero.title">Autonomni roboti za profesionalno čišćenje.</h1>
             <p class="hero-lead" data-i18n="hero.lead">
-              Od odabira i demonstracije do mapiranja, edukacije i servisa. Adria Robotics
-              uvodi provjerena rješenja PUDU, OrionStar i Gausium u objekte diljem Adria regije.
+              Od odabira i demonstracije do mapiranja, edukacije i servisa. Adria Robotics uvodi
+              provjerena rješenja PUDU, OrionStar i Gausium u objekte diljem Adria regije.
             </p>
-            <div
-              class="hero-actions"
-              role="group"
-              aria-label="Glavne akcije"
-              data-i18n-aria-label="hero.actionsLabel"
-            >
-              <a class="button button-primary" href="#demo">
-                <span data-i18n="buttons.requestDemo">Zatražite demonstraciju</span>
-                <span aria-hidden="true">→</span>
+            <div class="hero-actions" role="group" aria-label="Glavne akcije" data-i18n-aria-label="hero.actionsLabel">
+              <a class="button button-primary" href="contact.html?lang=hr" data-page-link="contact.html">
+                <span data-i18n="buttons.requestDemo">Zatražite demonstraciju</span><span aria-hidden="true">→</span>
               </a>
-              <a class="button button-secondary" href="#robots">
-                <span data-i18n="buttons.viewRobots">Pogledajte robote</span>
-                <span aria-hidden="true">↓</span>
+              <a class="button button-secondary" href="robots.html?lang=hr" data-page-link="robots.html">
+                <span data-i18n="buttons.viewRobots">Pogledajte robote</span><span aria-hidden="true">→</span>
               </a>
             </div>
-            <dl
-              class="hero-metrics"
-              role="group"
-              aria-label="Ključne prednosti"
-              data-i18n-aria-label="hero.metricsLabel"
-            >
-              <div>
-                <dt>3</dt>
-                <dd data-i18n="hero.metrics.portfolios">portfelja robota</dd>
-              </div>
-              <div>
-                <dt>5</dt>
-                <dd data-i18n="hero.metrics.steps">koraka implementacije</dd>
-              </div>
-              <div>
-                <dt>1</dt>
-                <dd data-i18n="hero.metrics.partner">lokalni partner</dd>
-              </div>
+            <dl class="hero-metrics" role="group" aria-label="Ključne prednosti" data-i18n-aria-label="hero.metricsLabel">
+              <div><dt>3</dt><dd data-i18n="hero.metrics.portfolios">portfelja robota</dd></div>
+              <div><dt>5</dt><dd data-i18n="hero.metrics.steps">koraka implementacije</dd></div>
+              <div><dt>1</dt><dd data-i18n="hero.metrics.partner">lokalni partner</dd></div>
             </dl>
           </div>
           <div class="route-panel" aria-hidden="true">
-            <span class="route-node route-node-start"></span>
-            <span class="route-line route-line-a"></span>
-            <span class="route-node route-node-mid"></span>
-            <span class="route-line route-line-b"></span>
+            <span class="route-node route-node-start"></span><span class="route-line route-line-a"></span>
+            <span class="route-node route-node-mid"></span><span class="route-line route-line-b"></span>
             <span class="route-node route-node-end"></span>
             <span class="route-label route-label-a" data-i18n="hero.route.analysis">analiza</span>
-            <span class="route-label route-label-b" data-i18n="hero.route.demonstration"
-              >demonstracija</span
-            >
+            <span class="route-label route-label-b" data-i18n="hero.route.demonstration">demonstracija</span>
             <span class="route-label route-label-c" data-i18n="hero.route.service">servis</span>
           </div>
         </div>
@@ -154,66 +102,10 @@
         <div class="container">
           <div class="section-kicker" data-i18n="partners.kicker">Neovisna preporuka</div>
           <div class="section-head compact">
-            <h2 id="partners-title" data-i18n="partners.title">
-              Više portfelja, jedna odgovorna implementacija.
-            </h2>
-            <p data-i18n="partners.copy">
-              Kupac ne mora unaprijed znati koji mu model treba. Analiziramo prostor, zadatak i
-              uvjete rada te izrađujemo uži izbor modela koji odgovaraju stvarnim potrebama objekta.
-            </p>
+            <h2 id="partners-title" data-i18n="partners.title">Više portfelja, jedna odgovorna implementacija.</h2>
+            <p data-i18n="partners.copy">Kupac ne mora unaprijed znati koji mu model treba. Analiziramo prostor, zadatak i uvjete rada te izrađujemo uži izbor modela koji odgovaraju stvarnim potrebama objekta.</p>
           </div>
           <div class="brand-grid" data-brand-grid></div>
-        </div>
-      </section>
-
-      <section class="products section-pad" id="robots" aria-labelledby="robots-title">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker" data-i18n="products.kicker">Katalog robota</div>
-              <h2 id="robots-title" data-i18n="products.title">
-                Roboti prema zadatku, prostoru i načinu rada.
-              </h2>
-            </div>
-            <p data-i18n="products.copy">
-              Kartice prikazuju preporučenu namjenu i ključne mogućnosti svakog modela. Otvorite
-              karticu za detaljne specifikacije. Konačna konfiguracija opreme i infrastrukture
-              potvrđuje se nakon pregleda prostora.
-            </p>
-          </div>
-
-          <div
-            class="catalog-filters"
-            role="group"
-            aria-label="Filtriranje kataloga robota"
-            data-i18n-aria-label="products.filterLegend"
-          >
-            <div class="filter-group">
-              <span class="filter-label" data-i18n="products.manufacturerLabel">Proizvođač</span>
-              <div class="filter-options" data-manufacturer-filters></div>
-            </div>
-            <div class="filter-group">
-              <span class="filter-label" data-i18n="products.taskLabel">Primarna namjena</span>
-              <div class="filter-options" data-task-filters></div>
-            </div>
-            <button class="filter-reset" type="button" data-filter-reset>
-              <span data-i18n="buttons.resetFilters">Poništite filtre</span>
-              <span aria-hidden="true">↺</span>
-            </button>
-          </div>
-
-          <div class="active-industry-filter" data-active-industry-filter hidden></div>
-          <div class="data-notice" data-data-notice hidden></div>
-          <p class="catalog-status" data-catalog-status role="status" aria-live="polite"></p>
-          <div class="product-grid" data-products-grid></div>
-          <p class="catalog-empty" data-catalog-empty hidden data-i18n="products.noResults">
-            Nema modela koji odgovaraju odabranim filtrima.
-          </p>
-          <noscript>
-            <p class="catalog-empty">
-              Za pregled i filtriranje kataloga potrebno je omogućiti JavaScript.
-            </p>
-          </noscript>
         </div>
       </section>
 
@@ -222,70 +114,52 @@
           <div class="section-head">
             <div>
               <div class="section-kicker" data-i18n="industries.kicker">Primjene</div>
-              <h2 id="industries-title" data-i18n="industries.title">
-                Autonomija se planira prema prostoru.
-              </h2>
+              <h2 id="industries-title" data-i18n="industries.title">Autonomija se planira prema prostoru.</h2>
             </div>
-            <p data-i18n="industries.copy">
-              Drugačiji objekt znači drugačiju navigaciju, način čišćenja, sigurnosne zone i
-              organizaciju punjenja.
-            </p>
+            <p data-i18n="industries.copy">Drugačiji objekt znači drugačiju navigaciju, način čišćenja, sigurnosne zone i organizaciju punjenja.</p>
           </div>
+          <div class="data-notice" data-data-notice hidden></div>
           <div class="industry-grid" data-industries-grid></div>
         </div>
       </section>
 
-      <section class="roi section-pad" id="roi" aria-labelledby="roi-title">
+      <section class="pathways section-pad" aria-labelledby="pathways-title">
         <div class="container">
           <div class="section-head">
             <div>
-              <div class="section-kicker" data-i18n="roi.kicker">ROI kalkulator</div>
-              <h2 id="roi-title" data-i18n="roi.title">
-                Procijenite financijski učinak automatizacije.
-              </h2>
+              <div class="section-kicker" data-i18n="homePaths.kicker">Istražite rješenje</div>
+              <h2 id="pathways-title" data-i18n="homePaths.title">Svaka odluka ima svoj jasan sljedeći korak.</h2>
             </div>
-            <p data-i18n="roi.copy">
-              Prilagodite pretpostavke svojem objektu i usporedite scenarije bez skrivenih formula.
-            </p>
+            <p data-i18n="homePaths.copy">Katalog, izračun isplativosti i paketi sada su odvojeni kako biste brže došli do informacije koja vam treba.</p>
           </div>
-          <div class="data-section-status" data-roi-status role="status" aria-live="polite"></div>
-          <div data-roi-app hidden></div>
-        </div>
-      </section>
-
-      <section
-        class="service-plans section-pad"
-        id="service-plans"
-        aria-labelledby="service-plans-title"
-      >
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker" data-i18n="servicePlans.kicker">Paketi usluga</div>
-              <h2 id="service-plans-title" data-i18n="servicePlans.title">
-                Standard ili Full-service najam.
-              </h2>
-            </div>
-            <p data-i18n="servicePlans.copy">
-              Usporedite što je uključeno u svaki paket prije odabira načina suradnje.
-            </p>
+          <div class="pathway-grid">
+            <article class="pathway-card">
+              <span class="pathway-number" aria-hidden="true">01</span>
+              <h3 data-i18n="homePaths.robots.title">Katalog robota</h3>
+              <p data-i18n="homePaths.robots.copy">Usporedite modele, specifikacije, cijene i mjesečne rate.</p>
+              <a href="robots.html?lang=hr" data-page-link="robots.html"><span data-i18n="buttons.openCatalogue">Otvorite katalog</span><span aria-hidden="true">→</span></a>
+            </article>
+            <article class="pathway-card">
+              <span class="pathway-number" aria-hidden="true">02</span>
+              <h3 data-i18n="homePaths.roi.title">ROI kalkulator</h3>
+              <p data-i18n="homePaths.roi.copy">Procijenite uštedu, povrat i potreban broj robota za svoj objekt.</p>
+              <a href="roi.html?lang=hr" data-page-link="roi.html"><span data-i18n="buttons.openRoi">Izračunajte ROI</span><span aria-hidden="true">→</span></a>
+            </article>
+            <article class="pathway-card">
+              <span class="pathway-number" aria-hidden="true">03</span>
+              <h3 data-i18n="homePaths.plans.title">Financiranje i paketi</h3>
+              <p data-i18n="homePaths.plans.copy">Usporedite kupnju, leasing te Standard i Full-service najam.</p>
+              <a href="service-plans.html?lang=hr" data-page-link="service-plans.html"><span data-i18n="buttons.comparePlans">Usporedite pakete</span><span aria-hidden="true">→</span></a>
+            </article>
           </div>
-          <div class="service-plans-wrap" data-service-plans></div>
         </div>
       </section>
 
       <section class="process section-pad" id="process" aria-labelledby="process-title">
         <div class="container">
           <div class="section-head">
-            <div>
-              <div class="section-kicker" data-i18n="process.kicker">Kako surađujemo</div>
-              <h2 id="process-title" data-i18n="process.title">
-                Od procjene do robota koji radi u vašem objektu.
-              </h2>
-            </div>
-            <p data-i18n="process.copy">
-              Proces smanjuje rizik prije odluke i skraćuje put do stabilnog svakodnevnog rada.
-            </p>
+            <div><div class="section-kicker" data-i18n="process.kicker">Kako surađujemo</div><h2 id="process-title" data-i18n="process.title">Od procjene do robota koji radi u vašem objektu.</h2></div>
+            <p data-i18n="process.copy">Proces smanjuje rizik prije odluke i skraćuje put do stabilnog svakodnevnog rada.</p>
           </div>
           <ol class="process-steps" data-process-steps></ol>
         </div>
@@ -295,148 +169,28 @@
         <div class="container video-grid">
           <div>
             <div class="section-kicker" data-i18n="video.kicker">Dokaz u praksi</div>
-            <h2 id="video-title" data-i18n="video.title">
-              Pogledajte kako autonomno čišćenje izgleda u stvarnoj primjeni.
-            </h2>
-            <p data-i18n="video.copy">
-              Službeni video daje početni uvid u mogućnosti sustava. Konačnu odluku donosimo nakon
-              provjere na vašim podovima, rutama i u stvarnim uvjetima rada.
-            </p>
-            <a class="button button-secondary" href="#demo">
-              <span data-i18n="buttons.requestDemo">Zatražite demonstraciju</span>
-              <span aria-hidden="true">→</span>
-            </a>
+            <h2 id="video-title" data-i18n="video.title">Pogledajte kako autonomno čišćenje izgleda u stvarnoj primjeni.</h2>
+            <p data-i18n="video.copy">Službeni video daje početni uvid u mogućnosti sustava. Konačnu odluku donosimo nakon provjere na vašim podovima, rutama i u stvarnim uvjetima rada.</p>
+            <a class="button button-secondary" href="contact.html?lang=hr" data-page-link="contact.html"><span data-i18n="buttons.requestDemo">Zatražite demonstraciju</span><span aria-hidden="true">→</span></a>
           </div>
-          <a
-            class="video-frame video-link"
-            href="https://www.youtube.com/watch?v=UbeORG_ni30"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Otvorite službeni Gausium video u novoj kartici"
-            data-i18n-aria-label="video.linkAria"
-          >
-            <img
-              src="assets/industries/logistics-warehouse-gausium-1920x933.webp"
-              width="1920"
-              height="933"
-              loading="lazy"
-              decoding="async"
-              alt="Robot čisti prolaz u logističkom skladištu"
-              data-i18n-alt="video.imageAlt"
-            />
-            <span class="video-overlay">
-              <span class="play-mark" aria-hidden="true"></span>
-              <span>
-                <strong data-i18n="video.videoLabel">Gausium primjer implementacije</strong>
-                <small data-i18n="video.openVideo">Otvorite službeni video</small>
-              </span>
-            </span>
+          <a class="video-frame video-link" href="https://www.youtube.com/watch?v=UbeORG_ni30" target="_blank" rel="noopener noreferrer" aria-label="Otvorite službeni Gausium video u novoj kartici" data-i18n-aria-label="video.linkAria">
+            <img src="assets/industries/logistics-warehouse-gausium-1920x933.webp" width="1920" height="933" loading="lazy" decoding="async" alt="Robot čisti prolaz u logističkom skladištu" data-i18n-alt="video.imageAlt" />
+            <span class="video-overlay"><span class="play-mark" aria-hidden="true"></span><span><strong data-i18n="video.videoLabel">Gausium primjer implementacije</strong><small data-i18n="video.openVideo">Otvorite službeni video</small></span></span>
           </a>
         </div>
       </section>
 
       <section class="faq section-pad" id="faq" aria-labelledby="faq-title">
         <div class="container faq-layout">
-          <div class="faq-heading">
-            <div class="section-kicker" data-i18n="faq.kicker">Prije odluke</div>
-            <h2 id="faq-title" data-i18n="faq.title">Česta pitanja</h2>
-          </div>
+          <div class="faq-heading"><div class="section-kicker" data-i18n="faq.kicker">Prije odluke</div><h2 id="faq-title" data-i18n="faq.title">Česta pitanja</h2></div>
           <div class="faq-list" data-faq-list></div>
         </div>
       </section>
 
-      <section class="demo section-pad" id="demo" aria-labelledby="demo-title">
-        <div class="container demo-grid">
-          <div>
-            <div class="section-kicker" data-i18n="demo.kicker">Demo i procjena</div>
-            <h2 id="demo-title" data-i18n="demo.title">
-              Pošaljite osnovne podatke o objektu.
-            </h2>
-            <p data-i18n="demo.copy">
-              Javit ćemo se s prijedlogom sljedećeg koraka: kratkim pozivom, pregledom lokacije ili
-              demonstracijom robota.
-            </p>
-            <ul class="demo-points" data-demo-points></ul>
-            <div class="direct-contact">
-              <p data-i18n="demo.directContact">Možete nam se javiti i izravno:</p>
-              <a data-contact-phone href="">Telefon</a>
-              <a data-contact-email href="">E-mail</a>
-            </div>
-          </div>
-
-          <form class="demo-form" data-demo-form novalidate>
-            <p class="required-note full" data-i18n="demo.form.requiredNote">
-              Polja označena zvjezdicom su obavezna.
-            </p>
-            <div class="field">
-              <label for="name">
-                <span data-i18n="demo.form.name">Ime i prezime</span>
-                <span aria-hidden="true">*</span>
-              </label>
-              <input id="name" name="name" type="text" autocomplete="name" required />
-            </div>
-            <div class="field">
-              <label for="company">
-                <span data-i18n="demo.form.company">Tvrtka</span>
-                <span aria-hidden="true">*</span>
-              </label>
-              <input id="company" name="company" type="text" autocomplete="organization" required />
-            </div>
-            <div class="field">
-              <label for="email">
-                <span data-i18n="demo.form.email">E-mail</span>
-                <span aria-hidden="true">*</span>
-              </label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <div class="field">
-              <label for="phone" data-i18n="demo.form.phone">Telefon</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" />
-            </div>
-            <div class="field full">
-              <label for="selected-model" data-i18n="demo.form.model">Odabrani model</label>
-              <input
-                id="selected-model"
-                name="model"
-                type="text"
-                readonly
-                placeholder="Nije odabran određeni model"
-                data-i18n-placeholder="demo.form.modelPlaceholder"
-              />
-            </div>
-            <div class="field full">
-              <label for="message">
-                <span data-i18n="demo.form.message">Objekt i potreba</span>
-                <span aria-hidden="true">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                placeholder="Primjer: skladište od 6.000 m², svakodnevno čišćenje, prašina i promet viličara"
-                data-i18n-placeholder="demo.form.messagePlaceholder"
-              ></textarea>
-            </div>
-            <p class="privacy-notice full">
-              <span data-i18n="demo.form.privacyBefore"
-                >Slanjem obrasca potvrđujete da ste pročitali
-              </span>
-              <a
-                href="privacy-policy.html?lang=hr"
-                data-legal-link="privacy-policy.html"
-                data-i18n="demo.form.privacyLink"
-                >Politiku privatnosti</a
-              ><span data-i18n="demo.form.privacyAfter">
-                i pristajete na obradu podataka radi odgovora na upit.</span
-              >
-            </p>
-            <button class="button button-primary full" type="submit" data-submit-button>
-              <span data-submit-label data-i18n="buttons.sendRequest">Pripremite zahtjev</span>
-              <span aria-hidden="true">→</span>
-            </button>
-            <p class="form-status full" data-form-status role="status" aria-live="polite"></p>
-          </form>
+      <section class="page-cta section-pad" aria-labelledby="home-cta-title">
+        <div class="container page-cta-inner">
+          <div><div class="section-kicker" data-i18n="homeCta.kicker">Sljedeći korak</div><h2 id="home-cta-title" data-i18n="homeCta.title">Niste sigurni koji model odgovara vašem objektu?</h2><p data-i18n="homeCta.copy">Kratko nam opišite prostor i način rada, a mi ćemo pripremiti uži izbor za demonstraciju.</p></div>
+          <a class="button button-primary" href="contact.html?lang=hr" data-page-link="contact.html"><span data-i18n="buttons.contactUs">Kontaktirajte nas</span><span aria-hidden="true">→</span></a>
         </div>
       </section>
     </main>
@@ -444,93 +198,36 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <img
-            src="assets/brand/adria-robotics-logo-reversed.svg"
-            width="190"
-            height="47"
-            alt="Adria Robotics"
-          />
+          <img src="assets/brand/adria-robotics-logo-reversed.svg" width="190" height="47" alt="Adria Robotics" />
           <p class="footer-tagline" data-i18n="footer.tagline">Robotika u praksi.</p>
-          <p data-i18n="footer.description">
-            Autonomna rješenja za profesionalno čišćenje, uz lokalnu implementaciju, edukaciju i
-            podršku.
-          </p>
+          <p data-i18n="footer.description">Autonomna rješenja za profesionalno čišćenje, uz lokalnu implementaciju, edukaciju i podršku.</p>
         </div>
         <nav aria-label="Navigacija u podnožju" data-i18n-aria-label="footer.navAria">
           <h2 data-i18n="footer.companyTitle">Tvrtka</h2>
-          <a href="#robots" data-i18n="nav.robots">Roboti</a>
-          <a href="#industries" data-i18n="nav.industries">Industrije</a>
-          <a href="#process" data-i18n="nav.implementation">Implementacija</a>
-          <a href="#faq" data-i18n="nav.faq">Česta pitanja</a>
-          <a href="#demo" data-i18n="nav.contact">Kontakt</a>
+          <a href="index.html?lang=hr" data-page-link="index.html" data-i18n="nav.home">Početna</a>
+          <a href="robots.html?lang=hr" data-page-link="robots.html" data-i18n="nav.robots">Roboti</a>
+          <a href="roi.html?lang=hr" data-page-link="roi.html" data-i18n="nav.roi">ROI kalkulator</a>
+          <a href="service-plans.html?lang=hr" data-page-link="service-plans.html" data-i18n="nav.plans">Paketi</a>
+          <a href="contact.html?lang=hr" data-page-link="contact.html" data-i18n="nav.contact">Kontakt</a>
         </nav>
         <div class="footer-contact">
           <h2 data-i18n="footer.contactTitle">Kontakt</h2>
           <dl>
-            <div>
-              <dt data-i18n="footer.legalNameLabel">Pravni naziv</dt>
-              <dd data-site-legal-name></dd>
-            </div>
-            <div>
-              <dt data-i18n="footer.addressLabel">Adresa</dt>
-              <dd data-site-address></dd>
-            </div>
-            <div>
-              <dt data-i18n="footer.taxIdLabel">OIB</dt>
-              <dd data-site-tax-id></dd>
-            </div>
-            <div>
-              <dt data-i18n="footer.phoneLabel">Telefon</dt>
-              <dd><a data-contact-phone href="">Telefon</a></dd>
-            </div>
-            <div>
-              <dt data-i18n="footer.emailLabel">E-mail</dt>
-              <dd><a data-contact-email href="">E-mail</a></dd>
-            </div>
+            <div><dt data-i18n="footer.legalNameLabel">Pravni naziv</dt><dd data-site-legal-name></dd></div>
+            <div><dt data-i18n="footer.addressLabel">Adresa</dt><dd data-site-address></dd></div>
+            <div><dt data-i18n="footer.taxIdLabel">OIB</dt><dd data-site-tax-id></dd></div>
+            <div><dt data-i18n="footer.phoneLabel">Telefon</dt><dd><a data-contact-phone href="">Telefon</a></dd></div>
+            <div><dt data-i18n="footer.emailLabel">E-mail</dt><dd><a data-contact-email href="">E-mail</a></dd></div>
           </dl>
         </div>
         <div class="footer-legal">
           <h2 data-i18n="footer.legalTitle">Pravne informacije</h2>
-          <a
-            href="privacy-policy.html?lang=hr"
-            data-legal-link="privacy-policy.html"
-            data-i18n="footer.privacy"
-            >Politika privatnosti</a
-          >
-          <a
-            href="cookie-policy.html?lang=hr"
-            data-legal-link="cookie-policy.html"
-            data-i18n="footer.cookies"
-            >Politika kolačića</a
-          >
+          <a href="privacy-policy.html?lang=hr" data-legal-link="privacy-policy.html" data-i18n="footer.privacy">Politika privatnosti</a>
+          <a href="cookie-policy.html?lang=hr" data-legal-link="cookie-policy.html" data-i18n="footer.cookies">Politika kolačića</a>
         </div>
       </div>
-      <div class="container footer-bottom">
-        <p data-copyright>© 2026 Adriarobotics d.o.o. Sva prava pridržana.</p>
-      </div>
+      <div class="container footer-bottom"><p data-copyright>© 2026 Adriarobotics d.o.o. Sva prava pridržana.</p></div>
     </footer>
-
-    <div class="modal-backdrop" data-robot-modal hidden>
-      <section
-        class="robot-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="robot-modal-title"
-        tabindex="-1"
-        data-modal-dialog
-      >
-        <button
-          class="modal-close"
-          type="button"
-          aria-label="Zatvori detalje robota"
-          data-modal-close
-          data-i18n-aria-label="accessibility.closeModal"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div data-modal-content></div>
-      </section>
-    </div>
 
     <script src="config/site.js"></script>
     <script src="config/i18n.hr.js"></script>

@@ -236,42 +236,47 @@ window.AR_LOCALES.en = {
   },
   faq: {
     kicker: "Before you decide",
-    title: "Frequently asked questions",
+    title: "Key questions before introducing a robot",
     items: [
       {
-        question: "How much does a cleaning robot cost?",
+        question: "How do we choose the right robot for our facility?",
         answer:
-          "The price depends on the model, equipment, facility size and required infrastructure. After a short site assessment, we prepare a recommendation and a specific offer.",
+          "Selection starts with the floor type, actual cleaning area, task (washing, sweeping or vacuuming), aisle width, traffic and number of shifts. We use these criteria to shortlist suitable models, then confirm the final choice with a demonstration at your facility.",
       },
       {
-        question: "Can the robot be purchased or rented?",
+        question: "Can the robot work while people or forklifts are present?",
         answer:
-          "Available options depend on the model and the agreed form of cooperation. After an initial consultation and site assessment, we recommend the most suitable acquisition model.",
+          "Professional models use sensors to detect obstacles and slow down, stop or adjust their route. During mapping, we define routes, restricted zones and operating times. Facilities with heavy pedestrian or forklift traffic are always validated through an on-site demonstration before deployment.",
       },
       {
-        question: "Can I see the robot operating before making a decision?",
+        question: "How many robots are needed for our floor area?",
         answer:
-          "Yes. An on-site demonstration allows the robot to be tested on the facility’s real floors, routes and obstacles before a final decision is made.",
+          "Our initial estimate is one robot for up to 1,000 m², two for up to 5,000 m² and three for up to 10,000 m². Above 10,000 m², the starting recommendation is one robot per 3,500 m², rounded up. The final quantity is adjusted for floor type, shifts, traffic, charging time and the actual cleaning window.",
       },
       {
-        question: "How long does implementation take?",
+        question: "What work does the robot actually take over, and what remains with staff?",
         answer:
-          "The timeline depends on the size and complexity of the facility. The process includes assessment, model selection, demonstration, mapping, start-up and user training.",
+          "The robot takes over repetitive cleaning of larger floor areas and follows planned routes. Staff remain responsible for edges and hard-to-reach areas, stairs, washrooms, unexpected spills, consumable replacement and daily checks. The goal is to free staff hours for tasks the robot cannot perform effectively.",
       },
       {
-        question: "Is a long-term contract required?",
+        question: "Can the robot work independently at night or between shifts?",
         answer:
-          "The terms depend on the selected purchase, rental and service model. All obligations and contract duration are agreed before the offer is accepted.",
+          "It can follow mapped routes without a person continuously supervising it. However, the process still needs an assigned person for daily checks, removing unexpected obstacles, handling water and replacing consumables when those tasks are not automated by a workstation.",
       },
       {
-        question: "Who provides service and maintenance?",
+        question: "What does implementation involve?",
         answer:
-          "Adria Robotics coordinates local support, preventive maintenance, service escalation and spare parts according to the agreed service package.",
+          "The process has five clear steps: facility and task review, model selection and demonstration, route and zone mapping, a trial run with adjustments, and user training and handover. Professional mapping, initial setup, initial training, implementation and technical support are included in both Standard and Full-service plans.",
       },
       {
-        question: "Can the robot operate while people are present?",
+        question: "What happens if the robot stops or breaks down?",
         answer:
-          "Many models are designed for dynamic environments, but suitability depends on the model, traffic, routes and safety requirements. This is verified during the assessment and demonstration.",
+          "The user first checks the robot’s message, obstacles and consumables, while Adria Robotics coordinates technical support and service. Full-service also includes regular preventive maintenance and access to a replacement robot, subject to availability and contract terms; these items are not included in the Standard plan.",
+      },
+      {
+        question: "How can we check whether a robot makes financial sense before deciding?",
+        answer:
+          "Enter the actual floor area, workdays and shifts, staff count, working hours and the share of work the robot can take over in the ROI calculator. It provides an estimate of the required robot count, monthly and annual savings, payback and net benefit after 24, 36 and 48 months. We then validate the result with site data and a demonstration.",
       },
     ],
   },
@@ -310,7 +315,8 @@ window.AR_LOCALES.en = {
       "The request has been prepared in your email application. Review the content and send the message.",
     error:
       "We could not open your email application. Your data has been preserved; send it directly to {email}.",
-    emailSubject: "Demo request — {company}",
+    notProvided: "not provided",
+    emailSubject: "Demo request: {company}",
     emailBody: {
       name: "Full name",
       company: "Company",
@@ -454,7 +460,6 @@ Object.assign(window.AR_LOCALES.en.accessibility, {
   financingPeriod: "Select a financing term",
   financingType: "Select a financing method",
   annualCostChart: "Comparison of estimated annual cost before and after implementation",
-  cumulativeChart: "Estimated cumulative benefit over 48 months",
 });
 
 Object.assign(window.AR_LOCALES.en.buttons, {
@@ -517,6 +522,7 @@ window.AR_LOCALES.en.roi = {
   title: "Estimate the financial effect of automation.",
   copy: "Adjust the assumptions to your facility and compare scenarios without hidden formulas.",
   inputsTitle: "Scenario assumptions",
+  simpleIntro: "Enter the core details for an initial estimate. The remaining values already use public recommended defaults.",
   resultsTitle: "Estimated result",
   model: "Robot model",
   financing: "Financing method",
@@ -525,6 +531,13 @@ window.AR_LOCALES.en.roi = {
   manualRobotHint: "Leave blank to use the automatic area-based recommendation.",
   manualOverride: "The manual value overrides the automatic recommendation of {count} robots.",
   automaticRecommendation: "Automatic area-based recommendation.",
+  sharePresetTitle: "How much work will the robot take over?",
+  sharePresetHint: "Choose a simple scenario. You can change the exact percentage under advanced assumptions.",
+  advancedTitle: "Advanced assumptions",
+  advancedHint: "Workdays, shifts, hours, exact work share and manual robot count",
+  detailsTitle: "Detailed result and comparisons",
+  detailsHint: "Additional KPIs, three scenarios and an annual cost comparison",
+  secondaryTitle: "Additional indicators",
   financingOptions: {
     lease: "Leasing",
     rentStandard: "Standard rental",
@@ -572,8 +585,6 @@ window.AR_LOCALES.en.roi = {
   before: "Before implementation",
   after: "After implementation",
   annualCostSummary: "Estimated annual cost changes from {before} to {after}.",
-  cumulativeTitle: "Cumulative benefit over 48 months",
-  cumulativeSummary: "Estimated cumulative net benefit after 48 months is {amount}.",
   disclaimerFallback: "The result is an indicative estimate and depends on actual site conditions and the final offer.",
 };
 
@@ -584,3 +595,111 @@ window.AR_LOCALES.en.legal.cookies.sections.splice(2, 0, {
     "Public product, financing, industry and ROI configuration data is temporarily stored in localStorage for 15 minutes to improve loading and availability during a brief Google Sheets outage. The cache contains no personal data and is not used for tracking.",
   ],
 });
+
+Object.assign(window.AR_LOCALES.en.nav, {
+  home: "Home",
+  roi: "ROI calculator",
+  plans: "Plans",
+});
+
+Object.assign(window.AR_LOCALES.en.buttons, {
+  openCatalogue: "Open catalogue",
+  openRoi: "Calculate ROI",
+  comparePlans: "Compare plans",
+  contactUs: "Contact us",
+});
+
+window.AR_LOCALES.en.pageMeta = {
+  home: {
+    title: "Adria Robotics | Autonomous robots for professional cleaning",
+    description: "Selection, demonstration, implementation and service of autonomous professional cleaning robots across the Adriatic region.",
+  },
+  robots: {
+    title: "Robot catalogue | Adria Robotics",
+    description: "Compare 11 active robots, their specifications, net prices, leasing and rental options.",
+  },
+  roi: {
+    title: "ROI calculator | Adria Robotics",
+    description: "Estimate robot cost, annual savings, ROI and payback for your facility.",
+  },
+  services: {
+    title: "Financing and plans | Adria Robotics",
+    description: "Compare purchase, leasing, Standard rental and the Full-service plan for autonomous robots.",
+  },
+  contact: {
+    title: "Contact and demo | Adria Robotics",
+    description: "Share your facility details and request an assessment or an on-site robot demonstration.",
+  },
+};
+
+window.AR_LOCALES.en.catalogPage = {
+  kicker: "Catalogue and financing",
+  title: "Find the right robot for your space and task.",
+  copy: "Filter the official catalogue, open technical specifications and compare public net prices and monthly payments.",
+};
+
+window.AR_LOCALES.en.roiPage = {
+  kicker: "Investment estimate",
+  title: "Check the financial impact for your facility.",
+  copy: "Adjust operating assumptions, model and financing method. The calculator uses public rates from Google Sheets.",
+};
+
+window.AR_LOCALES.en.servicePage = {
+  kicker: "Ways to work with us",
+  title: "From purchase to a fully managed rental.",
+  copy: "Choose the financing model that suits your budget, then compare what Standard and Full-service include.",
+};
+
+window.AR_LOCALES.en.contactPage = {
+  kicker: "Contact and demo",
+  title: "Let’s discuss your facility.",
+  copy: "Share a few basic details. We will suggest suitable models and the most useful next step.",
+};
+
+window.AR_LOCALES.en.homePaths = {
+  kicker: "Explore the solution",
+  title: "Every decision has a clear next step.",
+  copy: "The catalogue, business case and service plans are now separate so you can reach the information you need faster.",
+  robots: {
+    title: "Robot catalogue",
+    copy: "Compare models, specifications, prices and monthly payments.",
+  },
+  roi: {
+    title: "ROI calculator",
+    copy: "Estimate savings, payback and the robot count required for your facility.",
+  },
+  plans: {
+    title: "Financing and plans",
+    copy: "Compare purchase, leasing, Standard rental and Full-service rental.",
+  },
+};
+
+window.AR_LOCALES.en.homeCta = {
+  kicker: "Next step",
+  title: "Not sure which model fits your facility?",
+  copy: "Briefly describe the space and operating routine, and we will prepare a shortlist for demonstration.",
+};
+
+window.AR_LOCALES.en.financingOverview = {
+  kicker: "Financing",
+  title: "Four acquisition options, with no hidden browser calculations.",
+  copy: "Exact public amounts for every robot and term are shown in each model’s catalogue modal. All displayed amounts are net and subject to 25% VAT.",
+  purchase: {
+    title: "Purchase",
+    copy: "A one-off net sales price with ownership of the equipment.",
+  },
+  lease: {
+    title: "Leasing",
+    copy: "Monthly payments over 24, 36 or 48 months, including the net down payment.",
+  },
+  standard: {
+    title: "Standard rental",
+    copy: "A predictable monthly payment with the core service scope included.",
+  },
+  full: {
+    title: "Full-service rental",
+    copy: "A broader support and service package included in the monthly payment.",
+  },
+};
+
+window.AR_LOCALES.en.servicePlans.comparisonTitle = "What does each plan include?";

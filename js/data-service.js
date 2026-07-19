@@ -307,7 +307,7 @@
       .sort((a, b) => a.sortOrder - b.sortOrder);
   }
 
-  function normalizeProductIndustries(rows, productIds, industryIds) {
+  function normalizeProductIndustries(rows, productIds, industryIds, activeIndustryIds) {
     return rows
       .map((row) => {
         const productId = stringValue(row.product_id);
@@ -317,6 +317,7 @@
           warn(`Invalid product-industry reference skipped: ${productId}/${industryId}`, row);
           return null;
         }
+        if (!activeIndustryIds.has(industryId)) return null;
         return {
           productId,
           industryId,
@@ -394,7 +395,10 @@
     });
     const productIds = new Set(products.map((product) => product.id));
     const industries = normalizeIndustries(rawSheets.Industries);
-    const industryIds = new Set(industries.map((industry) => industry.id));
+    const activeIndustryIds = new Set(industries.map((industry) => industry.id));
+    const industryIds = new Set(
+      rawSheets.Industries.map((industry) => stringValue(industry.id)).filter(Boolean),
+    );
     return {
       products,
       specifications: normalizeSpecs(rawSheets.Product_Specs, productIds),
@@ -405,6 +409,7 @@
         rawSheets.Product_Industries,
         productIds,
         industryIds,
+        activeIndustryIds,
       ),
       servicePlans: normalizeServicePlans(rawSheets.Service_Plans),
     };

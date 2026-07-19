@@ -3,6 +3,25 @@
 Statična, dvojezična HR/EN stranica za Adria Robotics. Nema backenda, frameworka ni build koraka;
 objavljuje se izravno preko GitHub Pagesa.
 
+## Stranice
+
+Web je podijeljen na nekoliko statičnih HTML dokumenata koji dijele isti CSS, JavaScript, javne
+Google Sheets podatke i 15-minutni cache:
+
+| Datoteka | Sadržaj |
+| --- | --- |
+| `index.html` | Kratka naslovnica, industrije, proces, video i FAQ |
+| `robots.html` | Katalog, filtri, specifikacije i financiranje po modelu |
+| `roi.html` | ROI kalkulator i scenariji |
+| `service-plans.html` | Načini financiranja i usporedba paketa usluga |
+| `contact.html` | Kontakt i obrazac za demo |
+| `privacy-policy.html` | Politika privatnosti |
+| `cookie-policy.html` | Politika kolačića i lokalne pohrane |
+
+Industrijska kartica s naslovnice otvara filtrirani katalog preko parametra `industry`, a CTA iz
+modala robota otvara kontakt preko parametra `model`. Parametar `lang=hr|en` i spremljeni odabir
+jezika vrijede na svim stranicama.
+
 ## Javni Google Sheets podaci
 
 Jedini izvor istine je javni spreadsheet:
@@ -35,7 +54,8 @@ npm run serve
 ```
 
 Otvorite <http://localhost:8080>. Nemojte provjeravati preko `file://`, jer tada mrežni dohvat nije
-reprezentativan.
+reprezentativan i preglednik može blokirati dohvat javnih Google Sheets podataka. Sve su stranice
+obični statični HTML, ali ih lokalno ipak treba posluživati preko HTTP servera.
 
 Čisti testovi koriste samo ugrađene Node module:
 
@@ -46,7 +66,7 @@ npm test
 ## Objavljivanje Sheetsa
 
 1. U Google Sheetsu otvorite **Share / Dijeli**.
-2. Postavite opći pristup na **Anyone with the link / Svatko s poveznicom — Viewer / Pregledavatelj**.
+2. Postavite opći pristup na **Anyone with the link / Svatko s poveznicom (Viewer / Pregledavatelj)**.
 3. Ne objavljujte niti povezujte internu tablicu `adriarobitics-database`.
 4. U anonimnom prozoru provjerite da javni spreadsheet i GViz endpoint rade bez prijave.
 
@@ -92,5 +112,7 @@ Skripta čita samo konfiguriranih sedam javnih raspona i mehanički regenerira
 ## GitHub Pages objava
 
 Repo nema build izlaz. U postavkama repozitorija odaberite GitHub Pages objavu iz željene grane i
-root direktorija. Nakon objave provjerite katalog, modal, ROI, industrijske filtre, servisne pakete,
-HR/EN prebacivanje i pravne stranice u anonimnom prozoru.
+root direktorija. GitHub Pages će uz `index.html` automatski posluživati i `robots.html`, `roi.html`,
+`service-plans.html` te `contact.html`; nije potrebno konfigurirati rute ili redirects. Nakon objave
+provjerite sve glavne stranice, katalog, modal, ROI, industrijske filtre, servisne pakete, HR/EN
+prebacivanje i pravne stranice u anonimnom prozoru.

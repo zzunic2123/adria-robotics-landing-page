@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontakt i demo | Adria Robotics</title>
+    <meta name="description" content="Pošaljite podatke o objektu i zatražite procjenu ili demonstraciju robota na lokaciji." />
+    <link rel="icon" href="assets/brand/adria-robotics-icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="contact" data-meta-key="pageMeta.contact">
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">Preskoči na sadržaj</a>
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="index.html?lang=hr" data-page-link="index.html" aria-label="Adria Robotics početna stranica" data-i18n-aria-label="accessibility.home"><img src="assets/brand/adria-robotics-logo-primary.svg" width="194" height="48" alt="Adria Robotics" /></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Otvori navigaciju" data-nav-toggle data-i18n-aria-label="accessibility.openNav"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <nav class="site-nav" id="site-nav" aria-label="Glavna navigacija" data-nav>
+          <a href="index.html?lang=hr" data-page-link="index.html" data-nav-page="home" data-i18n="nav.home">Početna</a><a href="robots.html?lang=hr" data-page-link="robots.html" data-nav-page="robots" data-i18n="nav.robots">Roboti</a><a href="roi.html?lang=hr" data-page-link="roi.html" data-nav-page="roi" data-i18n="nav.roi">ROI kalkulator</a><a href="service-plans.html?lang=hr" data-page-link="service-plans.html" data-nav-page="services" data-i18n="nav.plans">Paketi</a><a class="nav-cta" href="contact.html?lang=hr" data-page-link="contact.html" data-nav-page="contact" data-i18n="nav.contact">Kontakt</a>
+          <div class="language-switcher" role="group" aria-label="Odabir jezika" data-i18n-aria-label="language.label"><button type="button" class="lang-button is-active" aria-pressed="true" aria-label="Hrvatski" data-lang-button="hr" data-i18n-aria-label="language.hr">HR</button><button type="button" class="lang-button" aria-pressed="false" aria-label="Engleski" data-lang-button="en" data-i18n-aria-label="language.en">EN</button></div>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-overlay" data-nav-overlay hidden aria-hidden="true"></div>
+
+    <main id="main">
+      <section class="page-hero" aria-labelledby="contact-page-title"><div class="container page-hero-inner"><div class="section-kicker" data-i18n="contactPage.kicker">Kontakt i demo</div><h1 id="contact-page-title" data-i18n="contactPage.title">Razgovarajmo o vašem objektu.</h1><p data-i18n="contactPage.copy">Pošaljite nekoliko osnovnih podataka. Predložit ćemo prikladne modele i najkorisniji sljedeći korak.</p></div></section>
+
+      <section class="demo section-pad contact-page-form" id="demo" aria-labelledby="demo-title">
+        <div class="container demo-grid">
+          <div>
+            <div class="section-kicker" data-i18n="demo.kicker">Demo i procjena</div>
+            <h2 id="demo-title" data-i18n="demo.title">Pošaljite osnovne podatke o objektu.</h2>
+            <p data-i18n="demo.copy">Javit ćemo se s prijedlogom sljedećeg koraka: kratkim pozivom, pregledom lokacije ili demonstracijom robota.</p>
+            <ul class="demo-points" data-demo-points></ul>
+            <div class="direct-contact"><p data-i18n="demo.directContact">Možete nam se javiti i izravno:</p><a data-contact-phone href="">Telefon</a><a data-contact-email href="">E-mail</a></div>
+          </div>
+          <form class="demo-form" data-demo-form novalidate>
+            <p class="required-note full" data-i18n="demo.form.requiredNote">Polja označena zvjezdicom su obavezna.</p>
+            <div class="field"><label for="name"><span data-i18n="demo.form.name">Ime i prezime</span><span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required /></div>
+            <div class="field"><label for="company"><span data-i18n="demo.form.company">Tvrtka</span><span aria-hidden="true">*</span></label><input id="company" name="company" type="text" autocomplete="organization" required /></div>
+            <div class="field"><label for="email"><span data-i18n="demo.form.email">E-mail</span><span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+            <div class="field"><label for="phone" data-i18n="demo.form.phone">Telefon</label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
+            <div class="field full"><label for="selected-model" data-i18n="demo.form.model">Odabrani model</label><input id="selected-model" name="model" type="text" readonly placeholder="Nije odabran određeni model" data-i18n-placeholder="demo.form.modelPlaceholder" /></div>
+            <div class="field full"><label for="message"><span data-i18n="demo.form.message">Objekt i potreba</span><span aria-hidden="true">*</span></label><textarea id="message" name="message" rows="5" required placeholder="Primjer: skladište od 6.000 m², svakodnevno čišćenje, prašina i promet viličara" data-i18n-placeholder="demo.form.messagePlaceholder"></textarea></div>
+            <p class="privacy-notice full"><span data-i18n="demo.form.privacyBefore">Slanjem obrasca potvrđujete da ste pročitali </span><a href="privacy-policy.html?lang=hr" data-legal-link="privacy-policy.html" data-i18n="demo.form.privacyLink">Politiku privatnosti</a><span data-i18n="demo.form.privacyAfter"> i pristajete na obradu podataka radi odgovora na upit.</span></p>
+            <button class="button button-primary full" type="submit" data-submit-button><span data-submit-label data-i18n="buttons.sendRequest">Pripremite zahtjev</span><span aria-hidden="true">→</span></button>
+            <p class="form-status full" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand"><img src="assets/brand/adria-robotics-logo-reversed.svg" width="190" height="47" alt="Adria Robotics" /><p class="footer-tagline" data-i18n="footer.tagline">Robotika u praksi.</p><p data-i18n="footer.description">Autonomna rješenja za profesionalno čišćenje, uz lokalnu implementaciju, edukaciju i podršku.</p></div>
+        <nav aria-label="Navigacija u podnožju" data-i18n-aria-label="footer.navAria"><h2 data-i18n="footer.companyTitle">Tvrtka</h2><a href="index.html?lang=hr" data-page-link="index.html" data-i18n="nav.home">Početna</a><a href="robots.html?lang=hr" data-page-link="robots.html" data-i18n="nav.robots">Roboti</a><a href="roi.html?lang=hr" data-page-link="roi.html" data-i18n="nav.roi">ROI kalkulator</a><a href="service-plans.html?lang=hr" data-page-link="service-plans.html" data-i18n="nav.plans">Paketi</a><a href="contact.html?lang=hr" data-page-link="contact.html" data-i18n="nav.contact">Kontakt</a></nav>
+        <div class="footer-contact"><h2 data-i18n="footer.contactTitle">Kontakt</h2><dl><div><dt data-i18n="footer.legalNameLabel">Pravni naziv</dt><dd data-site-legal-name></dd></div><div><dt data-i18n="footer.addressLabel">Adresa</dt><dd data-site-address></dd></div><div><dt data-i18n="footer.taxIdLabel">OIB</dt><dd data-site-tax-id></dd></div><div><dt data-i18n="footer.phoneLabel">Telefon</dt><dd><a data-contact-phone href="">Telefon</a></dd></div><div><dt data-i18n="footer.emailLabel">E-mail</dt><dd><a data-contact-email href="">E-mail</a></dd></div></dl></div>
+        <div class="footer-legal"><h2 data-i18n="footer.legalTitle">Pravne informacije</h2><a href="privacy-policy.html?lang=hr" data-legal-link="privacy-policy.html" data-i18n="footer.privacy">Politika privatnosti</a><a href="cookie-policy.html?lang=hr" data-legal-link="cookie-policy.html" data-i18n="footer.cookies">Politika kolačića</a></div>
+      </div><div class="container footer-bottom"><p data-copyright>© 2026 Adriarobotics d.o.o. Sva prava pridržana.</p></div>
+    </footer>
+    <script src="config/site.js"></script><script src="config/i18n.hr.js"></script><script src="config/i18n.en.js"></script><script src="config/data-source.js"></script><script src="config/fallback-data.js"></script><script src="js/data-service.js"></script><script src="js/roi-calculator.js"></script><script src="js/main.js"></script>
+  </body>
+</html>

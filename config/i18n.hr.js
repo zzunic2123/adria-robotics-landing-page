@@ -236,42 +236,47 @@ window.AR_LOCALES.hr = {
   },
   faq: {
     kicker: "Prije odluke",
-    title: "Česta pitanja",
+    title: "Najvažnija pitanja prije uvođenja robota",
     items: [
       {
-        question: "Koliko košta robot za čišćenje?",
+        question: "Kako odabrati pravi robot za naš objekt?",
         answer:
-          "Cijena ovisi o modelu, opremi, veličini prostora i potrebnoj infrastrukturi. Nakon kratke procjene objekta pripremamo preporuku i konkretnu ponudu.",
+          "Odabir počinje s vrstom poda, stvarnom površinom čišćenja, zadatkom (pranjem, metenjem ili usisavanjem), širinom prolaza, prometom i brojem smjena. Na temelju toga sužavamo izbor na odgovarajuće modele, a konačan odabir potvrđujemo demonstracijom na vašoj lokaciji.",
       },
       {
-        question: "Je li moguća kupnja ili najam robota?",
+        question: "Može li robot raditi dok su ljudi ili viličari u prostoru?",
         answer:
-          "Dostupne opcije ovise o modelu i dogovorenom načinu suradnje. Nakon razgovora i procjene objekta predlažemo najprikladniji model nabave.",
+          "Profesionalni modeli koriste senzore za prepoznavanje prepreka te usporavaju, zaustavljaju se ili prilagođavaju putanju. Tijekom mapiranja definiramo rute, zabranjene zone i vrijeme rada. Prostore s intenzivnim prometom ljudi ili viličara obavezno provjeravamo demonstracijom prije puštanja u rad.",
       },
       {
-        question: "Mogu li vidjeti robota u radu prije odluke?",
+        question: "Koliko robota je potrebno za našu površinu?",
         answer:
-          "Da. Demonstracija na lokaciji služi za provjeru rada robota na stvarnim podovima, rutama i preprekama prije konačne odluke.",
+          "Za početnu procjenu koristimo jedan robot do 1.000 m², dva do 5.000 m² i tri do 10.000 m². Iznad 10.000 m² početna preporuka je jedan robot na svakih 3.500 m², zaokruženo naviše. Konačan broj usklađujemo s vrstom poda, smjenama, prometom, vremenom punjenja i stvarno dostupnim vremenom za čišćenje.",
       },
       {
-        question: "Koliko traje uvođenje robota u objekt?",
+        question: "Što robot stvarno preuzima, a što ostaje zaposlenicima?",
         answer:
-          "Trajanje ovisi o veličini i složenosti prostora. Proces uključuje analizu, odabir modela, demonstraciju, mapiranje, početak rada i edukaciju korisnika.",
+          "Robot preuzima ponavljajuće čišćenje većih podnih površina i odrađuje planirane rute. Zaposlenici ostaju zaduženi za rubove i teško dostupna mjesta, stepenice, sanitarne prostore, iznenadna onečišćenja, dopunu potrošnog materijala i dnevnu kontrolu. Cilj je osloboditi radne sate za zadatke koje robot ne može kvalitetno obaviti.",
       },
       {
-        question: "Je li potreban dugoročni ugovor?",
+        question: "Može li robot raditi samostalno noću ili između smjena?",
         answer:
-          "Uvjeti ovise o odabranom modelu kupnje, najma i servisa. Sve obveze i trajanje dogovaraju se prije prihvaćanja ponude.",
+          "Može raditi po unaprijed mapiranim rutama bez osobe koja ga stalno prati. Ipak, proces mora imati odgovornu osobu za dnevnu provjeru, uklanjanje neočekivanih prepreka te punjenje ili pražnjenje vode i zamjenu potrošnog materijala kada to model ne obavlja preko radne stanice.",
       },
       {
-        question: "Tko obavlja servis i održavanje?",
+        question: "Kako izgleda uvođenje robota u rad?",
         answer:
-          "Adria Robotics organizira lokalnu podršku, preventivno održavanje, servisnu eskalaciju i nabavu potrebnih dijelova prema dogovorenom paketu.",
+          "Proces ima pet jasnih koraka: pregled prostora i zadatka, odabir modela i demonstracija, mapiranje ruta i zona, probni rad s korekcijama te obuka korisnika i primopredaja. Profesionalno mapiranje, početna postavka, početna obuka, implementacija i tehnička podrška uključeni su i u Standard i u Full-service paket.",
       },
       {
-        question: "Može li robot raditi dok su ljudi u objektu?",
+        question: "Što se događa ako robot stane ili se pokvari?",
         answer:
-          "Mnogi modeli projektirani su za rad u dinamičnim prostorima, ali prikladnost ovisi o modelu, prometu, rutama i sigurnosnim uvjetima. To se provjerava tijekom procjene i demonstracije.",
+          "Korisnik prvo provjerava poruku robota, prepreke i potrošni materijal, a Adria Robotics organizira tehničku podršku i servis. Full-service dodatno uključuje redovno preventivno održavanje i mogućnost zamjenskog robota, ovisno o dostupnosti i ugovorenim uvjetima; te stavke nisu uključene u Standard paket.",
+      },
+      {
+        question: "Kako prije odluke provjeriti ima li robot financijskog smisla?",
+        answer:
+          "U ROI kalkulator unesite stvarnu površinu, broj radnih dana i smjena, broj zaposlenika, sate rada i udio posla koji robot može preuzeti. Dobit ćete procjenu potrebnog broja robota, mjesečne i godišnje uštede, povrata te neto koristi nakon 24, 36 i 48 mjeseci. Rezultat zatim provjeravamo podacima s lokacije i demonstracijom.",
       },
     ],
   },
@@ -310,7 +315,8 @@ window.AR_LOCALES.hr = {
       "Zahtjev je pripremljen u vašem programu za e-poštu. Provjerite sadržaj i pošaljite poruku.",
     error:
       "Nismo uspjeli otvoriti program za e-poštu. Vaši podaci su sačuvani; pošaljite ih izravno na {email}.",
-    emailSubject: "Zahtjev za demonstraciju — {company}",
+    notProvided: "nije navedeno",
+    emailSubject: "Zahtjev za demonstraciju: {company}",
     emailBody: {
       name: "Ime i prezime",
       company: "Tvrtka",
@@ -454,7 +460,6 @@ Object.assign(window.AR_LOCALES.hr.accessibility, {
   financingPeriod: "Odaberite razdoblje financiranja",
   financingType: "Odaberite način financiranja",
   annualCostChart: "Usporedba procijenjenog godišnjeg troška prije i nakon implementacije",
-  cumulativeChart: "Procijenjena kumulativna korist kroz 48 mjeseci",
 });
 
 Object.assign(window.AR_LOCALES.hr.buttons, {
@@ -517,6 +522,7 @@ window.AR_LOCALES.hr.roi = {
   title: "Procijenite financijski učinak automatizacije.",
   copy: "Prilagodite pretpostavke svojem objektu i usporedite scenarije bez skrivenih formula.",
   inputsTitle: "Pretpostavke scenarija",
+  simpleIntro: "Za početnu procjenu unesite osnovne podatke. Ostale vrijednosti već imaju javne preporučene postavke.",
   resultsTitle: "Procijenjeni rezultat",
   model: "Model robota",
   financing: "Način financiranja",
@@ -525,6 +531,13 @@ window.AR_LOCALES.hr.roi = {
   manualRobotHint: "Ostavite prazno za automatsku preporuku prema površini.",
   manualOverride: "Ručni unos nadjačava automatsku preporuku od {count} robota.",
   automaticRecommendation: "Automatska preporuka prema površini.",
+  sharePresetTitle: "Koliki dio posla preuzima robot?",
+  sharePresetHint: "Odaberite jednostavan scenarij. Točan postotak možete promijeniti u naprednim pretpostavkama.",
+  advancedTitle: "Napredne pretpostavke",
+  advancedHint: "Radni dani, smjene, sati, točan udio rada i ručni broj robota",
+  detailsTitle: "Detaljni rezultat i usporedbe",
+  detailsHint: "Dodatni KPI-jevi, tri scenarija i usporedba godišnjeg troška",
+  secondaryTitle: "Dodatni pokazatelji",
   financingOptions: {
     lease: "Leasing",
     rentStandard: "Standard najam",
@@ -572,8 +585,6 @@ window.AR_LOCALES.hr.roi = {
   before: "Prije implementacije",
   after: "Nakon implementacije",
   annualCostSummary: "Procijenjeni godišnji trošak mijenja se s {before} na {after}.",
-  cumulativeTitle: "Kumulativna korist kroz 48 mjeseci",
-  cumulativeSummary: "Procijenjena kumulativna neto korist nakon 48 mjeseci iznosi {amount}.",
   disclaimerFallback: "Rezultat je informativna procjena i ovisi o stvarnim uvjetima objekta i konačnoj ponudi.",
 };
 
@@ -584,3 +595,111 @@ window.AR_LOCALES.hr.legal.cookies.sections.splice(2, 0, {
     "Javni podaci o proizvodima, financiranju, industrijama i ROI postavkama privremeno se spremaju u localStorage na 15 minuta radi bržeg učitavanja i dostupnosti pri kratkotrajnom prekidu veze s Google Sheetsom. Cache ne sadrži osobne podatke i ne služi praćenju.",
   ],
 });
+
+Object.assign(window.AR_LOCALES.hr.nav, {
+  home: "Početna",
+  roi: "ROI kalkulator",
+  plans: "Paketi",
+});
+
+Object.assign(window.AR_LOCALES.hr.buttons, {
+  openCatalogue: "Otvorite katalog",
+  openRoi: "Izračunajte ROI",
+  comparePlans: "Usporedite pakete",
+  contactUs: "Kontaktirajte nas",
+});
+
+window.AR_LOCALES.hr.pageMeta = {
+  home: {
+    title: "Adria Robotics | Autonomni roboti za profesionalno čišćenje",
+    description: "Odabir, demonstracija, implementacija i servis autonomnih robota za profesionalno čišćenje u Adria regiji.",
+  },
+  robots: {
+    title: "Katalog robota | Adria Robotics",
+    description: "Usporedite 11 aktivnih robota, njihove specifikacije, neto cijene te opcije leasinga i najma.",
+  },
+  roi: {
+    title: "ROI kalkulator | Adria Robotics",
+    description: "Procijenite trošak robota, godišnju uštedu, ROI i povrat ulaganja za svoj objekt.",
+  },
+  services: {
+    title: "Financiranje i paketi | Adria Robotics",
+    description: "Usporedite kupnju, leasing, Standard najam i Full-service paket za autonomne robote.",
+  },
+  contact: {
+    title: "Kontakt i demo | Adria Robotics",
+    description: "Pošaljite podatke o objektu i zatražite procjenu ili demonstraciju robota na lokaciji.",
+  },
+};
+
+window.AR_LOCALES.hr.catalogPage = {
+  kicker: "Katalog i financiranje",
+  title: "Pronađite robota za svoj prostor i zadatak.",
+  copy: "Filtrirajte službeni katalog, otvorite tehničke specifikacije te usporedite javne neto cijene i mjesečne rate.",
+};
+
+window.AR_LOCALES.hr.roiPage = {
+  kicker: "Procjena ulaganja",
+  title: "Provjerite financijski učinak za svoj objekt.",
+  copy: "Promijenite radne pretpostavke, model i način financiranja. Kalkulator koristi javne stope iz Google Sheetsa.",
+};
+
+window.AR_LOCALES.hr.servicePage = {
+  kicker: "Načini suradnje",
+  title: "Od kupnje do potpuno upravljanog najma.",
+  copy: "Odaberite model financiranja koji odgovara vašem budžetu, a zatim usporedite što uključuju Standard i Full-service.",
+};
+
+window.AR_LOCALES.hr.contactPage = {
+  kicker: "Kontakt i demo",
+  title: "Razgovarajmo o vašem objektu.",
+  copy: "Pošaljite nekoliko osnovnih podataka. Predložit ćemo prikladne modele i najkorisniji sljedeći korak.",
+};
+
+window.AR_LOCALES.hr.homePaths = {
+  kicker: "Istražite rješenje",
+  title: "Svaka odluka ima svoj jasan sljedeći korak.",
+  copy: "Katalog, izračun isplativosti i paketi sada su odvojeni kako biste brže došli do informacije koja vam treba.",
+  robots: {
+    title: "Katalog robota",
+    copy: "Usporedite modele, specifikacije, cijene i mjesečne rate.",
+  },
+  roi: {
+    title: "ROI kalkulator",
+    copy: "Procijenite uštedu, povrat i potreban broj robota za svoj objekt.",
+  },
+  plans: {
+    title: "Financiranje i paketi",
+    copy: "Usporedite kupnju, leasing te Standard i Full-service najam.",
+  },
+};
+
+window.AR_LOCALES.hr.homeCta = {
+  kicker: "Sljedeći korak",
+  title: "Niste sigurni koji model odgovara vašem objektu?",
+  copy: "Kratko nam opišite prostor i način rada, a mi ćemo pripremiti uži izbor za demonstraciju.",
+};
+
+window.AR_LOCALES.hr.financingOverview = {
+  kicker: "Financiranje",
+  title: "Četiri načina nabave, bez skrivenih izračuna u pregledniku.",
+  copy: "Točni javni iznosi za svaki robot i razdoblje nalaze se u modalu pojedinog modela u katalogu. Svi prikazani iznosi su neto i uvećavaju se za 25% PDV-a.",
+  purchase: {
+    title: "Kupnja",
+    copy: "Jednokratna neto prodajna cijena uz vlasništvo nad opremom.",
+  },
+  lease: {
+    title: "Leasing",
+    copy: "Mjesečne rate za 24, 36 ili 48 mjeseci uz prikaz neto učešća.",
+  },
+  standard: {
+    title: "Standard najam",
+    copy: "Predvidiva mjesečna rata uz osnovni opseg uključenih usluga.",
+  },
+  full: {
+    title: "Full-service najam",
+    copy: "Širi paket podrške i usluga uključen u mjesečnu ratu.",
+  },
+};
+
+window.AR_LOCALES.hr.servicePlans.comparisonTitle = "Što je uključeno u svaki paket?";

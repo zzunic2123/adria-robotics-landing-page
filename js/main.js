@@ -5,6 +5,9 @@ const roiCalculator = window.AR_ROI;
 const defaultLanguage = "hr";
 const mobileBreakpoint = 920;
 const financingPeriods = [24, 36, 48];
+const pageParameters = new URLSearchParams(window.location.search);
+const requestedIndustryId = pageParameters.get("industry");
+const requestedProductId = pageParameters.get("model");
 
 function storageValue(key) {
   try {
@@ -31,6 +34,7 @@ let modalFinancingState = { mode: "purchase", period: 36 };
 let roiState = null;
 let roiUpdateTimer = 0;
 let navOpenScrollY = 0;
+let initialPageStateApplied = false;
 
 const catalogState = {
   manufacturer: "all",
@@ -102,7 +106,7 @@ function localeCode() {
 
 function formatCurrency(value, fractionDigits) {
   const number = Number(value);
-  if (!Number.isFinite(number)) return t("roi.unavailable", "—");
+  if (!Number.isFinite(number)) return t("roi.unavailable", "N/A");
   const digits = fractionDigits ?? (Number.isInteger(number) ? 0 : 2);
   return new Intl.NumberFormat(localeCode(), {
     style: "currency",
@@ -114,13 +118,13 @@ function formatCurrency(value, fractionDigits) {
 
 function formatNumber(value, maximumFractionDigits = 1) {
   const number = Number(value);
-  if (!Number.isFinite(number)) return t("roi.unavailable", "—");
+  if (!Number.isFinite(number)) return t("roi.unavailable", "N/A");
   return new Intl.NumberFormat(localeCode(), { maximumFractionDigits }).format(number);
 }
 
 function formatPercent(value, maximumFractionDigits = 1) {
   const number = Number(value);
-  if (!Number.isFinite(number)) return t("roi.unavailable", "—");
+  if (!Number.isFinite(number)) return t("roi.unavailable", "N/A");
   return new Intl.NumberFormat(localeCode(), {
     style: "percent",
     maximumFractionDigits,
@@ -133,14 +137,28 @@ function updateLanguageInUrl() {
   window.history.replaceState({}, "", url);
 }
 
+function pageUrl(path, parameters = {}) {
+  const url = new URL(path, window.location.href);
+  url.searchParams.set("lang", currentLanguage);
+  Object.entries(parameters).forEach(([key, value]) => {
+    if (value !== null && value !== undefined && value !== "") url.searchParams.set(key, value);
+  });
+  return url.href;
+}
+
 function applyTextTranslations() {
   document.documentElement.lang = currentLanguage;
-  document.title = t("meta.title", document.title);
+  const metaKey = document.body.dataset.metaKey;
+  document.title = metaKey
+    ? t(`${metaKey}.title`, t("meta.title", document.title))
+    : t("meta.title", document.title);
   const description = document.querySelector('meta[name="description"]');
   if (description) {
     description.setAttribute(
       "content",
-      t("meta.description", description.getAttribute("content") || ""),
+      metaKey
+        ? t(`${metaKey}.description`, t("meta.description", description.getAttribute("content") || ""))
+        : t("meta.description", description.getAttribute("content") || ""),
     );
   }
   document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -544,6 +562,14 @@ function renderSiteDetails() {
   document.querySelectorAll("[data-legal-link]").forEach((link) => {
     link.setAttribute("href", `${link.dataset.legalLink}?lang=${currentLanguage}`);
   });
+  document.querySelectorAll("[data-page-link]").forEach((link) => {
+    link.setAttribute("href", pageUrl(link.dataset.pageLink));
+  });
+  const activePage = document.body.dataset.page;
+  document.querySelectorAll("[data-nav-page]").forEach((link) => {
+    if (link.dataset.navPage === activePage) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
   const copyright = document.querySelector("[data-copyright]");
   if (copyright) {
     const year = Math.max(site.copyrightStartYear || 2026, new Date().getFullYear());
@@ -594,8 +620,8 @@ function renderServicePlans() {
                       : ""
                   }
                 </th>
-                <td>${included(plan.standardIncluded)}</td>
-                <td>${included(plan.fullServiceIncluded)}</td>
+                <td data-label="${escapeHtml(t("servicePlans.standard"))}">${included(plan.standardIncluded)}</td>
+                <td data-label="${escapeHtml(t("servicePlans.fullService"))}">${included(plan.fullServiceIncluded)}</td>
               </tr>
             `,
           )
@@ -871,13 +897,34 @@ function trapModalFocus(event) {
 
 function selectRobotForQuote(productId) {
   const product = webData?.products.find((item) => item.id === productId);
-  if (!product || !selectedModelInput || !demoSection) return;
+  if (!product) return;
+  if (!selectedModelInput || !demoSection) {
+    closeModal({ restoreFocus: false });
+    window.location.href = pageUrl("contact.html", { model: product.id });
+    return;
+  }
   selectedModelInput.value = product.fullName;
   closeModal({ restoreFocus: false });
   demoSection.scrollIntoView({ behavior: "smooth", block: "start" });
   window.setTimeout(() => {
     demoForm?.querySelector("input:not([readonly])")?.focus({ preventScroll: true });
   }, 450);
+}
+
+function applyInitialPageState() {
+  if (initialPageStateApplied || !webData) return;
+  if (
+    productsGrid &&
+    requestedIndustryId &&
+    webData.industries.some((industry) => industry.id === requestedIndustryId)
+  ) {
+    catalogState.industry = requestedIndustryId;
+  }
+  if (selectedModelInput && requestedProductId) {
+    const product = webData.products.find((item) => item.id === requestedProductId);
+    if (product) selectedModelInput.value = product.fullName;
+  }
+  initialPageStateApplied = true;
 }
 
 function roiConfigRow(key) {
@@ -1024,19 +1071,10 @@ function renderRoi() {
     <div class="roi-layout">
       <form class="roi-form" data-roi-form novalidate>
         <h3>${escapeHtml(t("roi.inputsTitle"))}</h3>
-        <div class="roi-fields">
-          ${[
-            "area",
-            "workdaysPerMonth",
-            "shiftsPerDay",
-            "employeesPerShift",
-            "shiftHours",
-            "employeeCostPerHour",
-            "robotWorkShare",
-          ]
-            .map(roiInputHtml)
-            .join("")}
-          <div class="roi-field">
+        <p class="roi-form-intro">${escapeHtml(t("roi.simpleIntro"))}</p>
+        <div class="roi-fields roi-fields-primary">
+          ${["area", "employeesPerShift"].map(roiInputHtml).join("")}
+          <div class="roi-field roi-field-product">
             <label for="roi-product">${escapeHtml(t("roi.model"))}</label>
             <select id="roi-product" data-roi-select="productId">
               ${webData.products
@@ -1072,6 +1110,46 @@ function renderRoi() {
                 .join("")}
             </select>
           </div>
+        </div>
+        <fieldset class="roi-share-picker">
+          <legend>${escapeHtml(t("roi.sharePresetTitle"))}</legend>
+          <p>${escapeHtml(t("roi.sharePresetHint"))}</p>
+          <div>
+            ${[
+              ["conservative", 0.5],
+              ["realistic", 0.7],
+              ["optimistic", 0.9],
+            ]
+              .map(
+                ([name, share]) => `
+                  <button
+                    type="button"
+                    data-roi-share="${share}"
+                    aria-pressed="${String(Math.abs(roiState.robotWorkShare - share) < 0.0001)}"
+                  >
+                    <span>${escapeHtml(t(`roi.scenarios.${name}`))}</span>
+                    <strong>${escapeHtml(formatPercent(share, 0))}</strong>
+                  </button>
+                `,
+              )
+              .join("")}
+          </div>
+        </fieldset>
+        <details class="roi-advanced-assumptions">
+          <summary>
+            <span>${escapeHtml(t("roi.advancedTitle"))}</span>
+            <small>${escapeHtml(t("roi.advancedHint"))}</small>
+          </summary>
+          <div class="roi-fields">
+            ${[
+              "workdaysPerMonth",
+              "shiftsPerDay",
+              "shiftHours",
+              "employeeCostPerHour",
+              "robotWorkShare",
+            ]
+              .map(roiInputHtml)
+              .join("")}
           <div class="roi-field roi-field-manual">
             <label for="roi-manual-count">${escapeHtml(t("roi.manualRobotCount"))}</label>
             <input
@@ -1087,7 +1165,8 @@ function renderRoi() {
             <small id="roi-manual-hint">${escapeHtml(t("roi.manualRobotHint"))}</small>
             <small class="field-error" id="roi-manual-error" data-roi-error="manualRobotCount"></small>
           </div>
-        </div>
+          </div>
+        </details>
       </form>
       <section class="roi-results" aria-labelledby="roi-results-title">
         <h3 id="roi-results-title">${escapeHtml(t("roi.resultsTitle"))}</h3>
@@ -1199,44 +1278,6 @@ function annualCostChart(result) {
   `;
 }
 
-function cumulativeBenefitChart(result) {
-  const width = 440;
-  const height = 170;
-  const padding = 22;
-  const values = Array.from({ length: 9 }, (_, index) => {
-    const month = index * 6;
-    return { month, value: result.monthlySavings * month - result.leaseDownPaymentTotal };
-  });
-  const allValues = [0, ...values.map((item) => item.value)];
-  const minimum = Math.min(...allValues);
-  const maximum = Math.max(...allValues);
-  const span = Math.max(1, maximum - minimum);
-  const x = (month) => padding + (month / 48) * (width - padding * 2);
-  const y = (value) => height - padding - ((value - minimum) / span) * (height - padding * 2);
-  const points = values.map((item) => `${x(item.month)},${y(item.value)}`).join(" ");
-  const zeroY = y(0);
-  const summary = interpolate(t("roi.cumulativeSummary"), {
-    amount: formatCurrency(result.netBenefit48, 0),
-  });
-  return `
-    <figure class="roi-chart cumulative-chart">
-      <h4>${escapeHtml(t("roi.cumulativeTitle"))}</h4>
-      <svg
-        viewBox="0 0 ${width} ${height}"
-        role="img"
-        aria-label="${escapeHtml(t("accessibility.cumulativeChart"))}"
-        preserveAspectRatio="none"
-      >
-        <line x1="${padding}" y1="${zeroY}" x2="${width - padding}" y2="${zeroY}" />
-        <polyline points="${points}" />
-        ${values.map((item) => `<circle cx="${x(item.month)}" cy="${y(item.value)}" r="3" />`).join("")}
-      </svg>
-      <div class="chart-axis" aria-hidden="true"><span>0</span><span>48</span></div>
-      <figcaption>${escapeHtml(summary)}</figcaption>
-    </figure>
-  `;
-}
-
 function roiDisclaimer() {
   return currentLanguage === "en"
     ? roiConfigText("disclaimer_en", t("roi.disclaimerFallback"))
@@ -1246,11 +1287,20 @@ function roiDisclaimer() {
 function renderRoiResults() {
   const container = roiApp?.querySelector("[data-roi-results]");
   if (!container || !roiState) return;
+  const resultDetailsWereOpen = Boolean(
+    container.querySelector("[data-roi-result-details]")?.open,
+  );
   roiApp.querySelectorAll("[data-roi-input]").forEach((input) => {
     const error = roiFieldError(input.dataset.roiInput);
     input.setAttribute("aria-invalid", String(Boolean(error)));
     const errorElement = roiApp.querySelector(`[data-roi-error="${input.dataset.roiInput}"]`);
     if (errorElement) errorElement.textContent = error;
+  });
+  roiApp.querySelectorAll("[data-roi-share]").forEach((button) => {
+    button.setAttribute(
+      "aria-pressed",
+      String(Math.abs(Number(button.dataset.roiShare) - roiState.robotWorkShare) < 0.0001),
+    );
   });
   if (!roiStateIsValid()) return;
   const calculation = calculateCurrentRoi();
@@ -1258,13 +1308,15 @@ function renderRoiResults() {
   const recommendationText = calculation.hasManualCount
     ? interpolate(t("roi.manualOverride"), { count: calculation.recommendedRobotCount })
     : t("roi.automaticRecommendation");
-  const kpis = [
+  const primaryKpis = [
     ["robotCount", formatNumber(result.robotCount, 0)],
     ["monthlyRobotCost", `${formatCurrency(result.monthlyRobotCost, 2)} ${t("roi.netSuffix")}`],
     ["monthlySavings", formatCurrency(result.monthlySavings, 2)],
     ["annualSavings", formatCurrency(result.annualSavings, 0)],
     ["annualRoi", formatPercent(result.annualROI)],
     ["payback", paybackText(result)],
+  ];
+  const secondaryKpis = [
     ["costReduction", formatPercent(result.costReduction)],
     ["replacedHours", formatNumber(result.replacedHoursPerYear, 0)],
     ["freedFte", formatNumber(result.freedFTE, 2)],
@@ -1284,8 +1336,8 @@ function renderRoiResults() {
         ? `<p class="roi-warning" role="status">${escapeHtml(t("roi.negativeWarning"))}</p>`
         : ""
     }
-    <dl class="roi-kpis">
-      ${kpis
+    <dl class="roi-kpis roi-kpis-primary">
+      ${primaryKpis
         .map(
           ([key, value]) => `
             <div><dt>${escapeHtml(t(`roi.kpis.${key}`))}</dt><dd>${escapeHtml(value)}</dd></div>
@@ -1293,41 +1345,56 @@ function renderRoiResults() {
         )
         .join("")}
     </dl>
-    <section class="roi-scenarios" aria-labelledby="roi-scenarios-title">
-      <h4 id="roi-scenarios-title">${escapeHtml(t("roi.scenariosTitle"))}</h4>
-      <div class="roi-table-wrap">
-        <table>
-          <thead><tr>
-            <th scope="col">${escapeHtml(t("roi.scenario"))}</th>
-            <th scope="col">${escapeHtml(t("roi.robotShare"))}</th>
-            <th scope="col">${escapeHtml(t("roi.annualSavings"))}</th>
-            <th scope="col">${escapeHtml(t("roi.annualRoi"))}</th>
-            <th scope="col">${escapeHtml(t("roi.payback"))}</th>
-            <th scope="col">${escapeHtml(t("roi.benefit48"))}</th>
-          </tr></thead>
-          <tbody>
-            ${scenarios
-              .map(
-                (scenario) => `
-                  <tr>
-                    <th scope="row">${escapeHtml(t(`roi.scenarios.${scenario.name}`))}</th>
-                    <td>${escapeHtml(formatPercent(scenario.share, 0))}</td>
-                    <td>${escapeHtml(formatCurrency(scenario.result.annualSavings, 0))}</td>
-                    <td>${escapeHtml(formatPercent(scenario.result.annualROI))}</td>
-                    <td>${escapeHtml(paybackText(scenario.result))}</td>
-                    <td>${escapeHtml(formatCurrency(scenario.result.netBenefit48, 0))}</td>
-                  </tr>
-                `,
-              )
-              .join("")}
-          </tbody>
-        </table>
+    <details class="roi-result-details" data-roi-result-details${resultDetailsWereOpen ? " open" : ""}>
+      <summary>
+        <span>${escapeHtml(t("roi.detailsTitle"))}</span>
+        <small>${escapeHtml(t("roi.detailsHint"))}</small>
+      </summary>
+      <div class="roi-result-details-body">
+        <h4>${escapeHtml(t("roi.secondaryTitle"))}</h4>
+        <dl class="roi-kpis roi-kpis-secondary">
+          ${secondaryKpis
+            .map(
+              ([key, value]) => `
+                <div><dt>${escapeHtml(t(`roi.kpis.${key}`))}</dt><dd>${escapeHtml(value)}</dd></div>
+              `,
+            )
+            .join("")}
+        </dl>
+        <section class="roi-scenarios" aria-labelledby="roi-scenarios-title">
+          <h4 id="roi-scenarios-title">${escapeHtml(t("roi.scenariosTitle"))}</h4>
+          <div class="roi-table-wrap">
+            <table>
+              <thead><tr>
+                <th scope="col">${escapeHtml(t("roi.scenario"))}</th>
+                <th scope="col">${escapeHtml(t("roi.robotShare"))}</th>
+                <th scope="col">${escapeHtml(t("roi.annualSavings"))}</th>
+                <th scope="col">${escapeHtml(t("roi.annualRoi"))}</th>
+                <th scope="col">${escapeHtml(t("roi.payback"))}</th>
+                <th scope="col">${escapeHtml(t("roi.benefit48"))}</th>
+              </tr></thead>
+              <tbody>
+                ${scenarios
+                  .map(
+                    (scenario) => `
+                      <tr>
+                        <th scope="row">${escapeHtml(t(`roi.scenarios.${scenario.name}`))}</th>
+                        <td data-label="${escapeHtml(t("roi.robotShare"))}">${escapeHtml(formatPercent(scenario.share, 0))}</td>
+                        <td data-label="${escapeHtml(t("roi.annualSavings"))}">${escapeHtml(formatCurrency(scenario.result.annualSavings, 0))}</td>
+                        <td data-label="${escapeHtml(t("roi.annualRoi"))}">${escapeHtml(formatPercent(scenario.result.annualROI))}</td>
+                        <td data-label="${escapeHtml(t("roi.payback"))}">${escapeHtml(paybackText(scenario.result))}</td>
+                        <td data-label="${escapeHtml(t("roi.benefit48"))}">${escapeHtml(formatCurrency(scenario.result.netBenefit48, 0))}</td>
+                      </tr>
+                    `,
+                  )
+                  .join("")}
+              </tbody>
+            </table>
+          </div>
+        </section>
+        ${annualCostChart(result)}
       </div>
-    </section>
-    <div class="roi-charts">
-      ${annualCostChart(result)}
-      ${cumulativeBenefitChart(result)}
-    </div>
+    </details>
     <p class="roi-disclaimer">${escapeHtml(roiDisclaimer())}</p>
   `;
   const liveSummary = roiApp.querySelector("[data-roi-live]");
@@ -1447,8 +1514,8 @@ function prepareEmailRequest() {
     `${labels.name}: ${data.get("name") || ""}`,
     `${labels.company}: ${company}`,
     `${labels.email}: ${data.get("email") || ""}`,
-    `${labels.phone}: ${data.get("phone") || "—"}`,
-    `${labels.model}: ${data.get("model") || "—"}`,
+    `${labels.phone}: ${data.get("phone") || t("forms.notProvided", "not provided")}`,
+    `${labels.model}: ${data.get("model") || t("forms.notProvided", "not provided")}`,
     "",
     `${labels.message}:`,
     `${data.get("message") || ""}`,
@@ -1483,6 +1550,7 @@ async function loadData({ forceRefresh = false } = {}) {
     webData = result.data;
     dataMeta = result.meta;
     dataLoadState = "ready";
+    applyInitialPageState();
     initializeRoiState();
   } catch (error) {
     console.error("[Adria Robotics data] Public data could not be loaded.", error);
@@ -1587,6 +1655,10 @@ productsGrid?.addEventListener("click", (event) => {
 industriesGrid?.addEventListener("click", (event) => {
   const button = event.target.closest("[data-industry]");
   if (!button) return;
+  if (!productsGrid) {
+    window.location.href = pageUrl("robots.html", { industry: button.dataset.industry });
+    return;
+  }
   catalogState.industry = button.dataset.industry;
   renderFilters();
   renderProducts();
@@ -1625,11 +1697,22 @@ robotModal?.addEventListener("click", (event) => {
   if (event.target.closest("[data-modal-services]")) {
     event.preventDefault();
     closeModal({ restoreFocus: false });
-    document.querySelector("#service-plans")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const servicePlans = document.querySelector("#service-plans");
+    if (servicePlans) servicePlans.scrollIntoView({ behavior: "smooth", block: "start" });
+    else window.location.href = pageUrl("service-plans.html#service-plans");
     return;
   }
   const quoteButton = event.target.closest("[data-modal-quote]");
   if (quoteButton) selectRobotForQuote(quoteButton.dataset.modalQuote);
+});
+
+roiApp?.addEventListener("click", (event) => {
+  const shareButton = event.target.closest("[data-roi-share]");
+  if (!shareButton || !roiState) return;
+  roiState.robotWorkShare = Number(shareButton.dataset.roiShare);
+  const exactShareInput = roiApp.querySelector('[data-roi-input="robotWorkShare"]');
+  if (exactShareInput) exactShareInput.value = roiState.robotWorkShare * 100;
+  renderRoiResults();
 });
 
 roiApp?.addEventListener("input", (event) => {

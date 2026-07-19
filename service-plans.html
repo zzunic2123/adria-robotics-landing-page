@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Financiranje i paketi | Adria Robotics</title>
+    <meta name="description" content="Usporedite kupnju, leasing, Standard najam i Full-service paket za autonomne robote." />
+    <link rel="icon" href="assets/brand/adria-robotics-icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="services" data-meta-key="pageMeta.services">
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">Preskoči na sadržaj</a>
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="index.html?lang=hr" data-page-link="index.html" aria-label="Adria Robotics početna stranica" data-i18n-aria-label="accessibility.home"><img src="assets/brand/adria-robotics-logo-primary.svg" width="194" height="48" alt="Adria Robotics" /></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Otvori navigaciju" data-nav-toggle data-i18n-aria-label="accessibility.openNav"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <nav class="site-nav" id="site-nav" aria-label="Glavna navigacija" data-nav>
+          <a href="index.html?lang=hr" data-page-link="index.html" data-nav-page="home" data-i18n="nav.home">Početna</a><a href="robots.html?lang=hr" data-page-link="robots.html" data-nav-page="robots" data-i18n="nav.robots">Roboti</a><a href="roi.html?lang=hr" data-page-link="roi.html" data-nav-page="roi" data-i18n="nav.roi">ROI kalkulator</a><a href="service-plans.html?lang=hr" data-page-link="service-plans.html" data-nav-page="services" data-i18n="nav.plans">Paketi</a><a class="nav-cta" href="contact.html?lang=hr" data-page-link="contact.html" data-nav-page="contact" data-i18n="nav.contact">Kontakt</a>
+          <div class="language-switcher" role="group" aria-label="Odabir jezika" data-i18n-aria-label="language.label"><button type="button" class="lang-button is-active" aria-pressed="true" aria-label="Hrvatski" data-lang-button="hr" data-i18n-aria-label="language.hr">HR</button><button type="button" class="lang-button" aria-pressed="false" aria-label="Engleski" data-lang-button="en" data-i18n-aria-label="language.en">EN</button></div>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-overlay" data-nav-overlay hidden aria-hidden="true"></div>
+
+    <main id="main">
+      <section class="page-hero" aria-labelledby="service-page-title"><div class="container page-hero-inner"><div class="section-kicker" data-i18n="servicePage.kicker">Načini suradnje</div><h1 id="service-page-title" data-i18n="servicePage.title">Od kupnje do potpuno upravljanog najma.</h1><p data-i18n="servicePage.copy">Odaberite model financiranja koji odgovara vašem budžetu, a zatim usporedite što uključuju Standard i Full-service.</p></div></section>
+
+      <section class="financing-overview section-pad" aria-labelledby="financing-overview-title">
+        <div class="container">
+          <div class="section-head"><div><div class="section-kicker" data-i18n="financingOverview.kicker">Financiranje</div><h2 id="financing-overview-title" data-i18n="financingOverview.title">Četiri načina nabave, bez skrivenih izračuna u pregledniku.</h2></div><p data-i18n="financingOverview.copy">Točni javni iznosi za svaki robot i razdoblje nalaze se u modalu pojedinog modela u katalogu. Svi prikazani iznosi su neto i uvećavaju se za 25% PDV-a.</p></div>
+          <div class="financing-card-grid">
+            <article><span aria-hidden="true">01</span><h3 data-i18n="financingOverview.purchase.title">Kupnja</h3><p data-i18n="financingOverview.purchase.copy">Jednokratna neto prodajna cijena uz vlasništvo nad opremom.</p></article>
+            <article><span aria-hidden="true">02</span><h3 data-i18n="financingOverview.lease.title">Leasing</h3><p data-i18n="financingOverview.lease.copy">Mjesečne rate za 24, 36 ili 48 mjeseci uz prikaz neto učešća.</p></article>
+            <article><span aria-hidden="true">03</span><h3 data-i18n="financingOverview.standard.title">Standard najam</h3><p data-i18n="financingOverview.standard.copy">Predvidiva mjesečna rata uz osnovni opseg uključenih usluga.</p></article>
+            <article><span aria-hidden="true">04</span><h3 data-i18n="financingOverview.full.title">Full-service najam</h3><p data-i18n="financingOverview.full.copy">Širi paket podrške i usluga uključen u mjesečnu ratu.</p></article>
+          </div>
+          <a class="button button-secondary section-action" href="robots.html?lang=hr" data-page-link="robots.html"><span data-i18n="buttons.openCatalogue">Otvorite katalog</span><span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="service-plans section-pad" id="service-plans" aria-labelledby="service-plans-title">
+        <div class="container">
+          <div class="section-head"><div><div class="section-kicker" data-i18n="servicePlans.kicker">Paketi usluga</div><h2 id="service-plans-title" data-i18n="servicePlans.comparisonTitle">Što je uključeno u svaki paket?</h2></div><p data-i18n="servicePlans.copy">Usporedite što je uključeno u svaki paket prije odabira načina suradnje.</p></div>
+          <div class="data-notice" data-data-notice hidden></div>
+          <div class="service-plans-wrap" data-service-plans></div>
+        </div>
+      </section>
+
+      <section class="page-cta section-pad" aria-labelledby="plans-cta-title"><div class="container page-cta-inner"><div><div class="section-kicker" data-i18n="homeCta.kicker">Sljedeći korak</div><h2 id="plans-cta-title" data-i18n="homeCta.title">Niste sigurni koji model odgovara vašem objektu?</h2><p data-i18n="homeCta.copy">Kratko nam opišite prostor i način rada, a mi ćemo pripremiti uži izbor za demonstraciju.</p></div><a class="button button-primary" href="contact.html?lang=hr" data-page-link="contact.html"><span data-i18n="buttons.contactUs">Kontaktirajte nas</span><span aria-hidden="true">→</span></a></div></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand"><img src="assets/brand/adria-robotics-logo-reversed.svg" width="190" height="47" alt="Adria Robotics" /><p class="footer-tagline" data-i18n="footer.tagline">Robotika u praksi.</p><p data-i18n="footer.description">Autonomna rješenja za profesionalno čišćenje, uz lokalnu implementaciju, edukaciju i podršku.</p></div>
+        <nav aria-label="Navigacija u podnožju" data-i18n-aria-label="footer.navAria"><h2 data-i18n="footer.companyTitle">Tvrtka</h2><a href="index.html?lang=hr" data-page-link="index.html" data-i18n="nav.home">Početna</a><a href="robots.html?lang=hr" data-page-link="robots.html" data-i18n="nav.robots">Roboti</a><a href="roi.html?lang=hr" data-page-link="roi.html" data-i18n="nav.roi">ROI kalkulator</a><a href="service-plans.html?lang=hr" data-page-link="service-plans.html" data-i18n="nav.plans">Paketi</a><a href="contact.html?lang=hr" data-page-link="contact.html" data-i18n="nav.contact">Kontakt</a></nav>
+        <div class="footer-contact"><h2 data-i18n="footer.contactTitle">Kontakt</h2><dl><div><dt data-i18n="footer.legalNameLabel">Pravni naziv</dt><dd data-site-legal-name></dd></div><div><dt data-i18n="footer.addressLabel">Adresa</dt><dd data-site-address></dd></div><div><dt data-i18n="footer.taxIdLabel">OIB</dt><dd data-site-tax-id></dd></div><div><dt data-i18n="footer.phoneLabel">Telefon</dt><dd><a data-contact-phone href="">Telefon</a></dd></div><div><dt data-i18n="footer.emailLabel">E-mail</dt><dd><a data-contact-email href="">E-mail</a></dd></div></dl></div>
+        <div class="footer-legal"><h2 data-i18n="footer.legalTitle">Pravne informacije</h2><a href="privacy-policy.html?lang=hr" data-legal-link="privacy-policy.html" data-i18n="footer.privacy">Politika privatnosti</a><a href="cookie-policy.html?lang=hr" data-legal-link="cookie-policy.html" data-i18n="footer.cookies">Politika kolačića</a></div>
+      </div><div class="container footer-bottom"><p data-copyright>© 2026 Adriarobotics d.o.o. Sva prava pridržana.</p></div>
+    </footer>
+    <script src="config/site.js"></script><script src="config/i18n.hr.js"></script><script src="config/i18n.en.js"></script><script src="config/data-source.js"></script><script src="config/fallback-data.js"></script><script src="js/data-service.js"></script><script src="js/roi-calculator.js"></script><script src="js/main.js"></script>
+  </body>
+</html>
