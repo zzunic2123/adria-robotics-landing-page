@@ -2177,3 +2177,799 @@ input[readonly] {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Public catalogue data, financing, ROI and service plans */
+.active-industry-filter,
+.data-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  margin: 0 0 12px;
+  border-radius: var(--ar-radius-control);
+}
+
+.active-industry-filter {
+  color: var(--ar-navy);
+  font-size: 0.9rem;
+  font-weight: 800;
+  background: rgba(17, 167, 165, 0.1);
+  border: 1px solid rgba(17, 167, 165, 0.28);
+}
+
+.active-industry-filter button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  color: var(--ar-route-teal-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: var(--ar-white);
+  border: 1px solid rgba(17, 167, 165, 0.32);
+  border-radius: 999px;
+}
+
+.data-notice {
+  color: #56634a;
+  font-size: 0.82rem;
+  background: #f5f7ed;
+  border: 1px solid #dfe5c9;
+}
+
+.inline-retry {
+  min-height: 36px;
+  padding: 7px 11px;
+  margin-left: 10px;
+  color: var(--ar-route-teal-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  background: var(--ar-white);
+  border: 1px solid rgba(17, 167, 165, 0.45);
+  border-radius: var(--ar-radius-control);
+}
+
+.catalog-skeleton {
+  pointer-events: none;
+}
+
+.catalog-skeleton .product-image,
+.catalog-skeleton .product-body span {
+  background: linear-gradient(90deg, #edf2f4 20%, #f7fafb 50%, #edf2f4 80%);
+  background-size: 220% 100%;
+  animation: catalog-loading 1.4s ease-in-out infinite;
+}
+
+.catalog-skeleton .product-body {
+  gap: 14px;
+}
+
+.catalog-skeleton .product-body span {
+  width: 100%;
+  height: 18px;
+  display: block;
+  border-radius: 5px;
+}
+
+.catalog-skeleton .product-body span:first-child {
+  width: 38%;
+}
+
+.catalog-skeleton .product-body span:last-child {
+  width: 72%;
+}
+
+@keyframes catalog-loading {
+  to {
+    background-position: -220% 0;
+  }
+}
+
+.product-placeholder {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  color: var(--ar-slate);
+  text-align: center;
+}
+
+.product-placeholder img,
+.product-image .product-placeholder img,
+.modal-image .product-placeholder img {
+  position: static;
+  inset: auto;
+  width: 52px;
+  height: 52px;
+  max-width: 52px;
+  opacity: 0.48;
+  object-fit: contain;
+}
+
+.product-placeholder span {
+  color: var(--ar-navy);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.product-placeholder small {
+  color: var(--ar-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.product-commercial {
+  position: relative;
+  z-index: 4;
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid var(--ar-structure-mist);
+}
+
+.product-commercial p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 7px;
+  margin: 0;
+}
+
+.product-commercial strong {
+  color: var(--ar-navy);
+  font-size: 1.05rem;
+}
+
+.product-commercial p span,
+.product-commercial small {
+  color: var(--ar-slate);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.product-commercial small {
+  display: block;
+  margin-top: 4px;
+}
+
+.industry-grid article {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.industry-grid article:hover,
+.industry-grid article:focus-within,
+.industry-grid article.is-active {
+  border-color: rgba(17, 167, 165, 0.58);
+  box-shadow: var(--ar-shadow-soft);
+  transform: translateY(-2px);
+}
+
+.industry-card-action {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0;
+  color: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+}
+
+.industry-card-action .industry-image,
+.industry-card-action .industry-body {
+  display: block;
+}
+
+.industry-card-action .industry-body strong {
+  display: block;
+  color: var(--ar-navy);
+  font-size: 1.16rem;
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.industry-card-action .industry-body > span {
+  min-height: 72px;
+  display: block;
+  margin-top: 8px;
+  color: var(--ar-slate);
+}
+
+.industry-grid article.is-active .industry-body {
+  box-shadow: inset 4px 0 0 var(--ar-route-teal);
+}
+
+.modal-price {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+}
+
+.modal-price small {
+  grid-column: 1 / -1;
+  color: var(--ar-slate);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.modal-image .product-placeholder {
+  min-height: 260px;
+}
+
+.modal-financing {
+  padding: 30px;
+  background: var(--ar-white);
+  border-top: 1px solid var(--ar-structure-mist);
+}
+
+.modal-financing > h3 {
+  margin-bottom: 16px;
+}
+
+.financing-options,
+.financing-periods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.financing-options button,
+.financing-periods button {
+  min-height: 42px;
+  padding: 8px 12px;
+  color: var(--ar-navy);
+  font-size: 0.84rem;
+  font-weight: 800;
+  background: var(--ar-clean-ice);
+  border: 1px solid var(--ar-structure-mist);
+  border-radius: 999px;
+}
+
+.financing-options button:hover,
+.financing-periods button:hover {
+  border-color: rgba(17, 167, 165, 0.58);
+}
+
+.financing-options button.is-active,
+.financing-periods button.is-active {
+  color: var(--ar-white);
+  background: var(--ar-navy);
+  border-color: var(--ar-navy);
+}
+
+.financing-periods {
+  align-items: center;
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid var(--ar-structure-mist);
+}
+
+.financing-periods > span {
+  margin-right: 3px;
+  color: var(--ar-slate);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.financing-result {
+  padding: 18px;
+  margin-top: 16px;
+  background: var(--ar-clean-ice);
+  border: 1px solid var(--ar-structure-mist);
+  border-radius: var(--ar-radius-card);
+}
+
+.financing-result dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.financing-result dt {
+  color: var(--ar-slate);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.financing-result dd {
+  margin: 3px 0 0;
+  color: var(--ar-navy);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.financing-result p,
+.financing-disclaimer {
+  margin: 10px 0 0;
+  color: var(--ar-slate);
+  font-size: 0.8rem;
+}
+
+.modal-financing > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  color: var(--ar-route-teal-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.roi,
+.service-plans {
+  scroll-margin-top: 78px;
+}
+
+.roi {
+  background: var(--ar-white);
+}
+
+.data-section-status {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  color: var(--ar-slate);
+  font-weight: 700;
+}
+
+.roi-layout {
+  display: grid;
+  grid-template-columns: minmax(330px, 0.72fr) minmax(0, 1.28fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.roi-form,
+.roi-results {
+  min-width: 0;
+  padding: 26px;
+  background: var(--ar-white);
+  border: 1px solid var(--ar-structure-mist);
+  border-radius: var(--ar-radius-card);
+  box-shadow: var(--ar-shadow-soft);
+}
+
+.roi-form {
+  position: sticky;
+  top: 102px;
+}
+
+.roi-form > h3,
+.roi-results > h3 {
+  margin-bottom: 20px;
+}
+
+.roi-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.roi-field {
+  min-width: 0;
+}
+
+.roi-field label {
+  min-height: 42px;
+  display: flex;
+  align-items: end;
+}
+
+.roi-field select:focus {
+  border-color: var(--ar-route-teal);
+}
+
+.roi-input-control {
+  position: relative;
+}
+
+.roi-input-control input {
+  padding-right: 64px;
+}
+
+.roi-input-control > span {
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  max-width: 50px;
+  color: var(--ar-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: right;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.roi-field-manual {
+  grid-column: 1 / -1;
+}
+
+.roi-field-manual label {
+  min-height: 0;
+}
+
+.roi-field > small {
+  display: block;
+  margin-top: 5px;
+  color: var(--ar-ink-soft);
+  font-size: 0.72rem;
+}
+
+.field-error {
+  min-height: 17px;
+  color: #a33b3b !important;
+  font-weight: 700;
+}
+
+.roi-field input[aria-invalid="true"] {
+  border-color: #b84a4a;
+}
+
+.roi-recommendation {
+  padding: 11px 13px;
+  margin: 0 0 14px;
+  color: var(--ar-navy);
+  font-size: 0.84rem;
+  font-weight: 800;
+  background: rgba(17, 167, 165, 0.1);
+  border-radius: var(--ar-radius-control);
+}
+
+.roi-warning {
+  padding: 12px 14px;
+  margin: 0 0 14px;
+  color: #794334;
+  font-size: 0.84rem;
+  font-weight: 700;
+  background: #fff5ed;
+  border: 1px solid #f0d7c6;
+  border-radius: var(--ar-radius-control);
+}
+
+.roi-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.roi-kpis div {
+  min-width: 0;
+  padding: 14px;
+  background: var(--ar-clean-ice);
+  border: 1px solid var(--ar-structure-mist);
+  border-radius: var(--ar-radius-control);
+}
+
+.roi-kpis dt {
+  min-height: 34px;
+  color: var(--ar-slate);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.roi-kpis dd {
+  margin: 6px 0 0;
+  color: var(--ar-navy);
+  font-size: 1.12rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.roi-scenarios {
+  margin-top: 24px;
+}
+
+.roi-scenarios h4,
+.roi-chart h4 {
+  margin: 0 0 12px;
+  color: var(--ar-navy);
+  font-size: 0.96rem;
+}
+
+.roi-table-wrap,
+.service-plans-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--ar-structure-mist);
+  border-radius: var(--ar-radius-card);
+}
+
+.roi-scenarios table,
+.service-plans-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--ar-white);
+}
+
+.roi-scenarios th,
+.roi-scenarios td,
+.service-plans-table th,
+.service-plans-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--ar-structure-mist);
+}
+
+.roi-scenarios thead th,
+.service-plans-table thead th {
+  color: var(--ar-slate);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--ar-clean-ice);
+}
+
+.roi-scenarios tbody th,
+.roi-scenarios td {
+  color: var(--ar-navy);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.roi-scenarios tbody tr:last-child > *,
+.service-plans-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.roi-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.roi-chart {
+  min-width: 0;
+  padding: 16px;
+  margin: 0;
+  background: var(--ar-clean-ice);
+  border: 1px solid var(--ar-structure-mist);
+  border-radius: var(--ar-radius-card);
+}
+
+.annual-cost-chart > div {
+  display: grid;
+  gap: 12px;
+}
+
+.annual-cost-chart > div > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.8fr) minmax(80px, 1fr);
+  gap: 4px 10px;
+  align-items: center;
+}
+
+.annual-cost-chart span,
+.annual-cost-chart strong {
+  color: var(--ar-slate);
+  font-size: 0.72rem;
+}
+
+.annual-cost-chart strong {
+  grid-column: 2;
+  color: var(--ar-navy);
+}
+
+.annual-cost-chart i {
+  height: 12px;
+  display: block;
+  overflow: hidden;
+  background: #dfe8eb;
+  border-radius: 99px;
+}
+
+.annual-cost-chart b {
+  height: 100%;
+  display: block;
+  background: var(--ar-navy);
+  border-radius: inherit;
+}
+
+.annual-cost-chart div > div:last-child b {
+  background: var(--ar-route-teal);
+}
+
+.cumulative-chart svg {
+  width: 100%;
+  height: 142px;
+  display: block;
+  overflow: visible;
+}
+
+.cumulative-chart line {
+  stroke: #afbdc4;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.cumulative-chart polyline {
+  fill: none;
+  stroke: var(--ar-route-teal-dark);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cumulative-chart circle {
+  fill: var(--ar-white);
+  stroke: var(--ar-route-teal-dark);
+  stroke-width: 2;
+}
+
+.chart-axis {
+  display: flex;
+  justify-content: space-between;
+  color: var(--ar-slate);
+  font-size: 0.68rem;
+}
+
+.roi-chart figcaption {
+  margin-top: 10px;
+  color: var(--ar-slate);
+  font-size: 0.72rem;
+}
+
+.roi-disclaimer {
+  padding-top: 16px;
+  margin: 22px 0 0;
+  color: var(--ar-slate);
+  font-size: 0.78rem;
+  border-top: 1px solid var(--ar-structure-mist);
+}
+
+.service-plans {
+  background: var(--ar-clean-ice);
+}
+
+.service-plans-wrap {
+  box-shadow: var(--ar-shadow-soft);
+}
+
+.service-plans-table th:first-child {
+  width: 52%;
+}
+
+.service-plans-table tbody th {
+  color: var(--ar-navy);
+  font-size: 0.92rem;
+}
+
+.service-plans-table tbody th small {
+  display: block;
+  margin-top: 4px;
+  color: var(--ar-slate);
+  font-size: 0.74rem;
+  font-weight: 500;
+}
+
+.service-plans-table td {
+  color: var(--ar-slate);
+  font-size: 0.82rem;
+}
+
+.plan-included,
+.plan-not-included {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 800;
+}
+
+.plan-included {
+  color: #167a68;
+}
+
+.plan-included > span:first-child {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  color: var(--ar-white);
+  background: #167a68;
+  border-radius: 50%;
+}
+
+.plan-not-included {
+  color: var(--ar-slate);
+}
+
+@media (max-width: 1024px) {
+  .roi-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .roi-form {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .roi-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roi-charts {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-financing {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .active-industry-filter,
+  .data-notice {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .industry-card-action .industry-body > span {
+    min-height: 0;
+  }
+
+  .product-commercial {
+    padding-top: 11px;
+    margin-top: 11px;
+  }
+
+  .roi-form,
+  .roi-results {
+    padding: 16px;
+  }
+
+  .roi-fields,
+  .roi-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .roi-field label,
+  .roi-kpis dt {
+    min-height: 0;
+  }
+
+  .financing-options,
+  .financing-periods {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .financing-options button,
+  .financing-periods button {
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .financing-periods > span {
+    grid-column: 1 / -1;
+  }
+
+  .financing-result dl {
+    grid-template-columns: 1fr;
+  }
+
+  .service-plans-table {
+    min-width: 640px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-skeleton .product-image,
+  .catalog-skeleton .product-body span {
+    animation: none;
+  }
+}

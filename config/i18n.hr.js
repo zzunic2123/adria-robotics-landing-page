@@ -447,3 +447,140 @@ window.AR_LOCALES.hr = {
     },
   },
 };
+
+Object.assign(window.AR_LOCALES.hr.accessibility, {
+  industryCard: "Filtrirajte katalog za industriju {industry}",
+  placeholderImage: "Slika modela {model} trenutačno nije dostupna",
+  financingPeriod: "Odaberite razdoblje financiranja",
+  financingType: "Odaberite način financiranja",
+  annualCostChart: "Usporedba procijenjenog godišnjeg troška prije i nakon implementacije",
+  cumulativeChart: "Procijenjena kumulativna korist kroz 48 mjeseci",
+});
+
+Object.assign(window.AR_LOCALES.hr.buttons, {
+  retry: "Pokušajte ponovno",
+  clearIndustry: "Uklonite industrijski filtar",
+  requestQuote: "Zatražite ponudu",
+  comparePlans: "Usporedite servisne pakete",
+});
+
+Object.assign(window.AR_LOCALES.hr.products, {
+  industryLabel: "Industrija",
+  industryActive: "Aktivni industrijski filtar: {industry}",
+  standardRentFrom: "Standard najam od {amount} mjesečno",
+  netPrice: "Neto cijena",
+  imageUnavailable: "Slika nije dostupna",
+  imageUnavailableAlt: "Slika modela {model} trenutačno nije dostupna",
+  financing: {
+    title: "Mogućnosti financiranja",
+    purchase: "Kupnja",
+    lease: "Leasing",
+    rentStandard: "Standard najam",
+    rentFull: "Full-service najam",
+    period: "Razdoblje",
+    months: "{count} mjeseci",
+    netAmount: "Neto iznos",
+    monthlyRate: "Mjesečna neto rata",
+    downPayment: "Neto učešće",
+    taxNote: "Na sve iznose obračunava se + 25% PDV.",
+    servicesLink: "Što uključuju Standard i Full-service?",
+  },
+});
+
+Object.assign(window.AR_LOCALES.hr.products.modal.groups, {
+  performance: "Učinkovitost",
+  other: "Ostale specifikacije",
+});
+
+window.AR_LOCALES.hr.data = {
+  loadingCatalog: "Učitavanje javnog kataloga…",
+  loadingRoi: "Učitavanje ROI postavki…",
+  error: "Javni podaci trenutačno nisu dostupni. Pokušajte ponovno.",
+  staleCache: "Prikazuju se zadnji spremljeni javni podaci jer Google Sheets trenutačno nije dostupan.",
+  fallback: "Prikazuje se zadnji generirani javni snapshot jer mrežni podaci nisu dostupni.",
+};
+
+window.AR_LOCALES.hr.servicePlans = {
+  kicker: "Paketi usluga",
+  title: "Standard ili Full-service najam.",
+  copy: "Usporedite što je uključeno u svaki paket prije odabira načina suradnje.",
+  service: "Usluga",
+  standard: "Standard",
+  fullService: "Full-service",
+  included: "Uključeno",
+  notIncluded: "Nije uključeno",
+  note: "Napomena",
+};
+
+window.AR_LOCALES.hr.roi = {
+  kicker: "ROI kalkulator",
+  title: "Procijenite financijski učinak automatizacije.",
+  copy: "Prilagodite pretpostavke svojem objektu i usporedite scenarije bez skrivenih formula.",
+  inputsTitle: "Pretpostavke scenarija",
+  resultsTitle: "Procijenjeni rezultat",
+  model: "Model robota",
+  financing: "Način financiranja",
+  period: "Razdoblje",
+  manualRobotCount: "Ručni broj robota (opcionalno)",
+  manualRobotHint: "Ostavite prazno za automatsku preporuku prema površini.",
+  manualOverride: "Ručni unos nadjačava automatsku preporuku od {count} robota.",
+  automaticRecommendation: "Automatska preporuka prema površini.",
+  financingOptions: {
+    lease: "Leasing",
+    rentStandard: "Standard najam",
+    rentFull: "Full-service najam",
+  },
+  periodOption: "{count} mjeseci",
+  validation: {
+    positive: "Unesite broj veći od nule.",
+    share: "Udio mora biti između 0% i 100%.",
+  },
+  kpis: {
+    robotCount: "Korišteni broj robota",
+    monthlyRobotCost: "Mjesečni trošak robota",
+    monthlySavings: "Mjesečna ušteda",
+    annualSavings: "Godišnja ušteda",
+    annualRoi: "Godišnji ROI",
+    payback: "Povrat početnog ulaganja",
+    costReduction: "Smanjenje troška",
+    replacedHours: "Zamijenjeni sati godišnje",
+    freedFte: "Oslobođeni FTE",
+    benefit24: "Neto korist nakon 24 mj.",
+    benefit36: "Neto korist nakon 36 mj.",
+    benefit48: "Neto korist nakon 48 mj.",
+  },
+  netSuffix: "neto",
+  paybackImmediate: "odmah",
+  paybackNotAchieved: "nije ostvaren",
+  paybackMonths: "{count} mj.",
+  unavailable: "nije dostupno",
+  negativeWarning: "Prema unesenim pretpostavkama odabrani scenarij ne donosi financijsku uštedu.",
+  liveSummary: "Ažurirani rezultat: godišnja ušteda {savings}, godišnji ROI {roi}, povrat {payback}.",
+  scenariosTitle: "Scenariji udjela rada robota",
+  scenario: "Scenarij",
+  robotShare: "Udio robota",
+  annualSavings: "Godišnja ušteda",
+  annualRoi: "Godišnji ROI",
+  payback: "Povrat",
+  benefit48: "Korist nakon 48 mj.",
+  scenarios: {
+    conservative: "Konzervativni",
+    realistic: "Realni",
+    optimistic: "Optimistični",
+  },
+  annualCostTitle: "Godišnji trošak prije i poslije",
+  before: "Prije implementacije",
+  after: "Nakon implementacije",
+  annualCostSummary: "Procijenjeni godišnji trošak mijenja se s {before} na {after}.",
+  cumulativeTitle: "Kumulativna korist kroz 48 mjeseci",
+  cumulativeSummary: "Procijenjena kumulativna neto korist nakon 48 mjeseci iznosi {amount}.",
+  disclaimerFallback: "Rezultat je informativna procjena i ovisi o stvarnim uvjetima objekta i konačnoj ponudi.",
+};
+
+window.AR_LOCALES.hr.legal.common.updated = "Posljednje ažuriranje: 19. srpnja 2026.";
+window.AR_LOCALES.hr.legal.cookies.sections.splice(2, 0, {
+  title: "Lokalni cache javnih podataka",
+  paragraphs: [
+    "Javni podaci o proizvodima, financiranju, industrijama i ROI postavkama privremeno se spremaju u localStorage na 15 minuta radi bržeg učitavanja i dostupnosti pri kratkotrajnom prekidu veze s Google Sheetsom. Cache ne sadrži osobne podatke i ne služi praćenju.",
+  ],
+});

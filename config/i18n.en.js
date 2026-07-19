@@ -447,3 +447,140 @@ window.AR_LOCALES.en = {
     },
   },
 };
+
+Object.assign(window.AR_LOCALES.en.accessibility, {
+  industryCard: "Filter the catalogue for the {industry} industry",
+  placeholderImage: "An image of {model} is not currently available",
+  financingPeriod: "Select a financing term",
+  financingType: "Select a financing method",
+  annualCostChart: "Comparison of estimated annual cost before and after implementation",
+  cumulativeChart: "Estimated cumulative benefit over 48 months",
+});
+
+Object.assign(window.AR_LOCALES.en.buttons, {
+  retry: "Try again",
+  clearIndustry: "Clear industry filter",
+  requestQuote: "Request a quote",
+  comparePlans: "Compare service plans",
+});
+
+Object.assign(window.AR_LOCALES.en.products, {
+  industryLabel: "Industry",
+  industryActive: "Active industry filter: {industry}",
+  standardRentFrom: "Standard rental from {amount} per month",
+  netPrice: "Net price",
+  imageUnavailable: "Image unavailable",
+  imageUnavailableAlt: "An image of {model} is not currently available",
+  financing: {
+    title: "Financing options",
+    purchase: "Purchase",
+    lease: "Leasing",
+    rentStandard: "Standard rental",
+    rentFull: "Full-service rental",
+    period: "Term",
+    months: "{count} months",
+    netAmount: "Net amount",
+    monthlyRate: "Monthly net payment",
+    downPayment: "Net down payment",
+    taxNote: "25% VAT is added to all amounts.",
+    servicesLink: "What do Standard and Full-service include?",
+  },
+});
+
+Object.assign(window.AR_LOCALES.en.products.modal.groups, {
+  performance: "Performance",
+  other: "Other specifications",
+});
+
+window.AR_LOCALES.en.data = {
+  loadingCatalog: "Loading the public catalogue…",
+  loadingRoi: "Loading ROI settings…",
+  error: "Public data is currently unavailable. Please try again.",
+  staleCache: "The last saved public data is shown because Google Sheets is currently unavailable.",
+  fallback: "The last generated public snapshot is shown because live data is unavailable.",
+};
+
+window.AR_LOCALES.en.servicePlans = {
+  kicker: "Service plans",
+  title: "Standard or Full-service rental.",
+  copy: "Compare what each plan includes before choosing how to work with us.",
+  service: "Service",
+  standard: "Standard",
+  fullService: "Full-service",
+  included: "Included",
+  notIncluded: "Not included",
+  note: "Note",
+};
+
+window.AR_LOCALES.en.roi = {
+  kicker: "ROI calculator",
+  title: "Estimate the financial effect of automation.",
+  copy: "Adjust the assumptions to your facility and compare scenarios without hidden formulas.",
+  inputsTitle: "Scenario assumptions",
+  resultsTitle: "Estimated result",
+  model: "Robot model",
+  financing: "Financing method",
+  period: "Term",
+  manualRobotCount: "Manual robot count (optional)",
+  manualRobotHint: "Leave blank to use the automatic area-based recommendation.",
+  manualOverride: "The manual value overrides the automatic recommendation of {count} robots.",
+  automaticRecommendation: "Automatic area-based recommendation.",
+  financingOptions: {
+    lease: "Leasing",
+    rentStandard: "Standard rental",
+    rentFull: "Full-service rental",
+  },
+  periodOption: "{count} months",
+  validation: {
+    positive: "Enter a number greater than zero.",
+    share: "The share must be between 0% and 100%.",
+  },
+  kpis: {
+    robotCount: "Robot count used",
+    monthlyRobotCost: "Monthly robot cost",
+    monthlySavings: "Monthly savings",
+    annualSavings: "Annual savings",
+    annualRoi: "Annual ROI",
+    payback: "Initial investment payback",
+    costReduction: "Cost reduction",
+    replacedHours: "Replaced hours per year",
+    freedFte: "Freed FTE",
+    benefit24: "Net benefit after 24 mo.",
+    benefit36: "Net benefit after 36 mo.",
+    benefit48: "Net benefit after 48 mo.",
+  },
+  netSuffix: "net",
+  paybackImmediate: "immediately",
+  paybackNotAchieved: "not achieved",
+  paybackMonths: "{count} mo.",
+  unavailable: "unavailable",
+  negativeWarning: "Under the entered assumptions, the selected scenario does not produce a financial saving.",
+  liveSummary: "Updated result: annual savings {savings}, annual ROI {roi}, payback {payback}.",
+  scenariosTitle: "Robot work-share scenarios",
+  scenario: "Scenario",
+  robotShare: "Robot share",
+  annualSavings: "Annual savings",
+  annualRoi: "Annual ROI",
+  payback: "Payback",
+  benefit48: "Benefit after 48 mo.",
+  scenarios: {
+    conservative: "Conservative",
+    realistic: "Realistic",
+    optimistic: "Optimistic",
+  },
+  annualCostTitle: "Annual cost before and after",
+  before: "Before implementation",
+  after: "After implementation",
+  annualCostSummary: "Estimated annual cost changes from {before} to {after}.",
+  cumulativeTitle: "Cumulative benefit over 48 months",
+  cumulativeSummary: "Estimated cumulative net benefit after 48 months is {amount}.",
+  disclaimerFallback: "The result is an indicative estimate and depends on actual site conditions and the final offer.",
+};
+
+window.AR_LOCALES.en.legal.common.updated = "Last updated: 19 July 2026.";
+window.AR_LOCALES.en.legal.cookies.sections.splice(2, 0, {
+  title: "Local cache of public data",
+  paragraphs: [
+    "Public product, financing, industry and ROI configuration data is temporarily stored in localStorage for 15 minutes to improve loading and availability during a brief Google Sheets outage. The cache contains no personal data and is not used for tracking.",
+  ],
+});

@@ -202,6 +202,8 @@
             </button>
           </div>
 
+          <div class="active-industry-filter" data-active-industry-filter hidden></div>
+          <div class="data-notice" data-data-notice hidden></div>
           <p class="catalog-status" data-catalog-status role="status" aria-live="polite"></p>
           <div class="product-grid" data-products-grid></div>
           <p class="catalog-empty" data-catalog-empty hidden data-i18n="products.noResults">
@@ -230,6 +232,45 @@
             </p>
           </div>
           <div class="industry-grid" data-industries-grid></div>
+        </div>
+      </section>
+
+      <section class="roi section-pad" id="roi" aria-labelledby="roi-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker" data-i18n="roi.kicker">ROI kalkulator</div>
+              <h2 id="roi-title" data-i18n="roi.title">
+                Procijenite financijski učinak automatizacije.
+              </h2>
+            </div>
+            <p data-i18n="roi.copy">
+              Prilagodite pretpostavke svojem objektu i usporedite scenarije bez skrivenih formula.
+            </p>
+          </div>
+          <div class="data-section-status" data-roi-status role="status" aria-live="polite"></div>
+          <div data-roi-app hidden></div>
+        </div>
+      </section>
+
+      <section
+        class="service-plans section-pad"
+        id="service-plans"
+        aria-labelledby="service-plans-title"
+      >
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker" data-i18n="servicePlans.kicker">Paketi usluga</div>
+              <h2 id="service-plans-title" data-i18n="servicePlans.title">
+                Standard ili Full-service najam.
+              </h2>
+            </div>
+            <p data-i18n="servicePlans.copy">
+              Usporedite što je uključeno u svaki paket prije odabira načina suradnje.
+            </p>
+          </div>
+          <div class="service-plans-wrap" data-service-plans></div>
         </div>
       </section>
 
@@ -494,7 +535,10 @@
     <script src="config/site.js"></script>
     <script src="config/i18n.hr.js"></script>
     <script src="config/i18n.en.js"></script>
-    <script src="config/robots.js"></script>
+    <script src="config/data-source.js"></script>
+    <script src="config/fallback-data.js"></script>
+    <script src="js/data-service.js"></script>
+    <script src="js/roi-calculator.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

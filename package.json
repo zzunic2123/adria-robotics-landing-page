@@ -1,0 +1,10 @@
+{
+  "name": "adria-robotics-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "python3 -m http.server 8080",
+    "test": "node --test",
+    "update:fallback": "node scripts/update-fallback.mjs"
+  }
+}
