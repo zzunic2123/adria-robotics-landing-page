@@ -8,25 +8,35 @@ window.AR_LOCALES.hr = {
   },
   accessibility: {
     skip: "Preskoči na sadržaj",
-    home: "Adria Robotics početna",
+    home: "Adria Robotics početna stranica",
     openNav: "Otvori navigaciju",
+    closeNav: "Zatvori navigaciju",
+    closeModal: "Zatvori detalje robota",
+    productCard: "Pogledajte specifikacije za {model}",
+    modalLabel: "Specifikacije modela {model}",
+    externalLink: "Poveznica se otvara u novoj kartici",
   },
   language: {
     label: "Odabir jezika",
+    hr: "Hrvatski",
+    en: "Engleski",
   },
   nav: {
     robots: "Roboti",
-    finder: "Pronađite model",
     industries: "Industrije",
     implementation: "Implementacija",
+    faq: "Česta pitanja",
     demo: "Zatražite demo",
     contact: "Kontakt",
   },
   buttons: {
     requestDemo: "Zatražite demonstraciju",
     requestDemoShort: "Zatražite demo",
-    reserveDemo: "Rezervirajte demonstraciju",
-    findModel: "Pronađite model",
+    viewRobots: "Pogledajte robote",
+    viewSpecifications: "Pogledajte specifikacije",
+    modalDemo: "Zatražite demo za ovaj model",
+    resetFilters: "Poništite filtre",
+    sendRequest: "Pripremite zahtjev",
   },
   hero: {
     eyebrow: "Globalna tehnologija. Lokalna implementacija.",
@@ -41,16 +51,16 @@ window.AR_LOCALES.hr = {
       partner: "lokalni partner",
     },
     route: {
-      audit: "audit",
-      demo: "demo",
+      analysis: "analiza",
+      demonstration: "demonstracija",
       service: "servis",
     },
   },
   partners: {
     kicker: "Neovisna preporuka",
-    title: "Više portfelja, jedan odgovoran rollout.",
+    title: "Više portfelja, jedna odgovorna implementacija.",
     copy:
-      "Kupac ne mora pogađati model. Analiziramo prostor, zadatak i budžet pa shortlist gradimo prema stvarnim uvjetima rada.",
+      "Kupac ne mora unaprijed znati koji mu model treba. Analiziramo prostor, zadatak i uvjete rada te izrađujemo uži izbor modela koji odgovaraju stvarnim potrebama objekta.",
   },
   brands: [
     {
@@ -59,330 +69,381 @@ window.AR_LOCALES.hr = {
     },
     {
       name: "OrionStar",
-      copy: "Kompaktni autonomni sustavi za objekte s prometom, rubovima i preprekama.",
+      copy: "Autonomni sustavi za objekte u kojima su važni pouzdano pranje, rubovi i prepreke.",
     },
     {
       name: "Gausium",
-      copy: "Specijalizirani roboti za velike površine, skladišta, retail i industriju.",
+      copy: "Specijalizirani roboti za velike površine, skladišta, maloprodaju i industriju.",
     },
   ],
-  finder: {
-    kicker: "Brza kvalifikacija",
-    title: "Koji robot ima smisla za vaš objekt?",
-    copy:
-      "Unesite osnovne parametre. Preporuka je orijentacijska; konačan odabir radimo nakon pregleda prostora i demonstracije.",
-    submit: "Prikaži preporuku",
-    fields: {
-      area: "Površina za čišćenje",
-      facility: "Tip objekta",
-      task: "Primarni zadatak",
-      frequency: "Učestalost čišćenja",
-      obstacles: "Razina prepreka",
-    },
-    facilities: {
-      retail: "Retail / trgovina",
-      shopping: "Shopping centar",
-      office: "Uredi i poslovni prostori",
-      hospitality: "Hotel / ugostiteljstvo",
-      logistics: "Skladište / logistika",
-      manufacturing: "Proizvodnja",
-      parking: "Garaža / parkiralište",
-      transport: "Transportni terminal",
-    },
-    tasks: {
-      auto: "Preporuči prema objektu",
-      full: "Strojno pranje / 4-u-1 čišćenje",
-      drySweep: "Suho pometanje",
-      vacuum: "Usisavanje / dust mopping",
-      heavyScrub: "Heavy-duty mokro čišćenje",
-      edge: "Rubovi, hodnici i prepreke",
-      spill: "Brza intervencija / prolijevanja",
-    },
-    frequency: {
-      daily: "Svaki dan",
-      often: "2-3 puta tjedno",
-      weekly: "Jednom tjedno",
-      seasonal: "Povremeno",
-    },
-    obstacles: {
-      low: "Niska",
-      medium: "Srednja",
-      high: "Visoka",
-    },
-    result: {
-      eyebrow: "Preporučeni smjer",
-      countLabel: "robot(a) za provjeru",
-      paybackLabel: "ROI razgovor",
-      link: "Dogovorite procjenu prostora",
-    },
-    payback: {
-      monthShort: "mj.",
-      audit: "procjena nakon audita",
-    },
-  },
-  robots: {
-    cc1pro: {
-      name: "PUDU CC1 Pro",
-      copy:
-        "Preporuka za veće komercijalne prostore gdje se traži 4-u-1 čišćenje, siguran rad i digitalni uvid u rezultat.",
-      note: "Provjeriti gužve, radno vrijeme, tip poda, docking i opciju automatske vode/odvoda.",
-    },
-    cc1: {
-      name: "PUDU CC1",
-      copy:
-        "Preporuka za urede, retail, edukaciju, hotele i druge prostore gdje jedan robot treba pokriti više načina čišćenja.",
-      note: "Provjeriti uske prolaze, zone s tepihom, punjenje i režim rada s korisnicima u prostoru.",
-    },
-    mt1: {
-      name: "PUDU MT1",
-      copy: "Preporuka za velike prostore sa suhim otpadom, prašinom i potrebom za autonomnim pometanjem.",
-      note: "Provjeriti tip otpada, širine prolaza, promet viličara, rampu i lokaciju stanice.",
-    },
-    mt1max: {
-      name: "PUDU MT1 Max",
-      copy: "Preporuka za zahtjevnije velike zone, dinamične prepreke i snažnije autonomno suho čišćenje.",
-      note: "Provjeriti vanjske ili poluotvorene uvjete, sigurnosne zone, punjenje i vremenske uvjete.",
-    },
-    mt1vac: {
-      name: "PUDU MT1 Vac",
-      copy:
-        "Preporuka za suho čišćenje i usisavanje većih unutarnjih prostora s tvrdim podovima i tepih zonama.",
-      note: "Provjeriti omjer tepiha i tvrdog poda, prašinu, filtraciju, uske prolaze i raspored pražnjenja.",
-    },
-    bg1: {
-      name: "PUDU BG1 Series",
-      copy: "Preporuka za velike tvrdopodne površine gdje se traži jedno-prolazno pometanje i dubinsko pranje.",
-      note: "Provjeriti vodu, odvod, kemiju, širine prolaza, plan punjenja i rad izvan vršnog prometa.",
-    },
-    sh1: {
-      name: "PUDU SH1",
-      copy: "Preporuka za brzu intervenciju osoblja u manjim zonama, prolijevanjima i ugostiteljsko-retail okruženju.",
-      note: "Provjeriti tko koristi uređaj, gdje se skladišti i koje zone trebaju ručno kontrolirano čišćenje.",
-    },
-    omnie: {
-      name: "Gausium Omnie",
-      copy: "Preporuka za vrlo velike otvorene javne i komercijalne površine s redovitim autonomnim rutinama.",
-      note: "Provjeriti širinu ruta, gužve, zone punjenja, rad izvan špice i potreban dnevni coverage.",
-    },
-    phantas: {
-      name: "Gausium Phantas",
-      copy: "Preporuka za kompaktne prostore s puno prepreka, uskim prolazima i naglaskom na rubne rute.",
-      note: "Provjeriti širine prolaza, rubove, stolice, pragove i koliko se raspored prostora mijenja kroz dan.",
-    },
-    beetle: {
-      name: "Gausium Beetle",
-      copy: "Preporuka za industrijsko i parking pometanje kada dominira suha prljavština ili krupniji otpad.",
-      note: "Provjeriti tip otpada, rampe, grublju podlogu, promet vozila i mjesta za pražnjenje spremnika.",
-    },
-    scrubber75: {
-      name: "Gausium Scrubber 75",
-      copy: "Preporuka za ekstremno velike ili zahtjevne tvrde podove gdje je prioritet snažno mokro ribanje.",
-      note: "Provjeriti vodu, odvod, kemiju, širine prolaza, skladištenje i režim rada izvan vršnog prometa.",
-    },
-    cleanibot: {
-      name: "OrionStar CleaniBot C5",
-      copy: "Preporuka za hodnike, urede i upravljane objekte gdje su rubovi, prepreke i prolazi ključni.",
-      note: "Provjeriti rubno čišćenje, pragove, liftove, širinu hodnika i dnevni promet korisnika.",
-    },
-  },
   products: {
-    kicker: "Istaknuti modeli",
-    title: "Roboti prema zadatku, prostoru i režimu rada.",
-    copy: "Kartice prikazuju tipičan fit. Točne specifikacije, oprema i infrastruktura potvrđuju se prije ponude.",
-    items: [
-      {
-        brand: "PUDU Robotics",
-        name: "CC1 Pro",
-        image: "assets/products/pudu-cc1-pro.webp",
-        alt: "PUDU CC1 Pro robot",
-        fit: "Always-on 4-u-1 autonomno čišćenje za velike komercijalne prostore",
+    kicker: "Katalog robota",
+    title: "Roboti prema zadatku, prostoru i načinu rada.",
+    copy:
+      "Kartice prikazuju preporučenu namjenu i ključne mogućnosti svakog modela. Otvorite karticu za detaljne specifikacije. Konačna konfiguracija opreme i infrastrukture potvrđuje se nakon pregleda prostora.",
+    filterLegend: "Filtriranje kataloga robota",
+    manufacturerLabel: "Proizvođač",
+    taskLabel: "Primarna namjena",
+    allManufacturers: "Svi",
+    allTasks: "Svi zadaci",
+    resultCount: {
+      one: "Prikazan je {count} model.",
+      other: "Prikazano je {count} modela.",
+    },
+    noResults: "Nema modela koji odgovaraju odabranim filtrima.",
+    categories: {
+      washing: "Pranje podova",
+      sweeping: "Pometanje",
+      vacuumDry: "Usisavanje i suho čišćenje",
+      compact: "Kompaktni i uski prostori",
+      large: "Velike površine",
+    },
+    highlightLabels: {
+      application: "Primjena",
+      operation: "Način rada",
+      performance: "Učinak",
+    },
+    modal: {
+      recommendedUse: "Preporučena namjena",
+      recommendedSpaces: "Preporučena vrsta prostora",
+      price: "Cijena",
+      source: "Službeni podaci proizvođača",
+      sourceNote: "Stvarni učinak ovisi o podu, preprekama, prometu i odabranoj konfiguraciji.",
+      groups: {
+        purpose: "Namjena i učinak",
+        cleaning: "Čišćenje",
+        battery: "Baterija i punjenje",
+        navigation: "Navigacija i sigurnost",
+        dimensions: "Dimenzije i kapaciteti",
       },
-      {
-        brand: "PUDU Robotics",
-        name: "CC1",
-        image: "assets/products/pudu-cc1.png",
-        alt: "PUDU CC1 robot",
-        fit: "4-u-1 čišćenje za urede, retail, obrazovanje, hotele i javni transport",
+      labels: {
+        recommendedUse: "Preporučena namjena",
+        recommendedSpaces: "Preporučeni prostori",
+        workingCapacity: "Radni kapacitet",
+        cleaningModes: "Načini čišćenja",
+        workingWidth: "Radna širina",
+        tankCapacity: "Spremnici",
+        binCapacity: "Spremnik otpada",
+        detergentCapacity: "Spremnik sredstva",
+        brushPressure: "Pritisak četke",
+        suction: "Usisna snaga",
+        filtration: "Filtracija",
+        airFlow: "Protok zraka",
+        runtime: "Trajanje rada",
+        chargingTime: "Vrijeme punjenja",
+        batteryCapacity: "Kapacitet baterije",
+        navigation: "Navigacija i senzori",
+        safety: "Sigurnosne funkcije",
+        automation: "Automatizirane funkcije",
+        minimumClearance: "Najmanji potreban prolaz",
+        dimensions: "Dimenzije",
+        weight: "Masa",
+        noise: "Razina buke",
       },
-      {
-        brand: "PUDU Robotics",
-        name: "MT1",
-        image: "assets/products/pudu-mt1.webp",
-        alt: "PUDU MT1 robot",
-        fit: "AI robotski sweeper za velike prostore, prašinu i rasuti otpad",
-      },
-      {
-        brand: "PUDU Robotics",
-        name: "MT1 Max",
-        image: "assets/products/pudu-mt1-max.png",
-        alt: "PUDU MT1 Max robot",
-        fit: "3D percepcija i snažnije autonomno pometanje za zahtjevne velike zone",
-      },
-      {
-        brand: "PUDU Robotics",
-        name: "MT1 Vac",
-        image: "assets/products/pudu-mt1-vac.png",
-        alt: "PUDU MT1 Vac robot",
-        fit: "Robotsko suho čišćenje, usisavanje i dust mopping za mješovite podove",
-      },
-      {
-        brand: "PUDU Robotics",
-        name: "BG1 Series",
-        image: "assets/products/pudu-bg1-series.png",
-        alt: "PUDU BG1 Series robot",
-        fit: "Veliki scrubber-dryer sustav za jedno-prolazno metenje i pranje",
-      },
-      {
-        brand: "PUDU Robotics",
-        name: "SH1",
-        image: "assets/products/pudu-sh1.png",
-        alt: "PUDU SH1 stroj za čišćenje",
-        fit: "Upright scrubber dryer za brzu reakciju u retailu, hotelima i ugostiteljstvu",
-      },
-      {
-        brand: "Gausium",
-        name: "Gausium Omnie",
-        image: "assets/products/omnie-front-original.webp",
-        alt: "Gausium Omnie robot",
-        fit: "Velike javne i komercijalne površine sa stabilnim autonomnim rutinama",
-      },
-      {
-        brand: "Gausium",
-        name: "Gausium Phantas",
-        image: "assets/products/phantas-front-original.webp",
-        alt: "Gausium Phantas robot",
-        fit: "Kompaktni prostori, uski prolazi i svakodnevne rute",
-      },
-      {
-        brand: "Gausium",
-        name: "Gausium Beetle",
-        image: "assets/products/beetle-front-original.webp",
-        alt: "Gausium Beetle robot",
-        fit: "Skladišta, proizvodnja i suho pometanje većih zona",
-      },
-      {
-        brand: "Gausium",
-        name: "Gausium Scrubber 75",
-        image: "assets/products/scrubber-75-front-original.webp",
-        alt: "Gausium Scrubber 75 robot",
-        fit: "Robusno mokro čišćenje tvrdih površina",
-      },
-      {
-        brand: "OrionStar",
-        name: "OrionStar CleaniBot C5",
-        image: "assets/products/cleanibot-c5-product-original.webp",
-        alt: "OrionStar CleaniBot C5 robot",
-        fit: "Hodnici, uredi, upravljani objekti i rubno čišćenje",
-      },
-    ],
+    },
   },
   industries: {
     kicker: "Primjene",
     title: "Autonomija se planira prema prostoru.",
-    copy: "Drugačiji objekt znači drugačiju navigaciju, režim čišćenja, sigurnosne zone i logistiku punjenja.",
+    copy:
+      "Drugačiji objekt znači drugačiju navigaciju, način čišćenja, sigurnosne zone i organizaciju punjenja.",
     items: [
       {
         title: "Skladišta i logistika",
         image: "assets/industries/logistics-warehouse-gausium-1920x933.webp",
-        alt: "Skladišni prostor",
+        alt: "Široki prolaz u logističkom skladištu",
         copy: "Velike zone, prašina, regali, rampe i stalno kretanje opreme.",
+        position: "center",
       },
       {
         title: "Proizvodnja",
         image: "assets/industries/manufacturing-gausium-1920x933.webp",
-        alt: "Proizvodni pogon",
+        alt: "Čist proizvodni pogon s označenim prolazima",
         copy: "Planirane rute oko strojeva, sigurnosne zone i rad izvan smjena.",
+        position: "center",
       },
       {
-        title: "Retail",
+        title: "Maloprodaja",
         image: "assets/industries/retail-store-gausium.webp",
-        alt: "Retail trgovina",
+        alt: "Uređen prodajni prostor s policama",
         copy: "Vidljivo čisti prostori uz promet kupaca i promjenjive prepreke.",
+        position: "center",
       },
       {
-        title: "Shopping centri",
+        title: "Trgovački centri",
         image: "assets/industries/shopping-centre-gausium-1920x933.webp",
-        alt: "Shopping centar",
-        copy: "Široki koridori, noćne rutine i više zona s različitim prioritetom.",
+        alt: "Prostrani hodnik trgovačkog centra",
+        copy: "Široki hodnici, noćne rute i više zona s različitim prioritetima.",
+        position: "center",
       },
       {
         title: "Hoteli i ugostiteljstvo",
         image: "assets/industries/hospitality-gausium-1920x933.webp",
-        alt: "Ugostiteljski prostor",
-        copy: "Tiši režimi, brza reakcija i čistoća u prostoru koji gosti vide.",
+        alt: "Hotelski prostor za goste",
+        copy: "Tiši načini rada, brza reakcija i čistoća u prostoru koji gosti vide.",
+        position: "center",
       },
       {
         title: "Parkirališta",
         image: "assets/industries/car-parking-gausium-1920x933.webp",
-        alt: "Podzemna garaža",
+        alt: "Osvijetljena podzemna garaža",
         copy: "Grublja prljavština, šire rute i potreba za pouzdanim pometanjem.",
+        position: "center",
       },
     ],
   },
   process: {
     kicker: "Kako surađujemo",
     title: "Od procjene do robota koji radi u vašem objektu.",
-    copy: "Proces je postavljen da smanji rizik prije kupnje i skrati put do stabilnog rada.",
+    copy: "Proces smanjuje rizik prije odluke i skraćuje put do stabilnog svakodnevnog rada.",
     steps: [
       {
         number: "01",
         title: "Analiza prostora",
-        copy: "Površine, podovi, promet, prepreke, voda, odvod i režim čišćenja.",
+        copy: "Pregledavamo površine, podove, promet, prepreke, vodu, odvod i sadašnji način čišćenja.",
       },
       {
         number: "02",
         title: "Preporuka modela",
-        copy: "Usporedba realnih opcija iz PUDU, OrionStar i Gausium portfelja.",
+        copy: "Uspoređujemo prikladne opcije iz portfelja PUDU, OrionStar i Gausium.",
       },
       {
         number: "03",
         title: "Demo na lokaciji",
-        copy: "Provjera ponašanja robota u stvarnom prometu i na stvarnim podovima.",
+        copy: "Provjeravamo rad robota u stvarnom prometu i na stvarnim podovima.",
       },
       {
         number: "04",
-        title: "Mapiranje i puštanje u rad",
-        copy: "Rute, zone, rasporedi, sigurnosne postavke i predaja operaterima.",
+        title: "Mapiranje i početak rada",
+        copy: "Postavljamo rute, zone, rasporede i sigurnosne postavke te predajemo sustav korisnicima.",
       },
       {
         number: "05",
         title: "Edukacija i servis",
-        copy: "Trening korisnika, preventivno održavanje, dijelovi i eskalacija podrške.",
+        copy: "Educiramo korisnike i organiziramo preventivno održavanje, dijelove i podršku.",
       },
     ],
   },
   video: {
     kicker: "Dokaz u praksi",
-    title: "Pogledajte kako autonomno čišćenje izgleda u stvarnom rollout-u.",
+    title: "Pogledajte kako autonomno čišćenje izgleda u stvarnoj primjeni.",
     copy:
-      "Video demonstracije koristimo kao početni razgovor, ali konačnu odluku donosimo na vašem objektu: s vašim podovima, rutama i uvjetima rada.",
-    linkAria: "Otvori Gausium case study video u novoj kartici",
-    imageAlt: "Skladište s rutama čišćenja",
+      "Službeni video daje početni uvid u mogućnosti sustava. Konačnu odluku donosimo nakon provjere na vašim podovima, rutama i u stvarnim uvjetima rada.",
+    linkAria: "Otvorite službeni Gausium video u novoj kartici",
+    imageAlt: "Robot čisti prolaz u logističkom skladištu",
+    videoLabel: "Gausium primjer implementacije",
     openVideo: "Otvorite službeni video",
+  },
+  faq: {
+    kicker: "Prije odluke",
+    title: "Česta pitanja",
+    items: [
+      {
+        question: "Koliko košta robot za čišćenje?",
+        answer:
+          "Cijena ovisi o modelu, opremi, veličini prostora i potrebnoj infrastrukturi. Nakon kratke procjene objekta pripremamo preporuku i konkretnu ponudu.",
+      },
+      {
+        question: "Je li moguća kupnja ili najam robota?",
+        answer:
+          "Dostupne opcije ovise o modelu i dogovorenom načinu suradnje. Nakon razgovora i procjene objekta predlažemo najprikladniji model nabave.",
+      },
+      {
+        question: "Mogu li vidjeti robota u radu prije odluke?",
+        answer:
+          "Da. Demonstracija na lokaciji služi za provjeru rada robota na stvarnim podovima, rutama i preprekama prije konačne odluke.",
+      },
+      {
+        question: "Koliko traje uvođenje robota u objekt?",
+        answer:
+          "Trajanje ovisi o veličini i složenosti prostora. Proces uključuje analizu, odabir modela, demonstraciju, mapiranje, početak rada i edukaciju korisnika.",
+      },
+      {
+        question: "Je li potreban dugoročni ugovor?",
+        answer:
+          "Uvjeti ovise o odabranom modelu kupnje, najma i servisa. Sve obveze i trajanje dogovaraju se prije prihvaćanja ponude.",
+      },
+      {
+        question: "Tko obavlja servis i održavanje?",
+        answer:
+          "Adria Robotics organizira lokalnu podršku, preventivno održavanje, servisnu eskalaciju i nabavu potrebnih dijelova prema dogovorenom paketu.",
+      },
+      {
+        question: "Može li robot raditi dok su ljudi u objektu?",
+        answer:
+          "Mnogi modeli projektirani su za rad u dinamičnim prostorima, ali prikladnost ovisi o modelu, prometu, rutama i sigurnosnim uvjetima. To se provjerava tijekom procjene i demonstracije.",
+      },
+    ],
   },
   demo: {
     kicker: "Demo i procjena",
     title: "Pošaljite osnovne podatke o objektu.",
     copy:
-      "Vratit ćemo se s prijedlogom sljedećeg koraka: kratak poziv, pregled lokacije ili demonstracija robota.",
+      "Javit ćemo se s prijedlogom sljedećeg koraka: kratkim pozivom, pregledom lokacije ili demonstracijom robota.",
     points: [
       "Preporuka modela prema prostoru i zadatku",
-      "Procjena broja robota i režima čišćenja",
+      "Procjena potrebnog broja robota i načina čišćenja",
       "Plan implementacije, edukacije i servisa",
     ],
+    directContact: "Možete nam se javiti i izravno:",
     form: {
+      requiredNote: "Polja označena zvjezdicom su obavezna.",
       name: "Ime i prezime",
       company: "Tvrtka",
+      email: "E-mail",
       phone: "Telefon",
+      model: "Odabrani model",
+      modelPlaceholder: "Nije odabran određeni model",
       message: "Objekt i potreba",
-      messagePlaceholder: "Npr. 6.000 m² skladišta, svakodnevno čišćenje, prašina i promet viličara",
+      messagePlaceholder:
+        "Primjer: skladište od 6.000 m², svakodnevno čišćenje, prašina i promet viličara",
+      privacyBefore: "Slanjem obrasca potvrđujete da ste pročitali ",
+      privacyLink: "Politiku privatnosti",
+      privacyAfter: " i pristajete na obradu podataka radi odgovora na upit.",
     },
   },
   forms: {
-    companyFallback: "vaš objekt",
-    status: "Hvala. Demo upit za {company} je pripremljen za spajanje na CRM ili email endpoint.",
+    required: "Ispunite ovo obavezno polje.",
+    email: "Unesite ispravnu e-mail adresu.",
+    submitting: "Pripremamo poruku…",
+    success:
+      "Zahtjev je pripremljen u vašem programu za e-poštu. Provjerite sadržaj i pošaljite poruku.",
+    error:
+      "Nismo uspjeli otvoriti program za e-poštu. Vaši podaci su sačuvani; pošaljite ih izravno na {email}.",
+    emailSubject: "Zahtjev za demonstraciju — {company}",
+    emailBody: {
+      name: "Ime i prezime",
+      company: "Tvrtka",
+      email: "E-mail",
+      phone: "Telefon",
+      model: "Odabrani model",
+      message: "Objekt i potreba",
+    },
   },
   footer: {
-    navAria: "Podnožje",
+    tagline: "Robotika u praksi.",
+    description:
+      "Autonomna rješenja za profesionalno čišćenje, uz lokalnu implementaciju, edukaciju i podršku.",
+    navAria: "Navigacija u podnožju",
+    companyTitle: "Tvrtka",
+    contactTitle: "Kontakt",
+    legalTitle: "Pravne informacije",
+    legalNameLabel: "Pravni naziv",
+    addressLabel: "Adresa",
+    taxIdLabel: "OIB",
+    phoneLabel: "Telefon",
+    emailLabel: "E-mail",
+    privacy: "Politika privatnosti",
+    cookies: "Politika kolačića",
+    copyright: "© {year} Adriarobotics d.o.o. Sva prava pridržana.",
+  },
+  legal: {
+    common: {
+      backHome: "Natrag na početnu stranicu",
+      reviewNote:
+        "Ovaj je tekst početni pravni predložak. Prije produkcijske objave mora ga pregledati odgovorna osoba ili pravnik.",
+      updated: "Posljednje ažuriranje: 16. srpnja 2026.",
+    },
+    privacy: {
+      metaTitle: "Politika privatnosti | Adria Robotics",
+      title: "Politika privatnosti",
+      intro:
+        "Ova politika objašnjava kako Adriarobotics d.o.o. obrađuje osobne podatke zaprimljene putem web-stranice Adria Robotics.",
+      sections: [
+        {
+          title: "Voditelj obrade",
+          paragraphs: [
+            "Voditelj obrade je Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, OIB 83127934571. Za pitanja o privatnosti obratite se na {email}.",
+          ],
+        },
+        {
+          title: "Koje podatke obrađujemo",
+          paragraphs: [
+            "Kada pošaljete upit, možemo obrađivati ime i prezime, naziv tvrtke, e-mail, telefonski broj, odabrani model te podatke koje unesete u poruku.",
+            "Sama stranica ne koristi analitičke ili marketinške alate. Pružatelj hostinga može obrađivati osnovne tehničke zapise potrebne za isporuku i sigurnost stranice prema svojim pravilima.",
+          ],
+        },
+        {
+          title: "Svrha i pravna osnova",
+          paragraphs: [
+            "Podatke koristimo za odgovor na upit, organizaciju procjene ili demonstracije, pripremu ponude i povezanu poslovnu komunikaciju. Obrada se temelji na poduzimanju radnji na vaš zahtjev prije sklapanja ugovora i, kada je primjenjivo, na našem legitimnom interesu da odgovorimo na poslovni upit.",
+          ],
+        },
+        {
+          title: "Način slanja obrasca",
+          paragraphs: [
+            "U ovoj statičkoj verziji stranice obrazac priprema poruku u vašem programu za e-poštu. Podaci se ne spremaju u bazu ove web-stranice. Slanje se dovršava tek kada vi pošaljete pripremljenu poruku.",
+          ],
+        },
+        {
+          title: "Čuvanje i primatelji",
+          paragraphs: [
+            "Podatke čuvamo samo onoliko dugo koliko je potrebno za obradu upita, poslovnu komunikaciju i ispunjenje zakonskih obveza. Pristup imaju samo osobe i pružatelji usluga kojima su podaci potrebni za navedene svrhe.",
+          ],
+        },
+        {
+          title: "Vaša prava",
+          paragraphs: [
+            "Ovisno o primjenjivim propisima, možete zatražiti pristup, ispravak, brisanje, ograničenje obrade, prenosivost podataka ili uložiti prigovor. Također možete podnijeti pritužbu nadležnom tijelu za zaštitu osobnih podataka.",
+          ],
+        },
+        {
+          title: "Vanjske poveznice",
+          paragraphs: [
+            "Stranica sadrži poveznicu na službeni YouTube video, ali ne ugrađuje YouTube reproduktor. Otvaranjem vanjske poveznice primjenjuju se pravila privatnosti vanjskog pružatelja.",
+          ],
+        },
+        {
+          title: "Kontakt",
+          paragraphs: [
+            "Za zahtjeve i pitanja o obradi podataka obratite se na {email} ili poštom na Kovinska ulica 4, Zagreb.",
+          ],
+        },
+      ],
+    },
+    cookies: {
+      metaTitle: "Politika kolačića | Adria Robotics",
+      title: "Politika kolačića",
+      intro:
+        "Ova politika opisuje lokalnu pohranu i kolačiće povezane s web-stranicom Adria Robotics.",
+      sections: [
+        {
+          title: "Trenutačna uporaba kolačića",
+          paragraphs: [
+            "Ova verzija stranice ne postavlja kolačiće za analitiku, oglašavanje, profiliranje ili društvene mreže. Zbog toga se ne prikazuje banner za privolu niti poveznica za postavke kolačića.",
+          ],
+        },
+        {
+          title: "Jezična postavka",
+          paragraphs: [
+            "Odabrani jezik sprema se lokalno u pregledniku putem tehnologije localStorage kako bi stranica pri sljedećem posjetu zapamtila izbor. Ta vrijednost nije kolačić, ne služi praćenju i možete je izbrisati brisanjem podataka stranice u pregledniku.",
+          ],
+        },
+        {
+          title: "Vanjski sadržaj",
+          paragraphs: [
+            "YouTube video nije ugrađen u stranicu. Kolačići vanjskog pružatelja mogu se postaviti tek ako korisnik sam otvori vanjsku poveznicu, nakon čega vrijede pravila tog pružatelja.",
+          ],
+        },
+        {
+          title: "Hosting i nužni tehnički podaci",
+          paragraphs: [
+            "Stranica je objavljena putem usluge statičkog hostinga. Pružatelj hostinga može obrađivati tehničke zapise potrebne za sigurnost, dostupnost i isporuku sadržaja, neovisno o kolačićima ove stranice.",
+          ],
+        },
+        {
+          title: "Buduće promjene",
+          paragraphs: [
+            "Ako se naknadno uvedu analitika, marketinški alati ili drugi neobavezni kolačići, prije njihova aktiviranja bit će uveden sustav za prihvaćanje, odbijanje, granularne postavke i naknadnu promjenu odluke.",
+          ],
+        },
+        {
+          title: "Kontakt",
+          paragraphs: [
+            "Pitanja o ovoj politici možete poslati na {email}.",
+          ],
+        },
+      ],
+    },
   },
 };

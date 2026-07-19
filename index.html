@@ -22,50 +22,105 @@
 
     <header class="site-header" data-header>
       <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Adria Robotics početna" data-i18n-aria-label="accessibility.home">
-          <img src="assets/brand/adria-robotics-logo-primary.svg" alt="Adria Robotics" />
+        <a
+          class="brand"
+          href="#top"
+          aria-label="Adria Robotics početna stranica"
+          data-i18n-aria-label="accessibility.home"
+        >
+          <img
+            src="assets/brand/adria-robotics-logo-primary.svg"
+            width="194"
+            height="48"
+            alt="Adria Robotics"
+          />
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span class="sr-only" data-i18n="accessibility.openNav">Otvori navigaciju</span>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otvori navigaciju"
+          data-nav-toggle
+          data-i18n-aria-label="accessibility.openNav"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
-        <nav class="site-nav" id="site-nav" data-nav>
+        <nav class="site-nav" id="site-nav" aria-label="Glavna navigacija" data-nav>
           <a href="#robots" data-i18n="nav.robots">Roboti</a>
-          <a href="#finder" data-i18n="nav.finder">Pronađite model</a>
           <a href="#industries" data-i18n="nav.industries">Industrije</a>
           <a href="#process" data-i18n="nav.implementation">Implementacija</a>
+          <a href="#faq" data-i18n="nav.faq">Česta pitanja</a>
           <a class="nav-cta" href="#demo" data-i18n="nav.demo">Zatražite demo</a>
-          <div class="language-switcher" aria-label="Odabir jezika" data-i18n-aria-label="language.label">
-            <button type="button" class="lang-button is-active" data-lang-button="hr">HR</button>
-            <button type="button" class="lang-button" data-lang-button="en">EN</button>
+          <div
+            class="language-switcher"
+            role="group"
+            aria-label="Odabir jezika"
+            data-i18n-aria-label="language.label"
+          >
+            <button
+              type="button"
+              class="lang-button is-active"
+              aria-pressed="true"
+              aria-label="Hrvatski"
+              data-lang-button="hr"
+              data-i18n-aria-label="language.hr"
+            >
+              HR
+            </button>
+            <button
+              type="button"
+              class="lang-button"
+              aria-pressed="false"
+              aria-label="Engleski"
+              data-lang-button="en"
+              data-i18n-aria-label="language.en"
+            >
+              EN
+            </button>
           </div>
         </nav>
       </div>
     </header>
+    <div class="nav-overlay" data-nav-overlay hidden aria-hidden="true"></div>
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow" data-i18n="hero.eyebrow">Globalna tehnologija. Lokalna implementacija.</p>
-            <h1 id="hero-title" data-i18n="hero.title">Autonomni roboti za profesionalno čišćenje.</h1>
+            <p class="eyebrow" data-i18n="hero.eyebrow">
+              Globalna tehnologija. Lokalna implementacija.
+            </p>
+            <h1 id="hero-title" data-i18n="hero.title">
+              Autonomni roboti za profesionalno čišćenje.
+            </h1>
             <p class="hero-lead" data-i18n="hero.lead">
               Od odabira i demonstracije do mapiranja, edukacije i servisa. Adria Robotics
               uvodi provjerena rješenja PUDU, OrionStar i Gausium u objekte diljem Adria regije.
             </p>
-            <div class="hero-actions" aria-label="Glavne akcije" data-i18n-aria-label="hero.actionsLabel">
+            <div
+              class="hero-actions"
+              role="group"
+              aria-label="Glavne akcije"
+              data-i18n-aria-label="hero.actionsLabel"
+            >
               <a class="button button-primary" href="#demo">
                 <span data-i18n="buttons.requestDemo">Zatražite demonstraciju</span>
                 <span aria-hidden="true">→</span>
               </a>
-              <a class="button button-secondary" href="#finder">
-                <span data-i18n="buttons.findModel">Pronađite model</span>
+              <a class="button button-secondary" href="#robots">
+                <span data-i18n="buttons.viewRobots">Pogledajte robote</span>
                 <span aria-hidden="true">↓</span>
               </a>
             </div>
-            <dl class="hero-metrics" aria-label="Ključne prednosti" data-i18n-aria-label="hero.metricsLabel">
+            <dl
+              class="hero-metrics"
+              role="group"
+              aria-label="Ključne prednosti"
+              data-i18n-aria-label="hero.metricsLabel"
+            >
               <div>
                 <dt>3</dt>
                 <dd data-i18n="hero.metrics.portfolios">portfelja robota</dd>
@@ -86,8 +141,10 @@
             <span class="route-node route-node-mid"></span>
             <span class="route-line route-line-b"></span>
             <span class="route-node route-node-end"></span>
-            <span class="route-label route-label-a" data-i18n="hero.route.audit">audit</span>
-            <span class="route-label route-label-b" data-i18n="hero.route.demo">demo</span>
+            <span class="route-label route-label-a" data-i18n="hero.route.analysis">analiza</span>
+            <span class="route-label route-label-b" data-i18n="hero.route.demonstration"
+              >demonstracija</span
+            >
             <span class="route-label route-label-c" data-i18n="hero.route.service">servis</span>
           </div>
         </div>
@@ -97,130 +154,15 @@
         <div class="container">
           <div class="section-kicker" data-i18n="partners.kicker">Neovisna preporuka</div>
           <div class="section-head compact">
-            <h2 id="partners-title" data-i18n="partners.title">Više portfelja, jedan odgovoran rollout.</h2>
+            <h2 id="partners-title" data-i18n="partners.title">
+              Više portfelja, jedna odgovorna implementacija.
+            </h2>
             <p data-i18n="partners.copy">
-              Kupac ne mora pogađati model. Analiziramo prostor, zadatak i budžet pa shortlist
-              gradimo prema stvarnim uvjetima rada.
+              Kupac ne mora unaprijed znati koji mu model treba. Analiziramo prostor, zadatak i
+              uvjete rada te izrađujemo uži izbor modela koji odgovaraju stvarnim potrebama objekta.
             </p>
           </div>
-          <div class="brand-grid" data-brand-grid>
-            <article>
-              <span>PUDU Robotics</span>
-              <p>Širok portfelj za komercijalno čišćenje i dinamične uslužne prostore.</p>
-            </article>
-            <article>
-              <span>OrionStar</span>
-              <p>Kompaktni autonomni sustavi za objekte s prometom, rubovima i preprekama.</p>
-            </article>
-            <article>
-              <span>Gausium</span>
-              <p>Specijalizirani roboti za velike površine, skladišta, retail i industriju.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="finder section-pad" id="finder" aria-labelledby="finder-title">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker" data-i18n="finder.kicker">Brza kvalifikacija</div>
-              <h2 id="finder-title" data-i18n="finder.title">Koji robot ima smisla za vaš objekt?</h2>
-            </div>
-            <p data-i18n="finder.copy">
-              Unesite osnovne parametre. Preporuka je orijentacijska; konačan odabir radimo nakon
-              pregleda prostora i demonstracije.
-            </p>
-          </div>
-
-          <div class="finder-layout">
-            <form class="finder-form" data-finder-form>
-              <div class="field full">
-                <label for="area" data-i18n="finder.fields.area">Površina za čišćenje</label>
-                <div class="range-head">
-                  <output id="area-output" for="area" data-area-output>4.500 m²</output>
-                </div>
-                <input id="area" name="area" type="range" min="500" max="20000" step="250" value="4500" />
-              </div>
-
-              <div class="field">
-                <label for="facility" data-i18n="finder.fields.facility">Tip objekta</label>
-                <select id="facility" name="facility">
-                  <option value="retail" data-i18n="finder.facilities.retail">Retail / trgovina</option>
-                  <option value="shopping" data-i18n="finder.facilities.shopping">Shopping centar</option>
-                  <option value="office" data-i18n="finder.facilities.office">Uredi i poslovni prostori</option>
-                  <option value="hospitality" data-i18n="finder.facilities.hospitality">Hotel / ugostiteljstvo</option>
-                  <option value="logistics" data-i18n="finder.facilities.logistics">Skladište / logistika</option>
-                  <option value="manufacturing" data-i18n="finder.facilities.manufacturing">Proizvodnja</option>
-                  <option value="parking" data-i18n="finder.facilities.parking">Garaža / parkiralište</option>
-                  <option value="transport" data-i18n="finder.facilities.transport">Transportni terminal</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="task" data-i18n="finder.fields.task">Primarni zadatak</label>
-                <select id="task" name="task">
-                  <option value="auto" data-i18n="finder.tasks.auto">Preporuči prema objektu</option>
-                  <option value="full" data-i18n="finder.tasks.full">Strojno pranje / 4-u-1 čišćenje</option>
-                  <option value="drySweep" data-i18n="finder.tasks.drySweep">Suho pometanje</option>
-                  <option value="vacuum" data-i18n="finder.tasks.vacuum">Usisavanje / dust mopping</option>
-                  <option value="heavyScrub" data-i18n="finder.tasks.heavyScrub">Heavy-duty mokro čišćenje</option>
-                  <option value="edge" data-i18n="finder.tasks.edge">Rubovi, hodnici i prepreke</option>
-                  <option value="spill" data-i18n="finder.tasks.spill">Brza intervencija / prolijevanja</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="frequency" data-i18n="finder.fields.frequency">Učestalost čišćenja</label>
-                <select id="frequency" name="frequency">
-                  <option value="daily" data-i18n="finder.frequency.daily">Svaki dan</option>
-                  <option value="often" data-i18n="finder.frequency.often">2-3 puta tjedno</option>
-                  <option value="weekly" data-i18n="finder.frequency.weekly">Jednom tjedno</option>
-                  <option value="seasonal" data-i18n="finder.frequency.seasonal">Povremeno</option>
-                </select>
-              </div>
-
-              <fieldset class="field radio-field">
-                <legend data-i18n="finder.fields.obstacles">Razina prepreka</legend>
-                <label><input type="radio" name="obstacles" value="low" /> <span data-i18n="finder.obstacles.low">Niska</span></label>
-                <label><input type="radio" name="obstacles" value="medium" checked /> <span data-i18n="finder.obstacles.medium">Srednja</span></label>
-                <label><input type="radio" name="obstacles" value="high" /> <span data-i18n="finder.obstacles.high">Visoka</span></label>
-              </fieldset>
-
-              <button class="button button-primary full" type="submit">
-                <span data-i18n="finder.submit">Prikaži preporuku</span>
-                <span aria-hidden="true">→</span>
-              </button>
-            </form>
-
-            <aside class="recommendation" aria-live="polite">
-              <div class="recommendation-image">
-                <img src="assets/products/pudu-cc1-pro.webp" alt="" data-result-image />
-              </div>
-              <div class="recommendation-body">
-                <p class="eyebrow" data-i18n="finder.result.eyebrow">Preporučeni smjer</p>
-                <h3 data-result-title>PUDU CC1 Pro</h3>
-                <p data-result-copy>
-                  Preporuka za veće komercijalne prostore gdje se traži 4-u-1 čišćenje,
-                  siguran rad i digitalni uvid u rezultat.
-                </p>
-                <div class="result-facts">
-                  <div>
-                    <span data-result-count>1-2</span>
-                    <small data-i18n="finder.result.countLabel">robot(a) za provjeru</small>
-                  </div>
-                  <div>
-                    <span data-result-payback>12-20 mj.</span>
-                    <small data-i18n="finder.result.paybackLabel">ROI razgovor</small>
-                  </div>
-                </div>
-                <p class="result-note" data-result-note>
-                  Sljedeći korak je pregled rute, punjenja, vode, odvoda i sigurnosnih zona.
-                </p>
-                <a class="text-link" href="#demo" data-i18n="finder.result.link">Dogovorite procjenu prostora</a>
-              </div>
-            </aside>
-          </div>
+          <div class="brand-grid" data-brand-grid></div>
         </div>
       </section>
 
@@ -228,113 +170,48 @@
         <div class="container">
           <div class="section-head">
             <div>
-              <div class="section-kicker" data-i18n="products.kicker">Istaknuti modeli</div>
-              <h2 id="robots-title" data-i18n="products.title">Roboti prema zadatku, prostoru i režimu rada.</h2>
+              <div class="section-kicker" data-i18n="products.kicker">Katalog robota</div>
+              <h2 id="robots-title" data-i18n="products.title">
+                Roboti prema zadatku, prostoru i načinu rada.
+              </h2>
             </div>
             <p data-i18n="products.copy">
-              Kartice prikazuju tipičan fit. Točne specifikacije, oprema i infrastruktura
-              potvrđuju se prije ponude.
+              Kartice prikazuju preporučenu namjenu i ključne mogućnosti svakog modela. Otvorite
+              karticu za detaljne specifikacije. Konačna konfiguracija opreme i infrastrukture
+              potvrđuje se nakon pregleda prostora.
             </p>
           </div>
 
-          <div class="product-grid" data-products-grid>
-            <article class="product-card">
-              <img src="assets/products/pudu-cc1-pro.webp" alt="PUDU CC1 Pro robot" />
-              <div>
-                <p>PUDU Robotics</p>
-                <h3>CC1 Pro</h3>
-                <span>Always-on 4-u-1 autonomno čišćenje za velike komercijalne prostore</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/pudu-cc1.png" alt="PUDU CC1 robot" />
-              <div>
-                <p>PUDU Robotics</p>
-                <h3>CC1</h3>
-                <span>4-u-1 čišćenje za urede, retail, obrazovanje, hotele i javni transport</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/pudu-mt1.webp" alt="PUDU MT1 robot" />
-              <div>
-                <p>PUDU Robotics</p>
-                <h3>MT1</h3>
-                <span>AI robotski sweeper za velike prostore, prašinu i rasuti otpad</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/pudu-mt1-max.png" alt="PUDU MT1 Max robot" />
-              <div>
-                <p>PUDU Robotics</p>
-                <h3>MT1 Max</h3>
-                <span>3D percepcija i snažnije autonomno pometanje za zahtjevne velike zone</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/pudu-mt1-vac.png" alt="PUDU MT1 Vac robot" />
-              <div>
-                <p>PUDU Robotics</p>
-                <h3>MT1 Vac</h3>
-                <span>Robotsko suho čišćenje, usisavanje i dust mopping za mješovite podove</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/pudu-bg1-series.png" alt="PUDU BG1 Series robot" />
-              <div>
-                <p>PUDU Robotics</p>
-                <h3>BG1 Series</h3>
-                <span>Veliki scrubber-dryer sustav za jedno-prolazno metenje i pranje</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/pudu-sh1.png" alt="PUDU SH1 stroj za čišćenje" />
-              <div>
-                <p>PUDU Robotics</p>
-                <h3>SH1</h3>
-                <span>Upright scrubber dryer za brzu reakciju u retailu, hotelima i ugostiteljstvu</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/omnie-front-original.webp" alt="Gausium Omnie robot" />
-              <div>
-                <p>Gausium</p>
-                <h3>Gausium Omnie</h3>
-                <span>Velike javne i komercijalne površine sa stabilnim autonomnim rutinama</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/phantas-front-original.webp" alt="Gausium Phantas robot" />
-              <div>
-                <p>Gausium</p>
-                <h3>Gausium Phantas</h3>
-                <span>Kompaktni prostori, uski prolazi i svakodnevne rute</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/beetle-front-original.webp" alt="Gausium Beetle robot" />
-              <div>
-                <p>Gausium</p>
-                <h3>Gausium Beetle</h3>
-                <span>Skladišta, proizvodnja i suho pometanje većih zona</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/scrubber-75-front-original.webp" alt="Gausium Scrubber 75 robot" />
-              <div>
-                <p>Gausium</p>
-                <h3>Gausium Scrubber 75</h3>
-                <span>Robusno mokro čišćenje tvrdih površina</span>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/products/cleanibot-c5-product-original.webp" alt="OrionStar CleaniBot C5 robot" />
-              <div>
-                <p>OrionStar</p>
-                <h3>OrionStar CleaniBot C5</h3>
-                <span>Hodnici, uredi, upravljani objekti i rubno čišćenje</span>
-              </div>
-            </article>
+          <div
+            class="catalog-filters"
+            role="group"
+            aria-label="Filtriranje kataloga robota"
+            data-i18n-aria-label="products.filterLegend"
+          >
+            <div class="filter-group">
+              <span class="filter-label" data-i18n="products.manufacturerLabel">Proizvođač</span>
+              <div class="filter-options" data-manufacturer-filters></div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label" data-i18n="products.taskLabel">Primarna namjena</span>
+              <div class="filter-options" data-task-filters></div>
+            </div>
+            <button class="filter-reset" type="button" data-filter-reset>
+              <span data-i18n="buttons.resetFilters">Poništite filtre</span>
+              <span aria-hidden="true">↺</span>
+            </button>
           </div>
+
+          <p class="catalog-status" data-catalog-status role="status" aria-live="polite"></p>
+          <div class="product-grid" data-products-grid></div>
+          <p class="catalog-empty" data-catalog-empty hidden data-i18n="products.noResults">
+            Nema modela koji odgovaraju odabranim filtrima.
+          </p>
+          <noscript>
+            <p class="catalog-empty">
+              Za pregled i filtriranje kataloga potrebno je omogućiti JavaScript.
+            </p>
+          </noscript>
         </div>
       </section>
 
@@ -343,46 +220,16 @@
           <div class="section-head">
             <div>
               <div class="section-kicker" data-i18n="industries.kicker">Primjene</div>
-              <h2 id="industries-title" data-i18n="industries.title">Autonomija se planira prema prostoru.</h2>
+              <h2 id="industries-title" data-i18n="industries.title">
+                Autonomija se planira prema prostoru.
+              </h2>
             </div>
             <p data-i18n="industries.copy">
-              Drugačiji objekt znači drugačiju navigaciju, režim čišćenja, sigurnosne zone i
-              logistiku punjenja.
+              Drugačiji objekt znači drugačiju navigaciju, način čišćenja, sigurnosne zone i
+              organizaciju punjenja.
             </p>
           </div>
-
-          <div class="industry-grid" data-industries-grid>
-            <article>
-              <img src="assets/industries/logistics-warehouse-gausium-1920x933.webp" alt="Skladišni prostor" />
-              <h3>Skladišta i logistika</h3>
-              <p>Velike zone, prašina, regali, rampe i stalno kretanje opreme.</p>
-            </article>
-            <article>
-              <img src="assets/industries/manufacturing-gausium-1920x933.webp" alt="Proizvodni pogon" />
-              <h3>Proizvodnja</h3>
-              <p>Planirane rute oko strojeva, sigurnosne zone i rad izvan smjena.</p>
-            </article>
-            <article>
-              <img src="assets/industries/retail-store-gausium.webp" alt="Retail trgovina" />
-              <h3>Retail</h3>
-              <p>Vidljivo čisti prostori uz promet kupaca i promjenjive prepreke.</p>
-            </article>
-            <article>
-              <img src="assets/industries/shopping-centre-gausium-1920x933.webp" alt="Shopping centar" />
-              <h3>Shopping centri</h3>
-              <p>Široki koridori, noćne rutine i više zona s različitim prioritetom.</p>
-            </article>
-            <article>
-              <img src="assets/industries/hospitality-gausium-1920x933.webp" alt="Ugostiteljski prostor" />
-              <h3>Hoteli i ugostiteljstvo</h3>
-              <p>Tiši režimi, brza reakcija i čistoća u prostoru koji gosti vide.</p>
-            </article>
-            <article>
-              <img src="assets/industries/car-parking-gausium-1920x933.webp" alt="Podzemna garaža" />
-              <h3>Parkirališta</h3>
-              <p>Grublja prljavština, šire rute i potreba za pouzdanim pometanjem.</p>
-            </article>
-          </div>
+          <div class="industry-grid" data-industries-grid></div>
         </div>
       </section>
 
@@ -391,38 +238,15 @@
           <div class="section-head">
             <div>
               <div class="section-kicker" data-i18n="process.kicker">Kako surađujemo</div>
-              <h2 id="process-title" data-i18n="process.title">Od procjene do robota koji radi u vašem objektu.</h2>
+              <h2 id="process-title" data-i18n="process.title">
+                Od procjene do robota koji radi u vašem objektu.
+              </h2>
             </div>
-            <p data-i18n="process.copy">Proces je postavljen da smanji rizik prije kupnje i skrati put do stabilnog rada.</p>
+            <p data-i18n="process.copy">
+              Proces smanjuje rizik prije odluke i skraćuje put do stabilnog svakodnevnog rada.
+            </p>
           </div>
-
-          <ol class="process-steps" data-process-steps>
-            <li>
-              <span>01</span>
-              <h3>Analiza prostora</h3>
-              <p>Površine, podovi, promet, prepreke, voda, odvod i režim čišćenja.</p>
-            </li>
-            <li>
-              <span>02</span>
-              <h3>Preporuka modela</h3>
-              <p>Usporedba realnih opcija iz PUDU, OrionStar i Gausium portfelja.</p>
-            </li>
-            <li>
-              <span>03</span>
-              <h3>Demo na lokaciji</h3>
-              <p>Provjera ponašanja robota u stvarnom prometu i na stvarnim podovima.</p>
-            </li>
-            <li>
-              <span>04</span>
-              <h3>Mapiranje i puštanje u rad</h3>
-              <p>Rute, zone, rasporedi, sigurnosne postavke i predaja operaterima.</p>
-            </li>
-            <li>
-              <span>05</span>
-              <h3>Edukacija i servis</h3>
-              <p>Trening korisnika, preventivno održavanje, dijelovi i eskalacija podrške.</p>
-            </li>
-          </ol>
+          <ol class="process-steps" data-process-steps></ol>
         </div>
       </section>
 
@@ -430,13 +254,15 @@
         <div class="container video-grid">
           <div>
             <div class="section-kicker" data-i18n="video.kicker">Dokaz u praksi</div>
-            <h2 id="video-title" data-i18n="video.title">Pogledajte kako autonomno čišćenje izgleda u stvarnom rollout-u.</h2>
+            <h2 id="video-title" data-i18n="video.title">
+              Pogledajte kako autonomno čišćenje izgleda u stvarnoj primjeni.
+            </h2>
             <p data-i18n="video.copy">
-              Video demonstracije koristimo kao početni razgovor, ali konačnu odluku donosimo na
-              vašem objektu: s vašim podovima, rutama i uvjetima rada.
+              Službeni video daje početni uvid u mogućnosti sustava. Konačnu odluku donosimo nakon
+              provjere na vašim podovima, rutama i u stvarnim uvjetima rada.
             </p>
             <a class="button button-secondary" href="#demo">
-              <span data-i18n="buttons.reserveDemo">Rezervirajte demonstraciju</span>
+              <span data-i18n="buttons.requestDemo">Zatražite demonstraciju</span>
               <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -444,19 +270,23 @@
             class="video-frame video-link"
             href="https://www.youtube.com/watch?v=UbeORG_ni30"
             target="_blank"
-            rel="noopener"
-            aria-label="Otvori Gausium case study video u novoj kartici"
+            rel="noopener noreferrer"
+            aria-label="Otvorite službeni Gausium video u novoj kartici"
             data-i18n-aria-label="video.linkAria"
           >
             <img
               src="assets/industries/logistics-warehouse-gausium-1920x933.webp"
-              alt="Skladište s rutama čišćenja"
+              width="1920"
+              height="933"
+              loading="lazy"
+              decoding="async"
+              alt="Robot čisti prolaz u logističkom skladištu"
               data-i18n-alt="video.imageAlt"
             />
             <span class="video-overlay">
               <span class="play-mark" aria-hidden="true"></span>
               <span>
-                <strong>Gausium deployment case</strong>
+                <strong data-i18n="video.videoLabel">Gausium primjer implementacije</strong>
                 <small data-i18n="video.openVideo">Otvorite službeni video</small>
               </span>
             </span>
@@ -464,54 +294,107 @@
         </div>
       </section>
 
+      <section class="faq section-pad" id="faq" aria-labelledby="faq-title">
+        <div class="container faq-layout">
+          <div class="faq-heading">
+            <div class="section-kicker" data-i18n="faq.kicker">Prije odluke</div>
+            <h2 id="faq-title" data-i18n="faq.title">Česta pitanja</h2>
+          </div>
+          <div class="faq-list" data-faq-list></div>
+        </div>
+      </section>
+
       <section class="demo section-pad" id="demo" aria-labelledby="demo-title">
         <div class="container demo-grid">
           <div>
             <div class="section-kicker" data-i18n="demo.kicker">Demo i procjena</div>
-            <h2 id="demo-title" data-i18n="demo.title">Pošaljite osnovne podatke o objektu.</h2>
+            <h2 id="demo-title" data-i18n="demo.title">
+              Pošaljite osnovne podatke o objektu.
+            </h2>
             <p data-i18n="demo.copy">
-              Vratit ćemo se s prijedlogom sljedećeg koraka: kratak poziv, pregled lokacije ili
-              demonstracija robota.
+              Javit ćemo se s prijedlogom sljedećeg koraka: kratkim pozivom, pregledom lokacije ili
+              demonstracijom robota.
             </p>
-            <ul class="demo-points" data-demo-points>
-              <li>Preporuka modela prema prostoru i zadatku</li>
-              <li>Procjena broja robota i režima čišćenja</li>
-              <li>Plan implementacije, edukacije i servisa</li>
-            </ul>
+            <ul class="demo-points" data-demo-points></ul>
+            <div class="direct-contact">
+              <p data-i18n="demo.directContact">Možete nam se javiti i izravno:</p>
+              <a data-contact-phone href="">Telefon</a>
+              <a data-contact-email href="">E-mail</a>
+            </div>
           </div>
 
-          <form class="demo-form" data-demo-form>
+          <form class="demo-form" data-demo-form novalidate>
+            <p class="required-note full" data-i18n="demo.form.requiredNote">
+              Polja označena zvjezdicom su obavezna.
+            </p>
             <div class="field">
-              <label for="name" data-i18n="demo.form.name">Ime i prezime</label>
-              <input id="name" name="name" autocomplete="name" required />
+              <label for="name">
+                <span data-i18n="demo.form.name">Ime i prezime</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
             </div>
             <div class="field">
-              <label for="company" data-i18n="demo.form.company">Tvrtka</label>
-              <input id="company" name="company" autocomplete="organization" required />
+              <label for="company">
+                <span data-i18n="demo.form.company">Tvrtka</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input id="company" name="company" type="text" autocomplete="organization" required />
             </div>
             <div class="field">
-              <label for="email">Email</label>
+              <label for="email">
+                <span data-i18n="demo.form.email">E-mail</span>
+                <span aria-hidden="true">*</span>
+              </label>
               <input id="email" name="email" type="email" autocomplete="email" required />
             </div>
             <div class="field">
               <label for="phone" data-i18n="demo.form.phone">Telefon</label>
-              <input id="phone" name="phone" autocomplete="tel" />
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
             </div>
             <div class="field full">
-              <label for="message" data-i18n="demo.form.message">Objekt i potreba</label>
+              <label for="selected-model" data-i18n="demo.form.model">Odabrani model</label>
+              <input
+                id="selected-model"
+                name="model"
+                type="text"
+                readonly
+                placeholder="Nije odabran određeni model"
+                data-i18n-placeholder="demo.form.modelPlaceholder"
+              />
+            </div>
+            <div class="field full">
+              <label for="message">
+                <span data-i18n="demo.form.message">Objekt i potreba</span>
+                <span aria-hidden="true">*</span>
+              </label>
               <textarea
                 id="message"
                 name="message"
-                rows="4"
-                placeholder="Npr. 6.000 m² skladišta, svakodnevno čišćenje, prašina i promet viličara"
+                rows="5"
+                required
+                placeholder="Primjer: skladište od 6.000 m², svakodnevno čišćenje, prašina i promet viličara"
                 data-i18n-placeholder="demo.form.messagePlaceholder"
               ></textarea>
             </div>
-            <button class="button button-primary full" type="submit">
-              <span data-i18n="buttons.requestDemoShort">Zatražite demo</span>
+            <p class="privacy-notice full">
+              <span data-i18n="demo.form.privacyBefore"
+                >Slanjem obrasca potvrđujete da ste pročitali
+              </span>
+              <a
+                href="privacy-policy.html?lang=hr"
+                data-legal-link="privacy-policy.html"
+                data-i18n="demo.form.privacyLink"
+                >Politiku privatnosti</a
+              ><span data-i18n="demo.form.privacyAfter">
+                i pristajete na obradu podataka radi odgovora na upit.</span
+              >
+            </p>
+            <button class="button button-primary full" type="submit" data-submit-button>
+              <span data-submit-label data-i18n="buttons.sendRequest">Pripremite zahtjev</span>
               <span aria-hidden="true">→</span>
             </button>
-            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            <p class="form-status full" data-form-status role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
@@ -519,21 +402,99 @@
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div>
-          <img src="assets/brand/adria-robotics-logo-reversed.svg" alt="Adria Robotics" />
-          <p>Robotics, made practical.</p>
+        <div class="footer-brand">
+          <img
+            src="assets/brand/adria-robotics-logo-reversed.svg"
+            width="190"
+            height="47"
+            alt="Adria Robotics"
+          />
+          <p class="footer-tagline" data-i18n="footer.tagline">Robotika u praksi.</p>
+          <p data-i18n="footer.description">
+            Autonomna rješenja za profesionalno čišćenje, uz lokalnu implementaciju, edukaciju i
+            podršku.
+          </p>
         </div>
-        <nav aria-label="Podnožje" data-i18n-aria-label="footer.navAria">
+        <nav aria-label="Navigacija u podnožju" data-i18n-aria-label="footer.navAria">
+          <h2 data-i18n="footer.companyTitle">Tvrtka</h2>
           <a href="#robots" data-i18n="nav.robots">Roboti</a>
-          <a href="#finder" data-i18n="nav.finder">Pronađite model</a>
           <a href="#industries" data-i18n="nav.industries">Industrije</a>
+          <a href="#process" data-i18n="nav.implementation">Implementacija</a>
+          <a href="#faq" data-i18n="nav.faq">Česta pitanja</a>
           <a href="#demo" data-i18n="nav.contact">Kontakt</a>
         </nav>
+        <div class="footer-contact">
+          <h2 data-i18n="footer.contactTitle">Kontakt</h2>
+          <dl>
+            <div>
+              <dt data-i18n="footer.legalNameLabel">Pravni naziv</dt>
+              <dd data-site-legal-name></dd>
+            </div>
+            <div>
+              <dt data-i18n="footer.addressLabel">Adresa</dt>
+              <dd data-site-address></dd>
+            </div>
+            <div>
+              <dt data-i18n="footer.taxIdLabel">OIB</dt>
+              <dd data-site-tax-id></dd>
+            </div>
+            <div>
+              <dt data-i18n="footer.phoneLabel">Telefon</dt>
+              <dd><a data-contact-phone href="">Telefon</a></dd>
+            </div>
+            <div>
+              <dt data-i18n="footer.emailLabel">E-mail</dt>
+              <dd><a data-contact-email href="">E-mail</a></dd>
+            </div>
+          </dl>
+        </div>
+        <div class="footer-legal">
+          <h2 data-i18n="footer.legalTitle">Pravne informacije</h2>
+          <a
+            href="privacy-policy.html?lang=hr"
+            data-legal-link="privacy-policy.html"
+            data-i18n="footer.privacy"
+            >Politika privatnosti</a
+          >
+          <a
+            href="cookie-policy.html?lang=hr"
+            data-legal-link="cookie-policy.html"
+            data-i18n="footer.cookies"
+            >Politika kolačića</a
+          >
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p data-copyright>© 2026 Adriarobotics d.o.o. Sva prava pridržana.</p>
       </div>
     </footer>
 
+    <div class="modal-backdrop" data-robot-modal hidden>
+      <section
+        class="robot-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="robot-modal-title"
+        tabindex="-1"
+        data-modal-dialog
+      >
+        <button
+          class="modal-close"
+          type="button"
+          aria-label="Zatvori detalje robota"
+          data-modal-close
+          data-i18n-aria-label="accessibility.closeModal"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <div data-modal-content></div>
+      </section>
+    </div>
+
+    <script src="config/site.js"></script>
     <script src="config/i18n.hr.js"></script>
     <script src="config/i18n.en.js"></script>
+    <script src="config/robots.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

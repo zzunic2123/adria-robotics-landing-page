@@ -4,35 +4,45 @@ window.AR_LOCALES.en = {
   meta: {
     title: "Adria Robotics | Autonomous robots for professional cleaning",
     description:
-      "Adria Robotics helps organizations select, demonstrate, deploy and service autonomous robots for professional cleaning.",
+      "Adria Robotics helps organisations select, demonstrate, implement and service autonomous professional cleaning robots.",
   },
   accessibility: {
     skip: "Skip to content",
-    home: "Adria Robotics home",
+    home: "Adria Robotics home page",
     openNav: "Open navigation",
+    closeNav: "Close navigation",
+    closeModal: "Close robot details",
+    productCard: "View specifications for {model}",
+    modalLabel: "Specifications for {model}",
+    externalLink: "Link opens in a new tab",
   },
   language: {
     label: "Language selection",
+    hr: "Croatian",
+    en: "English",
   },
   nav: {
     robots: "Robots",
-    finder: "Find a model",
     industries: "Industries",
     implementation: "Implementation",
+    faq: "FAQ",
     demo: "Request a demo",
     contact: "Contact",
   },
   buttons: {
-    requestDemo: "Request a demonstration",
+    requestDemo: "Request a demo",
     requestDemoShort: "Request a demo",
-    reserveDemo: "Book a demonstration",
-    findModel: "Find a model",
+    viewRobots: "View robots",
+    viewSpecifications: "View specifications",
+    modalDemo: "Request a demo for this model",
+    resetFilters: "Reset filters",
+    sendRequest: "Prepare request",
   },
   hero: {
     eyebrow: "Global technology. Local implementation.",
     title: "Autonomous robots for professional cleaning.",
     lead:
-      "From selection and demonstration to mapping, training and service. Adria Robotics brings proven PUDU, OrionStar and Gausium solutions to facilities across the Adria region.",
+      "From selection and demonstration to mapping, training and service. Adria Robotics brings proven PUDU, OrionStar and Gausium solutions to facilities across the Adriatic region.",
     actionsLabel: "Primary actions",
     metricsLabel: "Key advantages",
     metrics: {
@@ -41,16 +51,16 @@ window.AR_LOCALES.en = {
       partner: "local partner",
     },
     route: {
-      audit: "audit",
-      demo: "demo",
+      analysis: "assessment",
+      demonstration: "demonstration",
       service: "service",
     },
   },
   partners: {
     kicker: "Independent recommendation",
-    title: "Multiple portfolios, one accountable rollout.",
+    title: "Multiple portfolios. One accountable implementation partner.",
     copy:
-      "The buyer does not need to guess the model. We analyze the space, task and budget, then build a shortlist around real operating conditions.",
+      "Customers do not need to know the right model in advance. We assess the site, task and operating conditions, then prepare a focused selection of robots suited to the facility’s real needs.",
   },
   brands: [
     {
@@ -59,330 +69,381 @@ window.AR_LOCALES.en = {
     },
     {
       name: "OrionStar",
-      copy: "Compact autonomous systems for facilities with traffic, edges and obstacles.",
+      copy: "Autonomous systems for facilities where reliable scrubbing, edges and obstacles matter.",
     },
     {
       name: "Gausium",
       copy: "Specialist robots for large areas, warehouses, retail and industrial sites.",
     },
   ],
-  finder: {
-    kicker: "Quick qualification",
-    title: "Which robot makes sense for your facility?",
-    copy:
-      "Enter the basic parameters. The recommendation is directional; final selection follows a site review and demonstration.",
-    submit: "Show recommendation",
-    fields: {
-      area: "Cleaning area",
-      facility: "Facility type",
-      task: "Primary task",
-      frequency: "Cleaning frequency",
-      obstacles: "Obstacle level",
-    },
-    facilities: {
-      retail: "Retail / store",
-      shopping: "Shopping center",
-      office: "Offices and workspaces",
-      hospitality: "Hotel / hospitality",
-      logistics: "Warehouse / logistics",
-      manufacturing: "Manufacturing",
-      parking: "Garage / parking",
-      transport: "Transport terminal",
-    },
-    tasks: {
-      auto: "Recommend by facility",
-      full: "Scrubbing / 4-in-1 cleaning",
-      drySweep: "Dry sweeping",
-      vacuum: "Vacuuming / dust mopping",
-      heavyScrub: "Heavy-duty wet cleaning",
-      edge: "Edges, corridors and obstacles",
-      spill: "Fast response / spills",
-    },
-    frequency: {
-      daily: "Every day",
-      often: "2-3 times per week",
-      weekly: "Once per week",
-      seasonal: "Occasionally",
-    },
-    obstacles: {
-      low: "Low",
-      medium: "Medium",
-      high: "High",
-    },
-    result: {
-      eyebrow: "Recommended direction",
-      countLabel: "robot(s) to validate",
-      paybackLabel: "ROI discussion",
-      link: "Schedule a site assessment",
-    },
-    payback: {
-      monthShort: "mo.",
-      audit: "estimate after audit",
-    },
-  },
-  robots: {
-    cc1pro: {
-      name: "PUDU CC1 Pro",
-      copy:
-        "Recommended for larger commercial spaces that need 4-in-1 cleaning, safe operation and digital performance visibility.",
-      note: "Check traffic levels, operating hours, floor type, docking and automatic water/drainage options.",
-    },
-    cc1: {
-      name: "PUDU CC1",
-      copy:
-        "Recommended for offices, retail, education, hotels and other spaces where one robot should cover multiple cleaning modes.",
-      note: "Check narrow passages, carpet zones, charging and operating routines while people are present.",
-    },
-    mt1: {
-      name: "PUDU MT1",
-      copy: "Recommended for large spaces with dry debris, dust and a need for autonomous sweeping.",
-      note: "Check debris type, aisle widths, forklift traffic, ramps and station location.",
-    },
-    mt1max: {
-      name: "PUDU MT1 Max",
-      copy: "Recommended for demanding large zones, dynamic obstacles and stronger autonomous dry cleaning.",
-      note: "Check outdoor or semi-outdoor conditions, safety zones, charging and weather exposure.",
-    },
-    mt1vac: {
-      name: "PUDU MT1 Vac",
-      copy:
-        "Recommended for dry cleaning and vacuuming larger indoor spaces with hard floors and carpeted zones.",
-      note: "Check the hard-floor/carpet mix, dust load, filtration, narrow passages and emptying routine.",
-    },
-    bg1: {
-      name: "PUDU BG1 Series",
-      copy: "Recommended for large hard-floor areas that require one-pass sweeping and deep scrubbing.",
-      note: "Check water, drainage, chemicals, aisle widths, charging plan and operation outside peak traffic.",
-    },
-    sh1: {
-      name: "PUDU SH1",
-      copy: "Recommended for fast staff response in smaller zones, spills and hospitality or retail environments.",
-      note: "Check who operates the device, where it is stored and which zones need manually controlled cleaning.",
-    },
-    omnie: {
-      name: "Gausium Omnie",
-      copy: "Recommended for very large open public and commercial areas with regular autonomous routines.",
-      note: "Check route widths, crowding, charging zones, off-peak operation and required daily coverage.",
-    },
-    phantas: {
-      name: "Gausium Phantas",
-      copy: "Recommended for compact spaces with many obstacles, narrow passages and a focus on edge routes.",
-      note: "Check passage widths, edges, chairs, thresholds and how often the layout changes during the day.",
-    },
-    beetle: {
-      name: "Gausium Beetle",
-      copy: "Recommended for industrial and parking sweeping when dry dirt or larger debris dominates.",
-      note: "Check debris type, ramps, rougher flooring, vehicle traffic and container emptying points.",
-    },
-    scrubber75: {
-      name: "Gausium Scrubber 75",
-      copy: "Recommended for extremely large or demanding hard floors where strong wet scrubbing is the priority.",
-      note: "Check water, drainage, chemicals, aisle widths, storage and operation outside peak traffic.",
-    },
-    cleanibot: {
-      name: "OrionStar CleaniBot C5",
-      copy: "Recommended for corridors, offices and managed facilities where edges, obstacles and passages matter most.",
-      note: "Check edge cleaning, thresholds, elevators, corridor width and daily user traffic.",
-    },
-  },
   products: {
-    kicker: "Featured models",
+    kicker: "Robot catalogue",
     title: "Robots by task, space and operating routine.",
-    copy: "Cards show the typical fit. Exact specifications, equipment and infrastructure are confirmed before proposal.",
-    items: [
-      {
-        brand: "PUDU Robotics",
-        name: "CC1 Pro",
-        image: "assets/products/pudu-cc1-pro.webp",
-        alt: "PUDU CC1 Pro robot",
-        fit: "Always-on 4-in-1 autonomous cleaning for large commercial spaces",
+    copy:
+      "The cards show the recommended use and key capabilities of each model. Open a card to view detailed specifications. The final equipment and infrastructure setup is confirmed after a site assessment.",
+    filterLegend: "Filter the robot catalogue",
+    manufacturerLabel: "Manufacturer",
+    taskLabel: "Primary use",
+    allManufacturers: "All",
+    allTasks: "All tasks",
+    resultCount: {
+      one: "{count} model shown.",
+      other: "{count} models shown.",
+    },
+    noResults: "No models match the selected filters.",
+    categories: {
+      washing: "Floor scrubbing",
+      sweeping: "Sweeping",
+      vacuumDry: "Vacuuming and dry cleaning",
+      compact: "Compact and narrow spaces",
+      large: "Large areas",
+    },
+    highlightLabels: {
+      application: "Application",
+      operation: "Operating mode",
+      performance: "Performance",
+    },
+    modal: {
+      recommendedUse: "Recommended use",
+      recommendedSpaces: "Recommended space type",
+      price: "Price",
+      source: "Official manufacturer data",
+      sourceNote: "Actual performance depends on the floor, obstacles, traffic and selected configuration.",
+      groups: {
+        purpose: "Use and performance",
+        cleaning: "Cleaning",
+        battery: "Battery and charging",
+        navigation: "Navigation and safety",
+        dimensions: "Dimensions and capacities",
       },
-      {
-        brand: "PUDU Robotics",
-        name: "CC1",
-        image: "assets/products/pudu-cc1.png",
-        alt: "PUDU CC1 robot",
-        fit: "4-in-1 cleaning for offices, retail, education, hotels and public transport",
+      labels: {
+        recommendedUse: "Recommended use",
+        recommendedSpaces: "Recommended spaces",
+        workingCapacity: "Working capacity",
+        cleaningModes: "Cleaning modes",
+        workingWidth: "Working width",
+        tankCapacity: "Tanks",
+        binCapacity: "Debris capacity",
+        detergentCapacity: "Detergent capacity",
+        brushPressure: "Brush pressure",
+        suction: "Suction",
+        filtration: "Filtration",
+        airFlow: "Air flow",
+        runtime: "Run-time",
+        chargingTime: "Charging time",
+        batteryCapacity: "Battery capacity",
+        navigation: "Navigation and sensors",
+        safety: "Safety functions",
+        automation: "Automated functions",
+        minimumClearance: "Minimum clearance",
+        dimensions: "Dimensions",
+        weight: "Weight",
+        noise: "Noise level",
       },
-      {
-        brand: "PUDU Robotics",
-        name: "MT1",
-        image: "assets/products/pudu-mt1.webp",
-        alt: "PUDU MT1 robot",
-        fit: "AI robotic sweeper for large spaces, dust and scattered debris",
-      },
-      {
-        brand: "PUDU Robotics",
-        name: "MT1 Max",
-        image: "assets/products/pudu-mt1-max.png",
-        alt: "PUDU MT1 Max robot",
-        fit: "3D perception and stronger autonomous sweeping for demanding large zones",
-      },
-      {
-        brand: "PUDU Robotics",
-        name: "MT1 Vac",
-        image: "assets/products/pudu-mt1-vac.png",
-        alt: "PUDU MT1 Vac robot",
-        fit: "Robotic dry cleaning, vacuuming and dust mopping for mixed floors",
-      },
-      {
-        brand: "PUDU Robotics",
-        name: "BG1 Series",
-        image: "assets/products/pudu-bg1-series.png",
-        alt: "PUDU BG1 Series robot",
-        fit: "Large scrubber-dryer system for one-pass sweeping and scrubbing",
-      },
-      {
-        brand: "PUDU Robotics",
-        name: "SH1",
-        image: "assets/products/pudu-sh1.png",
-        alt: "PUDU SH1 cleaning machine",
-        fit: "Upright scrubber dryer for fast response in retail, hotels and hospitality",
-      },
-      {
-        brand: "Gausium",
-        name: "Gausium Omnie",
-        image: "assets/products/omnie-front-original.webp",
-        alt: "Gausium Omnie robot",
-        fit: "Large public and commercial surfaces with stable autonomous routines",
-      },
-      {
-        brand: "Gausium",
-        name: "Gausium Phantas",
-        image: "assets/products/phantas-front-original.webp",
-        alt: "Gausium Phantas robot",
-        fit: "Compact spaces, narrow passages and everyday routes",
-      },
-      {
-        brand: "Gausium",
-        name: "Gausium Beetle",
-        image: "assets/products/beetle-front-original.webp",
-        alt: "Gausium Beetle robot",
-        fit: "Warehouses, manufacturing and dry sweeping of larger zones",
-      },
-      {
-        brand: "Gausium",
-        name: "Gausium Scrubber 75",
-        image: "assets/products/scrubber-75-front-original.webp",
-        alt: "Gausium Scrubber 75 robot",
-        fit: "Robust wet cleaning of hard floors",
-      },
-      {
-        brand: "OrionStar",
-        name: "OrionStar CleaniBot C5",
-        image: "assets/products/cleanibot-c5-product-original.webp",
-        alt: "OrionStar CleaniBot C5 robot",
-        fit: "Corridors, offices, managed facilities and edge cleaning",
-      },
-    ],
+    },
   },
   industries: {
     kicker: "Applications",
     title: "Autonomy is planned around the space.",
-    copy: "A different facility means different navigation, cleaning routines, safety zones and charging logistics.",
+    copy:
+      "A different facility means different navigation, cleaning modes, safety zones and charging arrangements.",
     items: [
       {
         title: "Warehouses and logistics",
         image: "assets/industries/logistics-warehouse-gausium-1920x933.webp",
-        alt: "Warehouse space",
+        alt: "Wide aisle in a logistics warehouse",
         copy: "Large zones, dust, racks, ramps and constant equipment movement.",
+        position: "center",
       },
       {
         title: "Manufacturing",
         image: "assets/industries/manufacturing-gausium-1920x933.webp",
-        alt: "Manufacturing facility",
+        alt: "Clean manufacturing facility with marked aisles",
         copy: "Planned routes around machines, safety zones and operation outside shifts.",
+        position: "center",
       },
       {
         title: "Retail",
         image: "assets/industries/retail-store-gausium.webp",
-        alt: "Retail store",
+        alt: "Organised retail space with shelves",
         copy: "Visibly clean spaces with customer traffic and changing obstacles.",
+        position: "center",
       },
       {
-        title: "Shopping centers",
+        title: "Shopping centres",
         image: "assets/industries/shopping-centre-gausium-1920x933.webp",
-        alt: "Shopping center",
+        alt: "Spacious shopping centre corridor",
         copy: "Wide corridors, night routines and multiple zones with different priorities.",
+        position: "center",
       },
       {
         title: "Hotels and hospitality",
         image: "assets/industries/hospitality-gausium-1920x933.webp",
-        alt: "Hospitality space",
-        copy: "Quieter routines, fast response and cleanliness in spaces guests can see.",
+        alt: "Hotel guest area",
+        copy: "Quieter operating modes, fast response and cleanliness in guest-facing spaces.",
+        position: "center",
       },
       {
         title: "Parking facilities",
         image: "assets/industries/car-parking-gausium-1920x933.webp",
-        alt: "Underground parking facility",
+        alt: "Well-lit underground car park",
         copy: "Heavier dirt, wider routes and a need for dependable sweeping.",
+        position: "center",
       },
     ],
   },
   process: {
     kicker: "How we work",
     title: "From assessment to a robot working in your facility.",
-    copy: "The process is designed to reduce purchase risk and shorten the path to stable operation.",
+    copy: "The process reduces risk before a decision and shortens the path to stable daily operation.",
     steps: [
       {
         number: "01",
-        title: "Space analysis",
-        copy: "Surfaces, floors, traffic, obstacles, water, drainage and cleaning routine.",
+        title: "Site assessment",
+        copy: "We review areas, floors, traffic, obstacles, water, drainage and the current cleaning routine.",
       },
       {
         number: "02",
         title: "Model recommendation",
-        copy: "Comparison of realistic options from the PUDU, OrionStar and Gausium portfolios.",
+        copy: "We compare suitable options from the PUDU, OrionStar and Gausium portfolios.",
       },
       {
         number: "03",
         title: "On-site demo",
-        copy: "Validation of robot behavior in real traffic and on real floors.",
+        copy: "We validate robot behaviour in real traffic and on the facility’s actual floors.",
       },
       {
         number: "04",
-        title: "Mapping and commissioning",
-        copy: "Routes, zones, schedules, safety settings and operator handover.",
+        title: "Mapping and start-up",
+        copy: "We set routes, zones, schedules and safety settings, then hand the system over to users.",
       },
       {
         number: "05",
         title: "Training and service",
-        copy: "User training, preventive maintenance, parts and support escalation.",
+        copy: "We train users and coordinate preventive maintenance, parts and support.",
       },
     ],
   },
   video: {
     kicker: "Proof in practice",
-    title: "See what autonomous cleaning looks like in a real rollout.",
+    title: "See autonomous cleaning in real-world operation.",
     copy:
-      "We use video demonstrations as a starting point, but the final decision is made at your facility: with your floors, routes and operating conditions.",
-    linkAria: "Open the Gausium case study video in a new tab",
-    imageAlt: "Warehouse with cleaning routes",
-    openVideo: "Open official video",
+      "The official video provides an initial view of the system’s capabilities. The final decision follows validation on your floors, routes and real operating conditions.",
+    linkAria: "Open the official Gausium video in a new tab",
+    imageAlt: "A robot cleaning an aisle in a logistics warehouse",
+    videoLabel: "Gausium implementation example",
+    openVideo: "Open the official video",
+  },
+  faq: {
+    kicker: "Before you decide",
+    title: "Frequently asked questions",
+    items: [
+      {
+        question: "How much does a cleaning robot cost?",
+        answer:
+          "The price depends on the model, equipment, facility size and required infrastructure. After a short site assessment, we prepare a recommendation and a specific offer.",
+      },
+      {
+        question: "Can the robot be purchased or rented?",
+        answer:
+          "Available options depend on the model and the agreed form of cooperation. After an initial consultation and site assessment, we recommend the most suitable acquisition model.",
+      },
+      {
+        question: "Can I see the robot operating before making a decision?",
+        answer:
+          "Yes. An on-site demonstration allows the robot to be tested on the facility’s real floors, routes and obstacles before a final decision is made.",
+      },
+      {
+        question: "How long does implementation take?",
+        answer:
+          "The timeline depends on the size and complexity of the facility. The process includes assessment, model selection, demonstration, mapping, start-up and user training.",
+      },
+      {
+        question: "Is a long-term contract required?",
+        answer:
+          "The terms depend on the selected purchase, rental and service model. All obligations and contract duration are agreed before the offer is accepted.",
+      },
+      {
+        question: "Who provides service and maintenance?",
+        answer:
+          "Adria Robotics coordinates local support, preventive maintenance, service escalation and spare parts according to the agreed service package.",
+      },
+      {
+        question: "Can the robot operate while people are present?",
+        answer:
+          "Many models are designed for dynamic environments, but suitability depends on the model, traffic, routes and safety requirements. This is verified during the assessment and demonstration.",
+      },
+    ],
   },
   demo: {
     kicker: "Demo and assessment",
     title: "Send basic information about your facility.",
     copy:
-      "We will come back with a recommended next step: a short call, site review or robot demonstration.",
+      "We will respond with a recommended next step: a short call, site review or robot demonstration.",
     points: [
       "Model recommendation based on space and task",
-      "Estimate of robot count and cleaning routine",
+      "Estimate of the required robot count and cleaning routine",
       "Implementation, training and service plan",
     ],
+    directContact: "You can also contact us directly:",
     form: {
+      requiredNote: "Fields marked with an asterisk are required.",
       name: "Full name",
       company: "Company",
+      email: "Email",
       phone: "Phone",
-      message: "Facility and need",
-      messagePlaceholder: "E.g. 6,000 m² warehouse, daily cleaning, dust and forklift traffic",
+      model: "Selected model",
+      modelPlaceholder: "No specific model selected",
+      message: "Facility and requirement",
+      messagePlaceholder:
+        "Example: 6,000 m² warehouse, daily cleaning, dust and forklift traffic",
+      privacyBefore: "By submitting the form, you confirm that you have read the ",
+      privacyLink: "Privacy Policy",
+      privacyAfter: " and agree to data processing for the purpose of responding to your enquiry.",
     },
   },
   forms: {
-    companyFallback: "your facility",
-    status: "Thank you. The demo request for {company} is ready to connect to a CRM or email endpoint.",
+    required: "Please complete this required field.",
+    email: "Enter a valid email address.",
+    submitting: "Preparing your message…",
+    success:
+      "The request has been prepared in your email application. Review the content and send the message.",
+    error:
+      "We could not open your email application. Your data has been preserved; send it directly to {email}.",
+    emailSubject: "Demo request — {company}",
+    emailBody: {
+      name: "Full name",
+      company: "Company",
+      email: "Email",
+      phone: "Phone",
+      model: "Selected model",
+      message: "Facility and requirement",
+    },
   },
   footer: {
-    navAria: "Footer",
+    tagline: "Robotics, made practical.",
+    description:
+      "Autonomous professional cleaning solutions with local implementation, training and support.",
+    navAria: "Footer navigation",
+    companyTitle: "Company",
+    contactTitle: "Contact",
+    legalTitle: "Legal information",
+    legalNameLabel: "Legal name",
+    addressLabel: "Address",
+    taxIdLabel: "Tax ID",
+    phoneLabel: "Phone",
+    emailLabel: "Email",
+    privacy: "Privacy Policy",
+    cookies: "Cookie Policy",
+    copyright: "© {year} Adriarobotics d.o.o. All rights reserved.",
+  },
+  legal: {
+    common: {
+      backHome: "Back to the home page",
+      reviewNote:
+        "This text is an initial legal template. It must be reviewed by the responsible person or legal counsel before production publication.",
+      updated: "Last updated: 16 July 2026.",
+    },
+    privacy: {
+      metaTitle: "Privacy Policy | Adria Robotics",
+      title: "Privacy Policy",
+      intro:
+        "This policy explains how Adriarobotics d.o.o. processes personal data received through the Adria Robotics website.",
+      sections: [
+        {
+          title: "Data controller",
+          paragraphs: [
+            "The data controller is Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, Croatia, Tax ID 83127934571. For privacy questions, contact {email}.",
+          ],
+        },
+        {
+          title: "Data we process",
+          paragraphs: [
+            "When you send an enquiry, we may process your full name, company name, email address, phone number, selected model and information entered in the message.",
+            "The website itself does not use analytics or marketing tools. The hosting provider may process basic technical logs needed to deliver and secure the website under its own policies.",
+          ],
+        },
+        {
+          title: "Purpose and legal basis",
+          paragraphs: [
+            "We use the data to respond to enquiries, organise an assessment or demonstration, prepare an offer and conduct related business communication. Processing is based on steps taken at your request before entering into a contract and, where applicable, our legitimate interest in responding to a business enquiry.",
+          ],
+        },
+        {
+          title: "How the form is sent",
+          paragraphs: [
+            "In this static version of the website, the form prepares a message in your email application. The data is not stored in this website’s database. Sending is completed only when you send the prepared email.",
+          ],
+        },
+        {
+          title: "Retention and recipients",
+          paragraphs: [
+            "We retain data only as long as needed to handle the enquiry, conduct business communication and meet legal obligations. Access is limited to people and service providers who need the data for these purposes.",
+          ],
+        },
+        {
+          title: "Your rights",
+          paragraphs: [
+            "Subject to applicable law, you may request access, correction, deletion, restriction, data portability or object to processing. You may also lodge a complaint with the competent data protection authority.",
+          ],
+        },
+        {
+          title: "External links",
+          paragraphs: [
+            "The website links to an official YouTube video but does not embed a YouTube player. When you open an external link, the external provider’s privacy rules apply.",
+          ],
+        },
+        {
+          title: "Contact",
+          paragraphs: [
+            "For requests and questions about personal data processing, contact {email} or write to Kovinska ulica 4, Zagreb, Croatia.",
+          ],
+        },
+      ],
+    },
+    cookies: {
+      metaTitle: "Cookie Policy | Adria Robotics",
+      title: "Cookie Policy",
+      intro:
+        "This policy describes local storage and cookies associated with the Adria Robotics website.",
+      sections: [
+        {
+          title: "Current cookie use",
+          paragraphs: [
+            "This version of the website does not set analytics, advertising, profiling or social-media cookies. Therefore, no consent banner or cookie-settings link is displayed.",
+          ],
+        },
+        {
+          title: "Language preference",
+          paragraphs: [
+            "The selected language is saved locally in the browser using localStorage so that the website can remember your choice on a later visit. This value is not a cookie, is not used for tracking and can be removed by clearing the website’s stored data in your browser.",
+          ],
+        },
+        {
+          title: "External content",
+          paragraphs: [
+            "The YouTube video is not embedded on the website. Cookies from an external provider may be set only if a user chooses to open the external link, after which that provider’s rules apply.",
+          ],
+        },
+        {
+          title: "Hosting and necessary technical data",
+          paragraphs: [
+            "The website is published through a static hosting service. The hosting provider may process technical logs needed for security, availability and content delivery, independently of cookies set by this website.",
+          ],
+        },
+        {
+          title: "Future changes",
+          paragraphs: [
+            "If analytics, marketing tools or other optional cookies are introduced later, a system for acceptance, rejection, granular settings and subsequent changes of choice will be implemented before those tools are activated.",
+          ],
+        },
+        {
+          title: "Contact",
+          paragraphs: [
+            "Questions about this policy can be sent to {email}.",
+          ],
+        },
+      ],
+    },
   },
 };
