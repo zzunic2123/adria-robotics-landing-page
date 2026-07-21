@@ -15,8 +15,6 @@ Google Sheets podatke i 15-minutni cache:
 | `roi.html` | ROI kalkulator i scenariji |
 | `service-plans.html` | Načini financiranja i usporedba paketa usluga |
 | `contact.html` | Telefonski kontakt za procjenu i demo |
-| `privacy-policy.html` | Politika privatnosti |
-| `cookie-policy.html` | Politika kolačića i lokalne pohrane |
 
 Industrijska kartica s naslovnice otvara filtrirani katalog preko parametra `industry`, a CTA iz
 modala robota otvara kontakt. Parametar `lang=hr|en` i spremljeni odabir jezika vrijede na svim
@@ -36,7 +34,7 @@ kroz izvor podataka, potrebno ih je ukloniti iz javnog Sheetsa, regenerirati fal
 ili privremeno isključiti ROI kalkulator.
 
 Za ponovno uključivanje obrasca i e-maila prvo upišite stvarnu adresu u `AR_SITE.email`, zatim
-postavite oba pripadajuća prekidača na `true` i uskladite Politiku privatnosti s aktivnim obrascem.
+postavite oba pripadajuća prekidača na `true`.
 
 ## Javni Google Sheets podaci
 

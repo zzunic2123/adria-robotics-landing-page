@@ -302,9 +302,6 @@ window.AR_LOCALES.en = {
       message: "Facility and requirement",
       messagePlaceholder:
         "Example: 6,000 m² warehouse, daily cleaning, dust and forklift traffic",
-      privacyBefore: "By submitting the form, you confirm that you have read the ",
-      privacyLink: "Privacy Policy",
-      privacyAfter: " and agree to data processing for the purpose of responding to your enquiry.",
     },
   },
   forms: {
@@ -333,122 +330,12 @@ window.AR_LOCALES.en = {
     navAria: "Footer navigation",
     companyTitle: "Company",
     contactTitle: "Contact",
-    legalTitle: "Legal information",
     legalNameLabel: "Legal name",
     addressLabel: "Address",
     taxIdLabel: "Tax ID",
     phoneLabel: "Phone",
     emailLabel: "Email",
-    privacy: "Privacy Policy",
-    cookies: "Cookie Policy",
     copyright: "© {year} Adriarobotics d.o.o. All rights reserved.",
-  },
-  legal: {
-    common: {
-      backHome: "Back to the home page",
-      updated: "Last updated: 21 July 2026.",
-    },
-    privacy: {
-      metaTitle: "Privacy Policy | Adria Robotics",
-      title: "Privacy Policy",
-      intro:
-        "This policy explains what data the Adria Robotics website may process and how Adriarobotics d.o.o. handles data received through direct business communication.",
-      sections: [
-        {
-          title: "Data controller",
-          paragraphs: [
-            "The data controller is Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, Croatia, Tax ID 83127934571. For privacy questions, call {phone} or write to the stated postal address.",
-          ],
-        },
-        {
-          title: "Data we process",
-          paragraphs: [
-            "The website currently has no active contact form and does not collect names, contact details or enquiry content through the browser. If you contact us by phone or another channel outside the website, we may process the information you voluntarily provide in order to respond to your enquiry.",
-            "The website itself does not use analytics or marketing tools. The hosting provider may process basic technical logs needed to deliver and secure the website under its own policies.",
-          ],
-        },
-        {
-          title: "Purpose and legal basis",
-          paragraphs: [
-            "We use the data to respond to enquiries, organise an assessment or demonstration, prepare an offer and conduct related business communication. Processing is based on steps taken at your request before entering into a contract and, where applicable, our legitimate interest in responding to a business enquiry.",
-          ],
-        },
-        {
-          title: "Contact through the website",
-          paragraphs: [
-            "The telephone link may open the calling application on your device. The website itself does not transmit or store the content of that communication.",
-          ],
-        },
-        {
-          title: "Retention and recipients",
-          paragraphs: [
-            "We retain data only as long as needed to handle the enquiry, conduct business communication and meet legal obligations. Access is limited to people and service providers who need the data for these purposes.",
-          ],
-        },
-        {
-          title: "Your rights",
-          paragraphs: [
-            "Subject to applicable law, you may request access, correction, deletion, restriction, data portability or object to processing. You may also lodge a complaint with the competent data protection authority.",
-          ],
-        },
-        {
-          title: "External links",
-          paragraphs: [
-            "The website links to an official YouTube video but does not embed a YouTube player. When you open an external link, the external provider’s privacy rules apply.",
-          ],
-        },
-        {
-          title: "Contact",
-          paragraphs: [
-            "For requests and questions about personal data processing, call {phone} or write to Kovinska ulica 4, Zagreb, Croatia.",
-          ],
-        },
-      ],
-    },
-    cookies: {
-      metaTitle: "Cookie Policy | Adria Robotics",
-      title: "Cookie Policy",
-      intro:
-        "This policy describes local storage and cookies associated with the Adria Robotics website.",
-      sections: [
-        {
-          title: "Current cookie use",
-          paragraphs: [
-            "This version of the website does not set analytics, advertising, profiling or social-media cookies. Therefore, no consent banner or cookie-settings link is displayed.",
-          ],
-        },
-        {
-          title: "Language preference",
-          paragraphs: [
-            "The selected language is saved locally in the browser using localStorage so that the website can remember your choice on a later visit. This value is not a cookie, is not used for tracking and can be removed by clearing the website’s stored data in your browser.",
-          ],
-        },
-        {
-          title: "External content",
-          paragraphs: [
-            "The YouTube video is not embedded on the website. Cookies from an external provider may be set only if a user chooses to open the external link, after which that provider’s rules apply.",
-          ],
-        },
-        {
-          title: "Hosting and necessary technical data",
-          paragraphs: [
-            "The website is published through a static hosting service. The hosting provider may process technical logs needed for security, availability and content delivery, independently of cookies set by this website.",
-          ],
-        },
-        {
-          title: "Future changes",
-          paragraphs: [
-            "If analytics, marketing tools or other optional cookies are introduced later, a system for acceptance, rejection, granular settings and subsequent changes of choice will be implemented before those tools are activated.",
-          ],
-        },
-        {
-          title: "Contact",
-          paragraphs: [
-            "For questions about this policy, call {phone} or write to Kovinska ulica 4, Zagreb, Croatia.",
-          ],
-        },
-      ],
-    },
   },
 };
 
@@ -590,14 +477,6 @@ window.AR_LOCALES.en.roi = {
   annualCostSummary: "Estimated annual cost changes from {before} to {after}.",
   disclaimerFallback: "The result is an indicative estimate and depends on actual site conditions and the final offer.",
 };
-
-window.AR_LOCALES.en.legal.common.updated = "Last updated: 21 July 2026.";
-window.AR_LOCALES.en.legal.cookies.sections.splice(2, 0, {
-  title: "Local cache of public data",
-  paragraphs: [
-    "Public product, financing, industry and ROI configuration data is temporarily stored in localStorage for 15 minutes to improve loading and availability during a brief Google Sheets outage. The cache contains no personal data and is not used for tracking.",
-  ],
-});
 
 Object.assign(window.AR_LOCALES.en.nav, {
   home: "Home",

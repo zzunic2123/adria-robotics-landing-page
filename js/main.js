@@ -583,9 +583,6 @@ function renderSiteDetails() {
   document.querySelectorAll("[data-site-tax-id]").forEach((element) => {
     element.textContent = site.taxId || "";
   });
-  document.querySelectorAll("[data-legal-link]").forEach((link) => {
-    link.setAttribute("href", `${link.dataset.legalLink}?lang=${currentLanguage}`);
-  });
   document.querySelectorAll("[data-page-link]").forEach((link) => {
     link.setAttribute("href", pageUrl(link.dataset.pageLink));
   });

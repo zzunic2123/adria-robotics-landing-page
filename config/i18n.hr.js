@@ -302,9 +302,6 @@ window.AR_LOCALES.hr = {
       message: "Objekt i potreba",
       messagePlaceholder:
         "Primjer: skladište od 6.000 m², svakodnevno čišćenje, prašina i promet viličara",
-      privacyBefore: "Slanjem obrasca potvrđujete da ste pročitali ",
-      privacyLink: "Politiku privatnosti",
-      privacyAfter: " i pristajete na obradu podataka radi odgovora na upit.",
     },
   },
   forms: {
@@ -333,122 +330,12 @@ window.AR_LOCALES.hr = {
     navAria: "Navigacija u podnožju",
     companyTitle: "Tvrtka",
     contactTitle: "Kontakt",
-    legalTitle: "Pravne informacije",
     legalNameLabel: "Pravni naziv",
     addressLabel: "Adresa",
     taxIdLabel: "OIB",
     phoneLabel: "Telefon",
     emailLabel: "E-mail",
-    privacy: "Politika privatnosti",
-    cookies: "Politika kolačića",
     copyright: "© {year} Adriarobotics d.o.o. Sva prava pridržana.",
-  },
-  legal: {
-    common: {
-      backHome: "Natrag na početnu stranicu",
-      updated: "Posljednje ažuriranje: 21. srpnja 2026.",
-    },
-    privacy: {
-      metaTitle: "Politika privatnosti | Adria Robotics",
-      title: "Politika privatnosti",
-      intro:
-        "Ova politika objašnjava koje podatke može obrađivati web-stranica Adria Robotics i kako Adriarobotics d.o.o. postupa s podacima iz izravne poslovne komunikacije.",
-      sections: [
-        {
-          title: "Voditelj obrade",
-          paragraphs: [
-            "Voditelj obrade je Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, OIB 83127934571. Za pitanja o privatnosti nazovite {phone} ili se obratite poštom na navedenu adresu.",
-          ],
-        },
-        {
-          title: "Koje podatke obrađujemo",
-          paragraphs: [
-            "Web-stranica trenutačno nema aktivan kontaktni obrazac i ne prikuplja ime, kontaktne podatke ni sadržaj upita kroz preglednik. Ako nas kontaktirate telefonom ili drugim kanalom izvan stranice, možemo obrađivati podatke koje nam dobrovoljno dostavite radi odgovora na vaš upit.",
-            "Sama stranica ne koristi analitičke ili marketinške alate. Pružatelj hostinga može obrađivati osnovne tehničke zapise potrebne za isporuku i sigurnost stranice prema svojim pravilima.",
-          ],
-        },
-        {
-          title: "Svrha i pravna osnova",
-          paragraphs: [
-            "Podatke koristimo za odgovor na upit, organizaciju procjene ili demonstracije, pripremu ponude i povezanu poslovnu komunikaciju. Obrada se temelji na poduzimanju radnji na vaš zahtjev prije sklapanja ugovora i, kada je primjenjivo, na našem legitimnom interesu da odgovorimo na poslovni upit.",
-          ],
-        },
-        {
-          title: "Kontakt putem stranice",
-          paragraphs: [
-            "Poveznica s telefonskim brojem može otvoriti aplikaciju za pozive na vašem uređaju. Sama web-stranica pritom ne prenosi niti sprema sadržaj komunikacije.",
-          ],
-        },
-        {
-          title: "Čuvanje i primatelji",
-          paragraphs: [
-            "Podatke čuvamo samo onoliko dugo koliko je potrebno za obradu upita, poslovnu komunikaciju i ispunjenje zakonskih obveza. Pristup imaju samo osobe i pružatelji usluga kojima su podaci potrebni za navedene svrhe.",
-          ],
-        },
-        {
-          title: "Vaša prava",
-          paragraphs: [
-            "Ovisno o primjenjivim propisima, možete zatražiti pristup, ispravak, brisanje, ograničenje obrade, prenosivost podataka ili uložiti prigovor. Također možete podnijeti pritužbu nadležnom tijelu za zaštitu osobnih podataka.",
-          ],
-        },
-        {
-          title: "Vanjske poveznice",
-          paragraphs: [
-            "Stranica sadrži poveznicu na službeni YouTube video, ali ne ugrađuje YouTube reproduktor. Otvaranjem vanjske poveznice primjenjuju se pravila privatnosti vanjskog pružatelja.",
-          ],
-        },
-        {
-          title: "Kontakt",
-          paragraphs: [
-            "Za zahtjeve i pitanja o obradi podataka nazovite {phone} ili se obratite poštom na Kovinska ulica 4, Zagreb.",
-          ],
-        },
-      ],
-    },
-    cookies: {
-      metaTitle: "Politika kolačića | Adria Robotics",
-      title: "Politika kolačića",
-      intro:
-        "Ova politika opisuje lokalnu pohranu i kolačiće povezane s web-stranicom Adria Robotics.",
-      sections: [
-        {
-          title: "Trenutačna uporaba kolačića",
-          paragraphs: [
-            "Ova verzija stranice ne postavlja kolačiće za analitiku, oglašavanje, profiliranje ili društvene mreže. Zbog toga se ne prikazuje banner za privolu niti poveznica za postavke kolačića.",
-          ],
-        },
-        {
-          title: "Jezična postavka",
-          paragraphs: [
-            "Odabrani jezik sprema se lokalno u pregledniku putem tehnologije localStorage kako bi stranica pri sljedećem posjetu zapamtila izbor. Ta vrijednost nije kolačić, ne služi praćenju i možete je izbrisati brisanjem podataka stranice u pregledniku.",
-          ],
-        },
-        {
-          title: "Vanjski sadržaj",
-          paragraphs: [
-            "YouTube video nije ugrađen u stranicu. Kolačići vanjskog pružatelja mogu se postaviti tek ako korisnik sam otvori vanjsku poveznicu, nakon čega vrijede pravila tog pružatelja.",
-          ],
-        },
-        {
-          title: "Hosting i nužni tehnički podaci",
-          paragraphs: [
-            "Stranica je objavljena putem usluge statičkog hostinga. Pružatelj hostinga može obrađivati tehničke zapise potrebne za sigurnost, dostupnost i isporuku sadržaja, neovisno o kolačićima ove stranice.",
-          ],
-        },
-        {
-          title: "Buduće promjene",
-          paragraphs: [
-            "Ako se naknadno uvedu analitika, marketinški alati ili drugi neobavezni kolačići, prije njihova aktiviranja bit će uveden sustav za prihvaćanje, odbijanje, granularne postavke i naknadnu promjenu odluke.",
-          ],
-        },
-        {
-          title: "Kontakt",
-          paragraphs: [
-            "Za pitanja o ovoj politici nazovite {phone} ili se obratite poštom na Kovinska ulica 4, Zagreb.",
-          ],
-        },
-      ],
-    },
   },
 };
 
@@ -590,14 +477,6 @@ window.AR_LOCALES.hr.roi = {
   annualCostSummary: "Procijenjeni godišnji trošak mijenja se s {before} na {after}.",
   disclaimerFallback: "Rezultat je informativna procjena i ovisi o stvarnim uvjetima objekta i konačnoj ponudi.",
 };
-
-window.AR_LOCALES.hr.legal.common.updated = "Posljednje ažuriranje: 21. srpnja 2026.";
-window.AR_LOCALES.hr.legal.cookies.sections.splice(2, 0, {
-  title: "Lokalni cache javnih podataka",
-  paragraphs: [
-    "Javni podaci o proizvodima, financiranju, industrijama i ROI postavkama privremeno se spremaju u localStorage na 15 minuta radi bržeg učitavanja i dostupnosti pri kratkotrajnom prekidu veze s Google Sheetsom. Cache ne sadrži osobne podatke i ne služi praćenju.",
-  ],
-});
 
 Object.assign(window.AR_LOCALES.hr.nav, {
   home: "Početna",
