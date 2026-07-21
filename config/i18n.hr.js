@@ -281,16 +281,16 @@ window.AR_LOCALES.hr = {
     ],
   },
   demo: {
-    kicker: "Demo i procjena",
-    title: "Pošaljite osnovne podatke o objektu.",
+    kicker: "Kontakt i procjena",
+    title: "Dogovorite kratku procjenu objekta.",
     copy:
-      "Javit ćemo se s prijedlogom sljedećeg koraka: kratkim pozivom, pregledom lokacije ili demonstracijom robota.",
+      "Nazovite nas kako bismo provjerili osnovne uvjete i dogovorili pregled lokacije ili demonstraciju robota.",
     points: [
       "Preporuka modela prema prostoru i zadatku",
       "Procjena potrebnog broja robota i načina čišćenja",
       "Plan implementacije, edukacije i servisa",
     ],
-    directContact: "Možete nam se javiti i izravno:",
+    directContact: "Nazovite nas izravno:",
     form: {
       requiredNote: "Polja označena zvjezdicom su obavezna.",
       name: "Ime i prezime",
@@ -346,26 +346,24 @@ window.AR_LOCALES.hr = {
   legal: {
     common: {
       backHome: "Natrag na početnu stranicu",
-      reviewNote:
-        "Ovaj je tekst početni pravni predložak. Prije produkcijske objave mora ga pregledati odgovorna osoba ili pravnik.",
-      updated: "Posljednje ažuriranje: 16. srpnja 2026.",
+      updated: "Posljednje ažuriranje: 21. srpnja 2026.",
     },
     privacy: {
       metaTitle: "Politika privatnosti | Adria Robotics",
       title: "Politika privatnosti",
       intro:
-        "Ova politika objašnjava kako Adriarobotics d.o.o. obrađuje osobne podatke zaprimljene putem web-stranice Adria Robotics.",
+        "Ova politika objašnjava koje podatke može obrađivati web-stranica Adria Robotics i kako Adriarobotics d.o.o. postupa s podacima iz izravne poslovne komunikacije.",
       sections: [
         {
           title: "Voditelj obrade",
           paragraphs: [
-            "Voditelj obrade je Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, OIB 83127934571. Za pitanja o privatnosti obratite se na {email}.",
+            "Voditelj obrade je Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, OIB 83127934571. Za pitanja o privatnosti nazovite {phone} ili se obratite poštom na navedenu adresu.",
           ],
         },
         {
           title: "Koje podatke obrađujemo",
           paragraphs: [
-            "Kada pošaljete upit, možemo obrađivati ime i prezime, naziv tvrtke, e-mail, telefonski broj, odabrani model te podatke koje unesete u poruku.",
+            "Web-stranica trenutačno nema aktivan kontaktni obrazac i ne prikuplja ime, kontaktne podatke ni sadržaj upita kroz preglednik. Ako nas kontaktirate telefonom ili drugim kanalom izvan stranice, možemo obrađivati podatke koje nam dobrovoljno dostavite radi odgovora na vaš upit.",
             "Sama stranica ne koristi analitičke ili marketinške alate. Pružatelj hostinga može obrađivati osnovne tehničke zapise potrebne za isporuku i sigurnost stranice prema svojim pravilima.",
           ],
         },
@@ -376,9 +374,9 @@ window.AR_LOCALES.hr = {
           ],
         },
         {
-          title: "Način slanja obrasca",
+          title: "Kontakt putem stranice",
           paragraphs: [
-            "U ovoj statičkoj verziji stranice obrazac priprema poruku u vašem programu za e-poštu. Podaci se ne spremaju u bazu ove web-stranice. Slanje se dovršava tek kada vi pošaljete pripremljenu poruku.",
+            "Poveznica s telefonskim brojem može otvoriti aplikaciju za pozive na vašem uređaju. Sama web-stranica pritom ne prenosi niti sprema sadržaj komunikacije.",
           ],
         },
         {
@@ -402,7 +400,7 @@ window.AR_LOCALES.hr = {
         {
           title: "Kontakt",
           paragraphs: [
-            "Za zahtjeve i pitanja o obradi podataka obratite se na {email} ili poštom na Kovinska ulica 4, Zagreb.",
+            "Za zahtjeve i pitanja o obradi podataka nazovite {phone} ili se obratite poštom na Kovinska ulica 4, Zagreb.",
           ],
         },
       ],
@@ -446,7 +444,7 @@ window.AR_LOCALES.hr = {
         {
           title: "Kontakt",
           paragraphs: [
-            "Pitanja o ovoj politici možete poslati na {email}.",
+            "Za pitanja o ovoj politici nazovite {phone} ili se obratite poštom na Kovinska ulica 4, Zagreb.",
           ],
         },
       ],
@@ -478,16 +476,21 @@ Object.assign(window.AR_LOCALES.hr.products, {
   imageUnavailableAlt: "Slika modela {model} trenutačno nije dostupna",
   financing: {
     title: "Mogućnosti financiranja",
+    availabilityIntro:
+      "Za ovaj model dostupne su različite opcije nabave i korištenja, ovisno o potrebama objekta.",
     purchase: "Kupnja",
     lease: "Leasing",
     rentStandard: "Standard najam",
     rentFull: "Full-service najam",
     period: "Razdoblje",
+    availableTerms: "Dostupna razdoblja za leasing i najam:",
     months: "{count} mjeseci",
     netAmount: "Neto iznos",
     monthlyRate: "Mjesečna neto rata",
     downPayment: "Neto učešće",
     taxNote: "Na sve iznose obračunava se + 25% PDV.",
+    quoteNote:
+      "Konačni uvjeti i iznosi ovise o odabranom modelu, opsegu usluge i procjeni objekta. Zatražite individualnu ponudu.",
     servicesLink: "Što uključuju Standard i Full-service?",
   },
 });
@@ -588,7 +591,7 @@ window.AR_LOCALES.hr.roi = {
   disclaimerFallback: "Rezultat je informativna procjena i ovisi o stvarnim uvjetima objekta i konačnoj ponudi.",
 };
 
-window.AR_LOCALES.hr.legal.common.updated = "Posljednje ažuriranje: 19. srpnja 2026.";
+window.AR_LOCALES.hr.legal.common.updated = "Posljednje ažuriranje: 21. srpnja 2026.";
 window.AR_LOCALES.hr.legal.cookies.sections.splice(2, 0, {
   title: "Lokalni cache javnih podataka",
   paragraphs: [
@@ -616,7 +619,8 @@ window.AR_LOCALES.hr.pageMeta = {
   },
   robots: {
     title: "Katalog robota | Adria Robotics",
-    description: "Usporedite 11 aktivnih robota, njihove specifikacije, neto cijene te opcije leasinga i najma.",
+    description:
+      "Usporedite 11 aktivnih robota, njihove specifikacije te dostupne opcije kupnje, leasinga i najma.",
   },
   roi: {
     title: "ROI kalkulator | Adria Robotics",
@@ -628,14 +632,14 @@ window.AR_LOCALES.hr.pageMeta = {
   },
   contact: {
     title: "Kontakt i demo | Adria Robotics",
-    description: "Pošaljite podatke o objektu i zatražite procjenu ili demonstraciju robota na lokaciji.",
+    description: "Nazovite Adria Robotics i dogovorite procjenu ili demonstraciju robota na lokaciji.",
   },
 };
 
 window.AR_LOCALES.hr.catalogPage = {
   kicker: "Katalog i financiranje",
   title: "Pronađite robota za svoj prostor i zadatak.",
-  copy: "Filtrirajte službeni katalog, otvorite tehničke specifikacije te usporedite javne neto cijene i mjesečne rate.",
+  copy: "Filtrirajte službeni katalog, otvorite tehničke specifikacije i provjerite dostupne opcije kupnje, leasinga i najma.",
 };
 
 window.AR_LOCALES.hr.roiPage = {
@@ -653,7 +657,7 @@ window.AR_LOCALES.hr.servicePage = {
 window.AR_LOCALES.hr.contactPage = {
   kicker: "Kontakt i demo",
   title: "Razgovarajmo o vašem objektu.",
-  copy: "Pošaljite nekoliko osnovnih podataka. Predložit ćemo prikladne modele i najkorisniji sljedeći korak.",
+  copy: "Nazovite nas i ukratko opišite prostor. Predložit ćemo prikladne modele i najkorisniji sljedeći korak.",
 };
 
 window.AR_LOCALES.hr.homePaths = {
@@ -662,7 +666,7 @@ window.AR_LOCALES.hr.homePaths = {
   copy: "Katalog, izračun isplativosti i paketi sada su odvojeni kako biste brže došli do informacije koja vam treba.",
   robots: {
     title: "Katalog robota",
-    copy: "Usporedite modele, specifikacije, cijene i mjesečne rate.",
+    copy: "Usporedite modele, tehničke specifikacije i dostupne opcije financiranja.",
   },
   roi: {
     title: "ROI kalkulator",
@@ -677,28 +681,28 @@ window.AR_LOCALES.hr.homePaths = {
 window.AR_LOCALES.hr.homeCta = {
   kicker: "Sljedeći korak",
   title: "Niste sigurni koji model odgovara vašem objektu?",
-  copy: "Kratko nam opišite prostor i način rada, a mi ćemo pripremiti uži izbor za demonstraciju.",
+  copy: "Nazovite nas i ukratko opišite prostor i način rada, a mi ćemo pripremiti uži izbor za demonstraciju.",
 };
 
 window.AR_LOCALES.hr.financingOverview = {
   kicker: "Financiranje",
-  title: "Četiri načina nabave, bez skrivenih izračuna u pregledniku.",
-  copy: "Točni javni iznosi za svaki robot i razdoblje nalaze se u modalu pojedinog modela u katalogu. Svi prikazani iznosi su neto i uvećavaju se za 25% PDV-a.",
+  title: "Četiri načina nabave za različite operativne potrebe.",
+  copy: "Odaberite kupnju, leasing, Standard najam ili Full-service najam. Konačni iznosi i uvjeti definiraju se individualnom ponudom nakon odabira robota i procjene objekta.",
   purchase: {
     title: "Kupnja",
-    copy: "Jednokratna neto prodajna cijena uz vlasništvo nad opremom.",
+    copy: "Jednokratna kupnja uz vlasništvo nad opremom i konfiguraciju prilagođenu objektu.",
   },
   lease: {
     title: "Leasing",
-    copy: "Mjesečne rate za 24, 36 ili 48 mjeseci uz prikaz neto učešća.",
+    copy: "Financiranje na 24, 36 ili 48 mjeseci uz uvjete definirane konačnom ponudom.",
   },
   standard: {
     title: "Standard najam",
-    copy: "Predvidiva mjesečna rata uz osnovni opseg uključenih usluga.",
+    copy: "Predvidiva mjesečna rata uz osnovni opseg implementacije i tehničke podrške.",
   },
   full: {
     title: "Full-service najam",
-    copy: "Širi paket podrške i usluga uključen u mjesečnu ratu.",
+    copy: "Mjesečni najam sa širim paketom održavanja, podrške i uključenih usluga.",
   },
 };
 

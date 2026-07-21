@@ -281,16 +281,16 @@ window.AR_LOCALES.en = {
     ],
   },
   demo: {
-    kicker: "Demo and assessment",
-    title: "Send basic information about your facility.",
+    kicker: "Contact and assessment",
+    title: "Arrange a short facility assessment.",
     copy:
-      "We will respond with a recommended next step: a short call, site review or robot demonstration.",
+      "Call us to review the basic requirements and arrange a site visit or robot demonstration.",
     points: [
       "Model recommendation based on space and task",
       "Estimate of the required robot count and cleaning routine",
       "Implementation, training and service plan",
     ],
-    directContact: "You can also contact us directly:",
+    directContact: "Call us directly:",
     form: {
       requiredNote: "Fields marked with an asterisk are required.",
       name: "Full name",
@@ -346,26 +346,24 @@ window.AR_LOCALES.en = {
   legal: {
     common: {
       backHome: "Back to the home page",
-      reviewNote:
-        "This text is an initial legal template. It must be reviewed by the responsible person or legal counsel before production publication.",
-      updated: "Last updated: 16 July 2026.",
+      updated: "Last updated: 21 July 2026.",
     },
     privacy: {
       metaTitle: "Privacy Policy | Adria Robotics",
       title: "Privacy Policy",
       intro:
-        "This policy explains how Adriarobotics d.o.o. processes personal data received through the Adria Robotics website.",
+        "This policy explains what data the Adria Robotics website may process and how Adriarobotics d.o.o. handles data received through direct business communication.",
       sections: [
         {
           title: "Data controller",
           paragraphs: [
-            "The data controller is Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, Croatia, Tax ID 83127934571. For privacy questions, contact {email}.",
+            "The data controller is Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, Croatia, Tax ID 83127934571. For privacy questions, call {phone} or write to the stated postal address.",
           ],
         },
         {
           title: "Data we process",
           paragraphs: [
-            "When you send an enquiry, we may process your full name, company name, email address, phone number, selected model and information entered in the message.",
+            "The website currently has no active contact form and does not collect names, contact details or enquiry content through the browser. If you contact us by phone or another channel outside the website, we may process the information you voluntarily provide in order to respond to your enquiry.",
             "The website itself does not use analytics or marketing tools. The hosting provider may process basic technical logs needed to deliver and secure the website under its own policies.",
           ],
         },
@@ -376,9 +374,9 @@ window.AR_LOCALES.en = {
           ],
         },
         {
-          title: "How the form is sent",
+          title: "Contact through the website",
           paragraphs: [
-            "In this static version of the website, the form prepares a message in your email application. The data is not stored in this website’s database. Sending is completed only when you send the prepared email.",
+            "The telephone link may open the calling application on your device. The website itself does not transmit or store the content of that communication.",
           ],
         },
         {
@@ -402,7 +400,7 @@ window.AR_LOCALES.en = {
         {
           title: "Contact",
           paragraphs: [
-            "For requests and questions about personal data processing, contact {email} or write to Kovinska ulica 4, Zagreb, Croatia.",
+            "For requests and questions about personal data processing, call {phone} or write to Kovinska ulica 4, Zagreb, Croatia.",
           ],
         },
       ],
@@ -446,7 +444,7 @@ window.AR_LOCALES.en = {
         {
           title: "Contact",
           paragraphs: [
-            "Questions about this policy can be sent to {email}.",
+            "For questions about this policy, call {phone} or write to Kovinska ulica 4, Zagreb, Croatia.",
           ],
         },
       ],
@@ -478,16 +476,21 @@ Object.assign(window.AR_LOCALES.en.products, {
   imageUnavailableAlt: "An image of {model} is not currently available",
   financing: {
     title: "Financing options",
+    availabilityIntro:
+      "Different acquisition and usage options are available for this model, depending on your facility’s needs.",
     purchase: "Purchase",
     lease: "Leasing",
     rentStandard: "Standard rental",
     rentFull: "Full-service rental",
     period: "Term",
+    availableTerms: "Available leasing and rental terms:",
     months: "{count} months",
     netAmount: "Net amount",
     monthlyRate: "Monthly net payment",
     downPayment: "Net down payment",
     taxNote: "25% VAT is added to all amounts.",
+    quoteNote:
+      "Final terms and amounts depend on the selected model, service scope and facility assessment. Request an individual quote.",
     servicesLink: "What do Standard and Full-service include?",
   },
 });
@@ -588,7 +591,7 @@ window.AR_LOCALES.en.roi = {
   disclaimerFallback: "The result is an indicative estimate and depends on actual site conditions and the final offer.",
 };
 
-window.AR_LOCALES.en.legal.common.updated = "Last updated: 19 July 2026.";
+window.AR_LOCALES.en.legal.common.updated = "Last updated: 21 July 2026.";
 window.AR_LOCALES.en.legal.cookies.sections.splice(2, 0, {
   title: "Local cache of public data",
   paragraphs: [
@@ -616,7 +619,8 @@ window.AR_LOCALES.en.pageMeta = {
   },
   robots: {
     title: "Robot catalogue | Adria Robotics",
-    description: "Compare 11 active robots, their specifications, net prices, leasing and rental options.",
+    description:
+      "Compare 11 active robots, their specifications and available purchase, leasing and rental options.",
   },
   roi: {
     title: "ROI calculator | Adria Robotics",
@@ -628,14 +632,14 @@ window.AR_LOCALES.en.pageMeta = {
   },
   contact: {
     title: "Contact and demo | Adria Robotics",
-    description: "Share your facility details and request an assessment or an on-site robot demonstration.",
+    description: "Call Adria Robotics to arrange an assessment or an on-site robot demonstration.",
   },
 };
 
 window.AR_LOCALES.en.catalogPage = {
   kicker: "Catalogue and financing",
   title: "Find the right robot for your space and task.",
-  copy: "Filter the official catalogue, open technical specifications and compare public net prices and monthly payments.",
+  copy: "Filter the official catalogue, open the technical specifications and review the available purchase, leasing and rental options.",
 };
 
 window.AR_LOCALES.en.roiPage = {
@@ -653,7 +657,7 @@ window.AR_LOCALES.en.servicePage = {
 window.AR_LOCALES.en.contactPage = {
   kicker: "Contact and demo",
   title: "Let’s discuss your facility.",
-  copy: "Share a few basic details. We will suggest suitable models and the most useful next step.",
+  copy: "Call us and briefly describe your facility. We will suggest suitable models and the most useful next step.",
 };
 
 window.AR_LOCALES.en.homePaths = {
@@ -662,7 +666,7 @@ window.AR_LOCALES.en.homePaths = {
   copy: "The catalogue, business case and service plans are now separate so you can reach the information you need faster.",
   robots: {
     title: "Robot catalogue",
-    copy: "Compare models, specifications, prices and monthly payments.",
+    copy: "Compare models, technical specifications and available financing options.",
   },
   roi: {
     title: "ROI calculator",
@@ -677,28 +681,28 @@ window.AR_LOCALES.en.homePaths = {
 window.AR_LOCALES.en.homeCta = {
   kicker: "Next step",
   title: "Not sure which model fits your facility?",
-  copy: "Briefly describe the space and operating routine, and we will prepare a shortlist for demonstration.",
+  copy: "Call us and briefly describe the space and operating routine, and we will prepare a shortlist for demonstration.",
 };
 
 window.AR_LOCALES.en.financingOverview = {
   kicker: "Financing",
-  title: "Four acquisition options, with no hidden browser calculations.",
-  copy: "Exact public amounts for every robot and term are shown in each model’s catalogue modal. All displayed amounts are net and subject to 25% VAT.",
+  title: "Four acquisition options for different operational needs.",
+  copy: "Choose purchase, leasing, Standard rental or Full-service rental. Final amounts and terms are defined in an individual quote after robot selection and facility assessment.",
   purchase: {
     title: "Purchase",
-    copy: "A one-off net sales price with ownership of the equipment.",
+    copy: "A one-off purchase with equipment ownership and a configuration tailored to the facility.",
   },
   lease: {
     title: "Leasing",
-    copy: "Monthly payments over 24, 36 or 48 months, including the net down payment.",
+    copy: "Financing over 24, 36 or 48 months under the terms defined in the final quote.",
   },
   standard: {
     title: "Standard rental",
-    copy: "A predictable monthly payment with the core service scope included.",
+    copy: "A predictable monthly payment with the core implementation and technical support scope.",
   },
   full: {
     title: "Full-service rental",
-    copy: "A broader support and service package included in the monthly payment.",
+    copy: "Monthly rental with a broader maintenance, support and included-service package.",
   },
 };
 

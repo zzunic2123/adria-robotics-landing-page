@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kontakt i demo | Adria Robotics</title>
-    <meta name="description" content="Pošaljite podatke o objektu i zatražite procjenu ili demonstraciju robota na lokaciji." />
+    <meta name="description" content="Nazovite Adria Robotics i dogovorite procjenu ili demonstraciju robota na lokaciji." />
     <link rel="icon" href="assets/brand/adria-robotics-icon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -25,18 +25,18 @@
     <div class="nav-overlay" data-nav-overlay hidden aria-hidden="true"></div>
 
     <main id="main">
-      <section class="page-hero" aria-labelledby="contact-page-title"><div class="container page-hero-inner"><div class="section-kicker" data-i18n="contactPage.kicker">Kontakt i demo</div><h1 id="contact-page-title" data-i18n="contactPage.title">Razgovarajmo o vašem objektu.</h1><p data-i18n="contactPage.copy">Pošaljite nekoliko osnovnih podataka. Predložit ćemo prikladne modele i najkorisniji sljedeći korak.</p></div></section>
+      <section class="page-hero" aria-labelledby="contact-page-title"><div class="container page-hero-inner"><div class="section-kicker" data-i18n="contactPage.kicker">Kontakt i demo</div><h1 id="contact-page-title" data-i18n="contactPage.title">Razgovarajmo o vašem objektu.</h1><p data-i18n="contactPage.copy">Nazovite nas i ukratko opišite prostor. Predložit ćemo prikladne modele i najkorisniji sljedeći korak.</p></div></section>
 
       <section class="demo section-pad contact-page-form" id="demo" aria-labelledby="demo-title">
-        <div class="container demo-grid">
+        <div class="container demo-grid is-form-hidden" data-contact-layout>
           <div>
-            <div class="section-kicker" data-i18n="demo.kicker">Demo i procjena</div>
-            <h2 id="demo-title" data-i18n="demo.title">Pošaljite osnovne podatke o objektu.</h2>
-            <p data-i18n="demo.copy">Javit ćemo se s prijedlogom sljedećeg koraka: kratkim pozivom, pregledom lokacije ili demonstracijom robota.</p>
+            <div class="section-kicker" data-i18n="demo.kicker">Kontakt i procjena</div>
+            <h2 id="demo-title" data-i18n="demo.title">Dogovorite kratku procjenu objekta.</h2>
+            <p data-i18n="demo.copy">Nazovite nas kako bismo provjerili osnovne uvjete i dogovorili pregled lokacije ili demonstraciju robota.</p>
             <ul class="demo-points" data-demo-points></ul>
-            <div class="direct-contact"><p data-i18n="demo.directContact">Možete nam se javiti i izravno:</p><a data-contact-phone href="">Telefon</a><a data-contact-email href="">E-mail</a></div>
+            <div class="direct-contact"><p data-i18n="demo.directContact">Nazovite nas izravno:</p><a data-contact-phone href="tel:+38598256469">+385 98 256 469</a><a data-contact-email hidden>E-mail</a></div>
           </div>
-          <form class="demo-form" data-demo-form novalidate>
+          <form class="demo-form" data-demo-form novalidate hidden>
             <p class="required-note full" data-i18n="demo.form.requiredNote">Polja označena zvjezdicom su obavezna.</p>
             <div class="field"><label for="name"><span data-i18n="demo.form.name">Ime i prezime</span><span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required /></div>
             <div class="field"><label for="company"><span data-i18n="demo.form.company">Tvrtka</span><span aria-hidden="true">*</span></label><input id="company" name="company" type="text" autocomplete="organization" required /></div>
@@ -56,7 +56,7 @@
       <div class="container footer-grid">
         <div class="footer-brand"><img src="assets/brand/adria-robotics-logo-reversed.svg" width="190" height="47" alt="Adria Robotics" /><p class="footer-tagline" data-i18n="footer.tagline">Robotika u praksi.</p><p data-i18n="footer.description">Autonomna rješenja za profesionalno čišćenje, uz lokalnu implementaciju, edukaciju i podršku.</p></div>
         <nav aria-label="Navigacija u podnožju" data-i18n-aria-label="footer.navAria"><h2 data-i18n="footer.companyTitle">Tvrtka</h2><a href="index.html?lang=hr" data-page-link="index.html" data-i18n="nav.home">Početna</a><a href="robots.html?lang=hr" data-page-link="robots.html" data-i18n="nav.robots">Roboti</a><a href="roi.html?lang=hr" data-page-link="roi.html" data-i18n="nav.roi">ROI kalkulator</a><a href="service-plans.html?lang=hr" data-page-link="service-plans.html" data-i18n="nav.plans">Paketi</a><a href="contact.html?lang=hr" data-page-link="contact.html" data-i18n="nav.contact">Kontakt</a></nav>
-        <div class="footer-contact"><h2 data-i18n="footer.contactTitle">Kontakt</h2><dl><div><dt data-i18n="footer.legalNameLabel">Pravni naziv</dt><dd data-site-legal-name></dd></div><div><dt data-i18n="footer.addressLabel">Adresa</dt><dd data-site-address></dd></div><div><dt data-i18n="footer.taxIdLabel">OIB</dt><dd data-site-tax-id></dd></div><div><dt data-i18n="footer.phoneLabel">Telefon</dt><dd><a data-contact-phone href="">Telefon</a></dd></div><div><dt data-i18n="footer.emailLabel">E-mail</dt><dd><a data-contact-email href="">E-mail</a></dd></div></dl></div>
+        <div class="footer-contact"><h2 data-i18n="footer.contactTitle">Kontakt</h2><dl><div><dt data-i18n="footer.legalNameLabel">Pravni naziv</dt><dd data-site-legal-name></dd></div><div><dt data-i18n="footer.addressLabel">Adresa</dt><dd data-site-address></dd></div><div><dt data-i18n="footer.taxIdLabel">OIB</dt><dd data-site-tax-id></dd></div><div><dt data-i18n="footer.phoneLabel">Telefon</dt><dd><a data-contact-phone href="tel:+38598256469">+385 98 256 469</a></dd></div><div data-contact-email-row hidden><dt data-i18n="footer.emailLabel">E-mail</dt><dd><a data-contact-email hidden>E-mail</a></dd></div></dl></div>
         <div class="footer-legal"><h2 data-i18n="footer.legalTitle">Pravne informacije</h2><a href="privacy-policy.html?lang=hr" data-legal-link="privacy-policy.html" data-i18n="footer.privacy">Politika privatnosti</a><a href="cookie-policy.html?lang=hr" data-legal-link="cookie-policy.html" data-i18n="footer.cookies">Politika kolačića</a></div>
       </div><div class="container footer-bottom"><p data-copyright>© 2026 Adriarobotics d.o.o. Sva prava pridržana.</p></div>
     </footer>

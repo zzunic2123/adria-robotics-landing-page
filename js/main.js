@@ -17,6 +17,11 @@ function storageValue(key) {
   }
 }
 
+function featureEnabled(name, fallback = true) {
+  const value = site.features?.[name];
+  return value === undefined ? fallback : value === true;
+}
+
 const languageFromQuery = new URLSearchParams(window.location.search).get("lang");
 const languageFromStorage = storageValue("ar-language");
 let currentLanguage = locales[languageFromQuery]
@@ -385,9 +390,10 @@ function renderProducts() {
   }
 
   const filteredRobots = getFilteredRobots();
+  const showPricing = featureEnabled("showPricing");
   productsGrid.innerHTML = filteredRobots
     .map((product) => {
-      const financing = financingForProduct(product.id);
+      const financing = showPricing ? financingForProduct(product.id) : null;
       const titleId = `product-title-${product.id}`;
       const descriptionId = `product-description-${product.id}`;
       const cardLabel = interpolate(t("accessibility.productCard"), { model: product.fullName });
@@ -431,13 +437,17 @@ function renderProducts() {
               ${escapeHtml(localized(product.shortDescription))}
             </p>
             <ul class="product-highlights">${highlights}</ul>
-            <div class="product-commercial">
-              <p>
-                <strong>${escapeHtml(formatCurrency(product.priceNetEur, 0))}</strong>
-                <span>${escapeHtml(localized(product.priceNote))}</span>
-              </p>
-              ${rentText ? `<small>${escapeHtml(rentText)}</small>` : ""}
-            </div>
+            ${
+              showPricing
+                ? `<div class="product-commercial">
+                    <p>
+                      <strong>${escapeHtml(formatCurrency(product.priceNetEur, 0))}</strong>
+                      <span>${escapeHtml(localized(product.priceNote))}</span>
+                    </p>
+                    ${rentText ? `<small>${escapeHtml(rentText)}</small>` : ""}
+                  </div>`
+                : ""
+            }
             <span class="product-link">
               ${escapeHtml(t("buttons.viewSpecifications", "View specifications"))}
               <span aria-hidden="true">→</span>
@@ -547,9 +557,23 @@ function renderSiteDetails() {
     link.setAttribute("href", `tel:${site.phoneHref || ""}`);
   });
   document.querySelectorAll("[data-contact-email]").forEach((link) => {
-    link.textContent = site.email || "";
-    link.setAttribute("href", `mailto:${site.email || ""}`);
+    const showEmail = featureEnabled("showEmail") && Boolean(site.email);
+    const row = link.closest("[data-contact-email-row]");
+    link.hidden = !showEmail;
+    if (row) row.hidden = !showEmail;
+    if (showEmail) {
+      link.textContent = site.email;
+      link.setAttribute("href", `mailto:${site.email}`);
+    } else {
+      link.textContent = "";
+      link.removeAttribute("href");
+    }
   });
+  const showContactForm = featureEnabled("showContactForm");
+  if (demoForm) demoForm.hidden = !showContactForm;
+  demoForm
+    ?.closest("[data-contact-layout]")
+    ?.classList.toggle("is-form-hidden", !showContactForm);
   document.querySelectorAll("[data-site-legal-name]").forEach((element) => {
     element.textContent = site.legalName || "";
   });
@@ -687,6 +711,34 @@ function financingRate(financing, mode, period) {
 function financingPanelHtml(product) {
   const financing = financingForProduct(product.id);
   if (!financing) return "";
+  if (!featureEnabled("showPricing")) {
+    return `
+      <section class="modal-financing" aria-labelledby="modal-financing-title">
+        <h3 id="modal-financing-title">${escapeHtml(t("products.financing.title"))}</h3>
+        <p class="financing-availability-intro">
+          ${escapeHtml(t("products.financing.availabilityIntro"))}
+        </p>
+        <ul class="financing-availability">
+          ${["purchase", "lease", "rentStandard", "rentFull"]
+            .map((mode) => `<li>${escapeHtml(financingModeLabel(mode))}</li>`)
+            .join("")}
+        </ul>
+        <p class="financing-terms">
+          <strong>${escapeHtml(t("products.financing.availableTerms"))}</strong>
+          ${escapeHtml(
+            financingPeriods
+              .map((period) => interpolate(t("products.financing.months"), { count: period }))
+              .join(" · "),
+          )}
+        </p>
+        <p class="financing-disclaimer">${escapeHtml(t("products.financing.quoteNote"))}</p>
+        <a href="#service-plans" data-modal-services>
+          ${escapeHtml(t("products.financing.servicesLink"))}
+          <span aria-hidden="true">↓</span>
+        </a>
+      </section>
+    `;
+  }
   return `
     <section class="modal-financing" aria-labelledby="modal-financing-title">
       <h3 id="modal-financing-title">${escapeHtml(t("products.financing.title"))}</h3>
@@ -810,11 +862,15 @@ function renderModal(product) {
             <dd>${escapeHtml(localized(product.environments))}</dd>
           </div>
         </dl>
-        <div class="modal-price">
-          <span>${escapeHtml(t("products.netPrice"))}</span>
-          <strong>${escapeHtml(formatCurrency(product.priceNetEur, 0))}</strong>
-          <small>${escapeHtml(localized(product.priceNote))}</small>
-        </div>
+        ${
+          featureEnabled("showPricing")
+            ? `<div class="modal-price">
+                <span>${escapeHtml(t("products.netPrice"))}</span>
+                <strong>${escapeHtml(formatCurrency(product.priceNetEur, 0))}</strong>
+                <small>${escapeHtml(localized(product.priceNote))}</small>
+              </div>`
+            : ""
+        }
       </div>
     </div>
     <div class="spec-groups">${renderSpecificationGroups(product)}</div>
@@ -898,7 +954,7 @@ function trapModalFocus(event) {
 function selectRobotForQuote(productId) {
   const product = webData?.products.find((item) => item.id === productId);
   if (!product) return;
-  if (!selectedModelInput || !demoSection) {
+  if (!featureEnabled("showContactForm") || !selectedModelInput || !demoSection) {
     closeModal({ restoreFocus: false });
     window.location.href = pageUrl("contact.html", { model: product.id });
     return;
@@ -1505,7 +1561,18 @@ function validateForm() {
 }
 
 function prepareEmailRequest() {
-  if (!demoForm || !formStatus || !submitButton || !submitLabel || !validateForm()) return;
+  if (
+    !featureEnabled("showContactForm") ||
+    !featureEnabled("showEmail") ||
+    !site.email ||
+    !demoForm ||
+    !formStatus ||
+    !submitButton ||
+    !submitLabel ||
+    !validateForm()
+  ) {
+    return;
+  }
   const data = new FormData(demoForm);
   const company = String(data.get("company") || "").trim();
   const subject = interpolate(t("forms.emailSubject"), { company });

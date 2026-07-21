@@ -57,8 +57,6 @@ function renderLegalPage() {
   document.querySelector("[data-legal-title]").textContent = page.title;
   document.querySelector("[data-legal-intro]").textContent = page.intro;
   document.querySelector("[data-legal-updated]").textContent = activeLocale.legal.common.updated;
-  document.querySelector("[data-legal-review]").textContent =
-    activeLocale.legal.common.reviewNote;
   document.querySelector("[data-legal-back]").textContent =
     activeLocale.legal.common.backHome;
   document.querySelector("[data-legal-sections]").innerHTML = page.sections
@@ -69,7 +67,7 @@ function renderLegalPage() {
           ${section.paragraphs
             .map(
               (paragraph) =>
-                `<p>${escapeHtml(interpolate(paragraph, { email: site.email || "" }))}</p>`,
+                `<p>${escapeHtml(interpolate(paragraph, { phone: site.phoneDisplay || "" }))}</p>`,
             )
             .join("")}
         </section>
