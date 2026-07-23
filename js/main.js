@@ -7,7 +7,6 @@ const mobileBreakpoint = 920;
 const financingPeriods = [24, 36, 48];
 const pageParameters = new URLSearchParams(window.location.search);
 const requestedIndustryId = pageParameters.get("industry");
-const requestedProductId = pageParameters.get("model");
 
 function storageValue(key) {
   try {
@@ -20,6 +19,18 @@ function storageValue(key) {
 function featureEnabled(name, fallback = true) {
   const value = site.features?.[name];
   return value === undefined ? fallback : value === true;
+}
+
+function contactFormEndpoint() {
+  try {
+    const url = new URL(site.contactFormEndpoint || "");
+    const validPath = /^\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(url.pathname);
+    return url.protocol === "https:" && url.hostname === "script.google.com" && validPath
+      ? url.href
+      : "";
+  } catch {
+    return "";
+  }
 }
 
 const languageFromQuery = new URLSearchParams(window.location.search).get("lang");
@@ -70,8 +81,8 @@ const demoForm = document.querySelector("[data-demo-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const submitButton = document.querySelector("[data-submit-button]");
 const submitLabel = document.querySelector("[data-submit-label]");
-const selectedModelInput = document.querySelector("#selected-model");
-const demoSection = document.querySelector("#demo");
+let contactSubmissionPending = false;
+let contactSubmissionTimer = 0;
 
 function t(path, fallback = "") {
   return (
@@ -580,8 +591,13 @@ function renderSiteDetails() {
       link.removeAttribute("href");
     }
   });
-  const showContactForm = featureEnabled("showContactForm");
-  if (demoForm) demoForm.hidden = !showContactForm;
+  const endpoint = contactFormEndpoint();
+  const showContactForm = featureEnabled("showContactForm") && Boolean(endpoint);
+  if (demoForm) {
+    demoForm.hidden = !showContactForm;
+    if (endpoint) demoForm.setAttribute("action", endpoint);
+    else demoForm.removeAttribute("action");
+  }
   demoForm
     ?.closest("[data-contact-layout]")
     ?.classList.toggle("is-form-hidden", !showContactForm);
@@ -962,17 +978,8 @@ function trapModalFocus(event) {
 function selectRobotForQuote(productId) {
   const product = webData?.products.find((item) => item.id === productId);
   if (!product) return;
-  if (!featureEnabled("showContactForm") || !selectedModelInput || !demoSection) {
-    closeModal({ restoreFocus: false });
-    window.location.href = pageUrl("contact.html", { model: product.id });
-    return;
-  }
-  selectedModelInput.value = product.fullName;
   closeModal({ restoreFocus: false });
-  demoSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  window.setTimeout(() => {
-    demoForm?.querySelector("input:not([readonly])")?.focus({ preventScroll: true });
-  }, 450);
+  window.location.href = pageUrl("contact.html");
 }
 
 function applyInitialPageState() {
@@ -983,10 +990,6 @@ function applyInitialPageState() {
     webData.industries.some((industry) => industry.id === requestedIndustryId)
   ) {
     catalogState.industry = requestedIndustryId;
-  }
-  if (selectedModelInput && requestedProductId) {
-    const product = webData.products.find((item) => item.id === requestedProductId);
-    if (product) selectedModelInput.value = product.fullName;
   }
   initialPageStateApplied = true;
 }
@@ -1568,51 +1571,82 @@ function validateForm() {
   return isValid;
 }
 
-function prepareEmailRequest() {
+function setContactSubmissionState({ pending, message, error = false }) {
+  contactSubmissionPending = pending;
+  if (submitButton) {
+    submitButton.disabled = pending;
+    submitButton.toggleAttribute("aria-busy", pending);
+  }
+  if (submitLabel) {
+    submitLabel.textContent = pending ? t("forms.submitting") : t("buttons.sendRequest");
+  }
+  if (formStatus) {
+    formStatus.classList.toggle("is-error", error);
+    formStatus.textContent = message || "";
+  }
+}
+
+function prepareContactRequest(event) {
   if (
     !featureEnabled("showContactForm") ||
-    !featureEnabled("showEmail") ||
-    !site.email ||
+    !contactFormEndpoint() ||
     !demoForm ||
     !formStatus ||
     !submitButton ||
     !submitLabel ||
-    !validateForm()
+    contactSubmissionPending
+  ) {
+    event.preventDefault();
+    return;
+  }
+  if (!validateForm()) {
+    event.preventDefault();
+    return;
+  }
+  window.clearTimeout(contactSubmissionTimer);
+  setContactSubmissionState({ pending: true, message: t("forms.submitting") });
+  contactSubmissionTimer = window.setTimeout(() => {
+    setContactSubmissionState({
+      pending: false,
+      message: t("forms.timeout"),
+      error: true,
+    });
+  }, 20000);
+}
+
+function isGoogleScriptMessageOrigin(origin) {
+  try {
+    const hostname = new URL(origin).hostname;
+    return hostname === "script.google.com" || hostname.endsWith(".googleusercontent.com");
+  } catch {
+    return false;
+  }
+}
+
+function handleContactFormResponse(event) {
+  const response = event.data;
+  if (
+    !contactSubmissionPending ||
+    !isGoogleScriptMessageOrigin(event.origin) ||
+    !response ||
+    response.source !== "adria-contact-form"
   ) {
     return;
   }
-  const data = new FormData(demoForm);
-  const company = String(data.get("company") || "").trim();
-  const subject = interpolate(t("forms.emailSubject"), { company });
-  const labels = activeLocale.forms.emailBody;
-  const body = [
-    `${labels.name}: ${data.get("name") || ""}`,
-    `${labels.company}: ${company}`,
-    `${labels.email}: ${data.get("email") || ""}`,
-    `${labels.phone}: ${data.get("phone") || t("forms.notProvided", "not provided")}`,
-    `${labels.model}: ${data.get("model") || t("forms.notProvided", "not provided")}`,
-    "",
-    `${labels.message}:`,
-    `${data.get("message") || ""}`,
-  ].join("\n");
-  submitButton.disabled = true;
-  submitButton.setAttribute("aria-busy", "true");
-  submitLabel.textContent = t("forms.submitting");
-  formStatus.classList.remove("is-error");
-  formStatus.textContent = t("forms.submitting");
-  window.setTimeout(() => {
-    try {
-      window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      formStatus.textContent = t("forms.success");
-    } catch {
-      formStatus.classList.add("is-error");
-      formStatus.textContent = interpolate(t("forms.error"), { email: site.email });
-    } finally {
-      submitButton.disabled = false;
-      submitButton.removeAttribute("aria-busy");
-      submitLabel.textContent = t("buttons.sendRequest");
-    }
-  }, 350);
+  window.clearTimeout(contactSubmissionTimer);
+  if (response.success) {
+    demoForm?.reset();
+    setContactSubmissionState({
+      pending: false,
+      message: t(response.code === "saved" ? "forms.saved" : "forms.success"),
+    });
+    return;
+  }
+  setContactSubmissionState({
+    pending: false,
+    message: t(response.code === "validation" ? "forms.validation" : "forms.error"),
+    error: true,
+  });
 }
 
 async function loadData({ forceRefresh = false } = {}) {
@@ -1822,9 +1856,10 @@ demoForm?.addEventListener("input", (event) => {
 });
 
 demoForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!submitButton?.disabled) prepareEmailRequest();
+  prepareContactRequest(event);
 });
+
+window.addEventListener("message", handleContactFormResponse);
 
 applyLocale();
 loadData();

@@ -36,7 +36,7 @@ window.AR_LOCALES.hr = {
     viewSpecifications: "Pogledajte specifikacije",
     modalDemo: "Zatražite demo za ovaj model",
     resetFilters: "Poništite filtre",
-    sendRequest: "Pripremite zahtjev",
+    sendRequest: "Pošaljite upit",
   },
   hero: {
     eyebrow: "Globalna tehnologija. Lokalna implementacija.",
@@ -282,9 +282,9 @@ window.AR_LOCALES.hr = {
   },
   demo: {
     kicker: "Kontakt i procjena",
-    title: "Dogovorite kratku procjenu objekta.",
+    title: "Pošaljite upit za kratku procjenu.",
     copy:
-      "Nazovite nas kako bismo provjerili osnovne uvjete i dogovorili pregled lokacije ili demonstraciju robota.",
+      "Opišite nam ukratko što želite automatizirati. Javit ćemo se radi provjere uvjeta i dogovora sljedećeg koraka.",
     points: [
       "Preporuka modela prema prostoru i zadatku",
       "Procjena potrebnog broja robota i načina čišćenja",
@@ -292,35 +292,28 @@ window.AR_LOCALES.hr = {
     ],
     form: {
       requiredNote: "Polja označena zvjezdicom su obavezna.",
-      name: "Ime i prezime",
-      company: "Tvrtka",
+      firstName: "Ime",
+      lastName: "Prezime",
       email: "E-mail",
       phone: "Telefon",
-      model: "Odabrani model",
-      modelPlaceholder: "Nije odabran određeni model",
-      message: "Objekt i potreba",
+      message: "Poruka",
       messagePlaceholder:
-        "Primjer: skladište od 6.000 m², svakodnevno čišćenje, prašina i promet viličara",
+        "Ukratko opišite objekt, njegovu površinu i što želite automatizirati.",
+      privacyNote:
+        "Podatke iz obrasca koristimo isključivo kako bismo odgovorili na vaš upit.",
     },
   },
   forms: {
     required: "Ispunite ovo obavezno polje.",
     email: "Unesite ispravnu e-mail adresu.",
-    submitting: "Pripremamo poruku…",
-    success:
-      "Zahtjev je pripremljen u vašem programu za e-poštu. Provjerite sadržaj i pošaljite poruku.",
-    error:
-      "Nismo uspjeli otvoriti program za e-poštu. Vaši podaci su sačuvani; pošaljite ih izravno na {email}.",
-    notProvided: "nije navedeno",
-    emailSubject: "Zahtjev za demonstraciju: {company}",
-    emailBody: {
-      name: "Ime i prezime",
-      company: "Tvrtka",
-      email: "E-mail",
-      phone: "Telefon",
-      model: "Odabrani model",
-      message: "Objekt i potreba",
-    },
+    submitting: "Šaljemo upit…",
+    success: "Hvala! Vaš je upit uspješno poslan.",
+    saved:
+      "Hvala! Upit je zaprimljen. Ako e-mail obavijest nije dostupna, odgovor ćemo pronaći u evidenciji upita.",
+    validation: "Provjerite unesene podatke i pokušajte ponovno.",
+    error: "Upit trenutačno nije moguće poslati. Pokušajte ponovno ili nam se javite izravno.",
+    timeout:
+      "Nismo primili potvrdu slanja. Prije ponovnog pokušaja provjerite je li upit već zaprimljen.",
   },
   footer: {
     tagline: "Robotika u praksi.",
@@ -511,7 +504,7 @@ window.AR_LOCALES.hr.pageMeta = {
   },
   contact: {
     title: "Kontakt i demo | Adria Robotics",
-    description: "Nazovite Adria Robotics i dogovorite procjenu ili demonstraciju robota na lokaciji.",
+    description: "Pošaljite upit Adria Robotics timu ili dogovorite procjenu i demonstraciju robota na lokaciji.",
   },
 };
 
@@ -536,7 +529,7 @@ window.AR_LOCALES.hr.servicePage = {
 window.AR_LOCALES.hr.contactPage = {
   kicker: "Kontakt i demo",
   title: "Razgovarajmo o vašem objektu.",
-  copy: "Nazovite nas i ukratko opišite prostor. Predložit ćemo prikladne modele i najkorisniji sljedeći korak.",
+  copy: "Pošaljite upit ili nas nazovite. Predložit ćemo prikladne modele i najkorisniji sljedeći korak.",
 };
 
 window.AR_LOCALES.hr.homePaths = {

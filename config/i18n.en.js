@@ -36,7 +36,7 @@ window.AR_LOCALES.en = {
     viewSpecifications: "View specifications",
     modalDemo: "Request a demo for this model",
     resetFilters: "Reset filters",
-    sendRequest: "Prepare request",
+    sendRequest: "Send enquiry",
   },
   hero: {
     eyebrow: "Global technology. Local implementation.",
@@ -282,9 +282,9 @@ window.AR_LOCALES.en = {
   },
   demo: {
     kicker: "Contact and assessment",
-    title: "Arrange a short facility assessment.",
+    title: "Send an enquiry for a short assessment.",
     copy:
-      "Call us to review the basic requirements and arrange a site visit or robot demonstration.",
+      "Briefly describe what you want to automate. We will contact you to review the requirements and agree on the next step.",
     points: [
       "Model recommendation based on space and task",
       "Estimate of the required robot count and cleaning routine",
@@ -292,35 +292,28 @@ window.AR_LOCALES.en = {
     ],
     form: {
       requiredNote: "Fields marked with an asterisk are required.",
-      name: "Full name",
-      company: "Company",
+      firstName: "First name",
+      lastName: "Last name",
       email: "Email",
       phone: "Phone",
-      model: "Selected model",
-      modelPlaceholder: "No specific model selected",
-      message: "Facility and requirement",
+      message: "Message",
       messagePlaceholder:
-        "Example: 6,000 m² warehouse, daily cleaning, dust and forklift traffic",
+        "Briefly describe the facility, its floor area and what you would like to automate.",
+      privacyNote:
+        "We use the information submitted through this form only to respond to your enquiry.",
     },
   },
   forms: {
     required: "Please complete this required field.",
     email: "Enter a valid email address.",
-    submitting: "Preparing your message…",
-    success:
-      "The request has been prepared in your email application. Review the content and send the message.",
-    error:
-      "We could not open your email application. Your data has been preserved; send it directly to {email}.",
-    notProvided: "not provided",
-    emailSubject: "Demo request: {company}",
-    emailBody: {
-      name: "Full name",
-      company: "Company",
-      email: "Email",
-      phone: "Phone",
-      model: "Selected model",
-      message: "Facility and requirement",
-    },
+    submitting: "Sending enquiry…",
+    success: "Thank you! Your enquiry has been sent successfully.",
+    saved:
+      "Thank you! Your enquiry has been received. If the email notification is unavailable, we will find it in the enquiry log.",
+    validation: "Check the information you entered and try again.",
+    error: "The enquiry cannot be sent right now. Try again or contact us directly.",
+    timeout:
+      "We did not receive a delivery confirmation. Before trying again, check whether the enquiry has already been received.",
   },
   footer: {
     tagline: "Robotics, made practical.",
@@ -511,7 +504,7 @@ window.AR_LOCALES.en.pageMeta = {
   },
   contact: {
     title: "Contact and demo | Adria Robotics",
-    description: "Call Adria Robotics to arrange an assessment or an on-site robot demonstration.",
+    description: "Send an enquiry to Adria Robotics or arrange an assessment and on-site robot demonstration.",
   },
 };
 
@@ -536,7 +529,7 @@ window.AR_LOCALES.en.servicePage = {
 window.AR_LOCALES.en.contactPage = {
   kicker: "Contact and demo",
   title: "Let’s discuss your facility.",
-  copy: "Call us and briefly describe your facility. We will suggest suitable models and the most useful next step.",
+  copy: "Send an enquiry or call us. We will suggest suitable models and the most useful next step.",
 };
 
 window.AR_LOCALES.en.homePaths = {

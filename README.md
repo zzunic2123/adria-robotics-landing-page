@@ -14,7 +14,7 @@ Google Sheets podatke i 15-minutni cache:
 | `robots.html` | Katalog, filtri, specifikacije i dostupne opcije financiranja po modelu |
 | `roi.html` | ROI kalkulator i scenariji |
 | `service-plans.html` | Načini financiranja i usporedba paketa usluga |
-| `contact.html` | Telefonski kontakt za procjenu i demo |
+| `contact.html` | Kontaktna forma, telefoni i e-mail za procjenu i demo |
 
 Industrijska kartica s naslovnice otvara filtrirani katalog preko parametra `industry`, a CTA iz
 modala robota otvara kontakt. Parametar `lang=hr|en` i spremljeni odabir jezika vrijede na svim
@@ -25,7 +25,7 @@ stranicama.
 U `config/site.js` nalaze se privremeni prekidači za javni launch:
 
 - `showPricing: false` skriva konkretne cijene i rate na karticama i u modalu robota, ali ostavlja vidljive dostupne opcije kupnje, leasinga i najma.
-- `showContactForm: false` skriva kontaktni obrazac.
+- `showContactForm: true` prikazuje kontaktni obrazac spojen na Google Apps Script.
 - `showEmail: true` prikazuje javni kontaktni e-mail.
 
 Ti prekidači služe samo za prikaz i nisu sigurnosna granica. Google Sheet i generirani fallback i
@@ -33,8 +33,19 @@ dalje sadrže javne iznose koje koristi ROI kalkulator. Ako iznosi ne smiju biti
 kroz izvor podataka, potrebno ih je ukloniti iz javnog Sheetsa, regenerirati fallback i prilagoditi
 ili privremeno isključiti ROI kalkulator.
 
-Prodajni brojevi, broj tehničke podrške i javni e-mail definirani su u `config/site.js`. Za ponovno
-uključivanje obrasca postavite `showContactForm` na `true`.
+Prodajni brojevi, broj tehničke podrške, javni e-mail i Apps Script `/exec` URL definirani su u
+`config/site.js`.
+
+## Kontaktna forma
+
+Kontaktna forma zadržava lokalni HTML/CSS dizajn, a podatke šalje Google Apps Script web-aplikaciji.
+Apps Script sprema upite u zaseban privatni Google Sheet i šalje obavijest na
+`info@adriarobotics.hr`. Privatni Sheet s upitima ne smije se objaviti niti povezati s javnim
+kataloškim spreadsheetom.
+
+Forma šalje samo: vrijeme zaprimanja, ime, prezime, e-mail, telefon i poruku. Javni `/exec` URL nije
+vjerodajnica, ali se prije korištenja validira kao HTTPS URL na domeni `script.google.com`. Nakon
+izmjene Apps Script koda potrebno je objaviti novu verziju preko **Deploy → Manage deployments**.
 
 ## Javni Google Sheets podaci
 

@@ -1218,6 +1218,21 @@ input[readonly] {
   font-size: 0.8rem;
 }
 
+.form-privacy {
+  margin: -2px 0 0;
+  color: var(--ar-slate);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-status {
   min-height: 24px;
   margin: -4px 0 0;

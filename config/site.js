@@ -9,9 +9,11 @@ window.AR_SITE = Object.freeze({
   ]),
   supportPhone: Object.freeze({ display: "+385 91 767 8433", href: "+385917678433" }),
   email: "info@adriarobotics.hr",
+  contactFormEndpoint:
+    "https://script.google.com/macros/s/AKfycbxXVzUIhKTbBJlxDL8Ef2qWFMdUu4oZzEavOg1Pc99fvg6Y2gcVZfeTC3mL19o2h4NkXw/exec",
   features: Object.freeze({
     showPricing: false,
-    showContactForm: false,
+    showContactForm: true,
     showEmail: true,
   }),
   copyrightStartYear: 2026,
