@@ -290,7 +290,6 @@ window.AR_LOCALES.en = {
       "Estimate of the required robot count and cleaning routine",
       "Implementation, training and service plan",
     ],
-    directContact: "Call us directly:",
     form: {
       requiredNote: "Fields marked with an asterisk are required.",
       name: "Full name",
@@ -333,7 +332,8 @@ window.AR_LOCALES.en = {
     legalNameLabel: "Legal name",
     addressLabel: "Address",
     taxIdLabel: "Tax ID",
-    phoneLabel: "Phone",
+    salesLabel: "Sales",
+    supportLabel: "Service and technical support",
     emailLabel: "Email",
     copyright: "© {year} Adriarobotics d.o.o. All rights reserved.",
   },

@@ -1078,7 +1078,8 @@ h3 {
   justify-content: center;
 }
 
-.demo-grid.is-form-hidden [data-contact-phone] {
+.demo-grid.is-form-hidden [data-contact-sales-phone],
+.demo-grid.is-form-hidden [data-contact-support-phone] {
   font-size: 1.18rem;
 }
 
@@ -1116,12 +1117,20 @@ h3 {
 
 .direct-contact {
   display: grid;
-  gap: 4px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
   margin-top: 30px;
   padding: 18px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--ar-structure-mist);
   border-radius: var(--ar-radius-card);
+}
+
+.direct-contact-group,
+.contact-link-list {
+  display: grid;
+  gap: 4px;
+  align-content: start;
 }
 
 .direct-contact p {
@@ -4157,14 +4166,14 @@ input[readonly] {
   }
 
   .contact-page-form .direct-contact {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
     margin-top: 18px;
     padding: 14px;
   }
 
   .contact-page-form .direct-contact p {
-    grid-column: 1 / -1;
+    grid-column: auto;
   }
 
   .contact-page-form .direct-contact a {

@@ -552,9 +552,20 @@ function renderFaq() {
 }
 
 function renderSiteDetails() {
-  document.querySelectorAll("[data-contact-phone]").forEach((link) => {
-    link.textContent = site.phoneDisplay || "";
-    link.setAttribute("href", `tel:${site.phoneHref || ""}`);
+  const salesPhones = Array.isArray(site.salesPhones) ? site.salesPhones : [];
+  document.querySelectorAll("[data-contact-sales-phone]").forEach((link) => {
+    const phone = salesPhones[Number(link.dataset.contactSalesPhone)];
+    link.hidden = !phone?.display || !phone?.href;
+    link.textContent = phone?.display || "";
+    if (phone?.href) link.setAttribute("href", `tel:${phone.href}`);
+    else link.removeAttribute("href");
+  });
+  document.querySelectorAll("[data-contact-support-phone]").forEach((link) => {
+    const phone = site.supportPhone;
+    link.hidden = !phone?.display || !phone?.href;
+    link.textContent = phone?.display || "";
+    if (phone?.href) link.setAttribute("href", `tel:${phone.href}`);
+    else link.removeAttribute("href");
   });
   document.querySelectorAll("[data-contact-email]").forEach((link) => {
     const showEmail = featureEnabled("showEmail") && Boolean(site.email);

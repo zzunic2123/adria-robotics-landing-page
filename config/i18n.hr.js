@@ -290,7 +290,6 @@ window.AR_LOCALES.hr = {
       "Procjena potrebnog broja robota i načina čišćenja",
       "Plan implementacije, edukacije i servisa",
     ],
-    directContact: "Nazovite nas izravno:",
     form: {
       requiredNote: "Polja označena zvjezdicom su obavezna.",
       name: "Ime i prezime",
@@ -333,7 +332,8 @@ window.AR_LOCALES.hr = {
     legalNameLabel: "Pravni naziv",
     addressLabel: "Adresa",
     taxIdLabel: "OIB",
-    phoneLabel: "Telefon",
+    salesLabel: "Prodaja",
+    supportLabel: "Servis i tehnička podrška",
     emailLabel: "E-mail",
     copyright: "© {year} Adriarobotics d.o.o. Sva prava pridržana.",
   },

@@ -26,15 +26,15 @@ U `config/site.js` nalaze se privremeni prekidači za javni launch:
 
 - `showPricing: false` skriva konkretne cijene i rate na karticama i u modalu robota, ali ostavlja vidljive dostupne opcije kupnje, leasinga i najma.
 - `showContactForm: false` skriva kontaktni obrazac.
-- `showEmail: false` skriva e-mail u cijelom korisničkom sučelju.
+- `showEmail: true` prikazuje javni kontaktni e-mail.
 
 Ti prekidači služe samo za prikaz i nisu sigurnosna granica. Google Sheet i generirani fallback i
 dalje sadrže javne iznose koje koristi ROI kalkulator. Ako iznosi ne smiju biti javno dostupni ni
 kroz izvor podataka, potrebno ih je ukloniti iz javnog Sheetsa, regenerirati fallback i prilagoditi
 ili privremeno isključiti ROI kalkulator.
 
-Za ponovno uključivanje obrasca i e-maila prvo upišite stvarnu adresu u `AR_SITE.email`, zatim
-postavite oba pripadajuća prekidača na `true`.
+Prodajni brojevi, broj tehničke podrške i javni e-mail definirani su u `config/site.js`. Za ponovno
+uključivanje obrasca postavite `showContactForm` na `true`.
 
 ## Javni Google Sheets podaci
 
