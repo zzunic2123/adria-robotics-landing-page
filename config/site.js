@@ -3,6 +3,8 @@ window.AR_SITE = Object.freeze({
   legalName: "Adriarobotics d.o.o.",
   address: "Kovinska ulica 4, Zagreb",
   taxId: "83127934571",
+  bankName: "OTP banka d.d.",
+  iban: "HR2924070001100795592",
   salesPhones: Object.freeze([
     Object.freeze({ display: "+385 98 256 469", href: "+38598256469" }),
     Object.freeze({ display: "+385 99 389 9783", href: "+385993899783" }),

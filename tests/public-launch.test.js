@@ -16,6 +16,8 @@ test("public configuration exposes contacts, form endpoint and hides product pri
     href: "+385917678433",
   });
   assert.equal(global.AR_SITE.email, "info@adriarobotics.hr");
+  assert.equal(global.AR_SITE.bankName, "OTP banka d.d.");
+  assert.equal(global.AR_SITE.iban, "HR2924070001100795592");
   assert.match(
     global.AR_SITE.contactFormEndpoint,
     /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/,
@@ -23,6 +25,16 @@ test("public configuration exposes contacts, form endpoint and hides product pri
   assert.equal(global.AR_SITE.features.showPricing, false);
   assert.equal(global.AR_SITE.features.showContactForm, true);
   assert.equal(global.AR_SITE.features.showEmail, true);
+});
+
+test("all public pages expose the configured bank and IBAN in the company footer", () => {
+  ["index.html", "robots.html", "roi.html", "service-plans.html", "contact.html"].forEach(
+    (fileName) => {
+      const html = fs.readFileSync(path.join(__dirname, "..", fileName), "utf8");
+      assert.match(html, /data-site-bank-name/);
+      assert.match(html, /data-site-iban/);
+    },
+  );
 });
 
 test("contact form posts only the five requested fields through the Apps Script iframe", () => {

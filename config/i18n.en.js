@@ -325,6 +325,8 @@ window.AR_LOCALES.en = {
     legalNameLabel: "Legal name",
     addressLabel: "Address",
     taxIdLabel: "Tax ID",
+    bankLabel: "Bank",
+    ibanLabel: "IBAN",
     salesLabel: "Sales",
     supportLabel: "Service and technical support",
     emailLabel: "Email",

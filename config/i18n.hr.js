@@ -325,6 +325,8 @@ window.AR_LOCALES.hr = {
     legalNameLabel: "Pravni naziv",
     addressLabel: "Adresa",
     taxIdLabel: "OIB",
+    bankLabel: "Banka",
+    ibanLabel: "IBAN",
     salesLabel: "Prodaja",
     supportLabel: "Servis i tehnička podrška",
     emailLabel: "E-mail",

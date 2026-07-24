@@ -610,6 +610,12 @@ function renderSiteDetails() {
   document.querySelectorAll("[data-site-tax-id]").forEach((element) => {
     element.textContent = site.taxId || "";
   });
+  document.querySelectorAll("[data-site-bank-name]").forEach((element) => {
+    element.textContent = site.bankName || "";
+  });
+  document.querySelectorAll("[data-site-iban]").forEach((element) => {
+    element.textContent = site.iban || "";
+  });
   document.querySelectorAll("[data-page-link]").forEach((link) => {
     link.setAttribute("href", pageUrl(link.dataset.pageLink));
   });
