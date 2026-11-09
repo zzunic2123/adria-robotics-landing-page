@@ -301,6 +301,7 @@ window.AR_LOCALES.en = {
         "Briefly describe the facility, its floor area and what you would like to automate.",
       privacyNote:
         "We use the information submitted through this form only to respond to your enquiry.",
+      privacyLink: "Read our privacy policy.",
     },
   },
   forms: {
@@ -330,6 +331,7 @@ window.AR_LOCALES.en = {
     salesLabel: "Sales",
     supportLabel: "Service and technical support",
     emailLabel: "Email",
+    privacyLink: "Privacy policy",
     copyright: "© {year} Adriarobotics d.o.o. All rights reserved.",
   },
 };
@@ -508,6 +510,41 @@ window.AR_LOCALES.en.pageMeta = {
     title: "Contact and demo | Adria Robotics",
     description: "Send an enquiry to Adria Robotics or arrange an assessment and on-site robot demonstration.",
   },
+  privacy: {
+    title: "Privacy policy | Adria Robotics",
+    description: "Learn how Adria Robotics processes visitor data and contact enquiries.",
+  },
+};
+
+window.AR_LOCALES.en.privacy = {
+  kicker: "Your data",
+  title: "Privacy policy",
+  intro: "How we process data when you visit our website or send us an enquiry.",
+  contents: "On this page",
+  controllerTitle: "Who processes your data",
+  controllerText: "The data controller is Adriarobotics d.o.o., Kovinska ulica 4, Zagreb, Croatia. For questions about personal data or to exercise your rights, email info@adriarobotics.hr. This policy covers the adriarobotics.hr website, not data processed by robots or their applications during operation.",
+  contactTitle: "Contact enquiries",
+  contactData: "When you submit the form, we receive your first name, last name, email address, phone number and message, and record the time of receipt. If you contact us by email or phone, we process the information you provide. We use it to answer your enquiry, discuss your needs and arrange an assessment, demonstration or quote. We do not use enquiry details to send newsletters.",
+  contactBasis: "If you enquire in your own name about a possible purchase or service, the legal basis is taking steps at your request before entering a contract (Article 6(1)(b) GDPR). If you contact us on behalf of a company, the basis is our legitimate interest in responding to business enquiries and communicating with business contacts (Article 6(1)(f) GDPR). You are not legally required to provide the data, but we cannot process a form enquiry without its required fields.",
+  retentionTitle: "How long we keep enquiries",
+  retentionText: "We delete enquiries that do not result in a business relationship 24 months after the last communication. If an enquiry leads to a business relationship, data that becomes part of contractual or accounting records is kept for the applicable statutory periods.",
+  servicesTitle: "Technical services and data recipients",
+  servicesForm: "The contact form sends enquiries through Google Apps Script to our internal enquiry records, and our team receives an email notification. Enquiries are accessible to staff responsible for handling them and to the technical service providers needed for this processing.",
+  servicesVisit: "The website is served through GitHub Pages. GitHub logs a visitor's IP address for security. Your browser contacts Google's servers to display the font and some public content. These providers may receive your IP address and technical request data. The YouTube link opens only when you choose it. Our legal basis for providing and protecting the website is our legitimate interest (Article 6(1)(f) GDPR).",
+  transfersTitle: "Transfers outside the European Economic Area",
+  transfersText: "Google and GitHub may process data outside the European Economic Area, including in the United States. Their notices describe reliance on adequacy decisions, including the EU–US Data Privacy Framework where applicable, and standard contractual clauses for other transfers. You can email us for information about the safeguards relevant to our use of these services.",
+  googleTransfers: "Google's transfer frameworks",
+  githubPrivacy: "GitHub's privacy statement",
+  storageTitle: "Cookies and local storage",
+  storageText: "Our own code does not set analytics or advertising cookies. We use your browser's local storage for your language choice and public data that helps display content when new information cannot be loaded. Your language choice remains until you change or delete it. Public data is treated as current for 15 minutes, but may remain until the website replaces it or you delete it in your browser settings.",
+  roiTitle: "ROI calculator and automated decisions",
+  roiText: "Information entered into the ROI calculator is processed in your browser to display an indicative calculation. It is not sent through the contact form. We do not make automated decisions about visitors that produce legal or similarly significant effects.",
+  rightsTitle: "Your rights",
+  rightsText: "Depending on the circumstances, you can request access to your data, correction, erasure or restriction of processing, and you can object to processing. You can also request data portability where its legal conditions apply. Send your request to info@adriarobotics.hr. If you believe your rights have been infringed, you can contact the Croatian Personal Data Protection Agency (AZOP).",
+  azopLink: "How to submit a request to AZOP",
+  updatesTitle: "Changes to this policy",
+  updatesText: "We will update this policy if the way we process data changes. We will show the date of the latest revision on this page.",
+  updated: "Last updated: 9 November 2026.",
 };
 
 window.AR_LOCALES.en.catalogPage = {

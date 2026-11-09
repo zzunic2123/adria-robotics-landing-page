@@ -28,7 +28,7 @@ test("public configuration exposes contacts, form endpoint and hides product pri
 });
 
 test("all public pages expose the configured bank and IBAN in the company footer", () => {
-  ["index.html", "robots.html", "roi.html", "service-plans.html", "contact.html"].forEach(
+  ["index.html", "robots.html", "roi.html", "service-plans.html", "contact.html", "privacy.html"].forEach(
     (fileName) => {
       const html = fs.readFileSync(path.join(__dirname, "..", fileName), "utf8");
       assert.match(html, /data-site-bank-name/);

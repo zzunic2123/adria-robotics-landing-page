@@ -301,6 +301,7 @@ window.AR_LOCALES.hr = {
         "Ukratko opišite objekt, njegovu površinu i što želite automatizirati.",
       privacyNote:
         "Podatke iz obrasca koristimo isključivo kako bismo odgovorili na vaš upit.",
+      privacyLink: "Pročitajte politiku privatnosti.",
     },
   },
   forms: {
@@ -330,6 +331,7 @@ window.AR_LOCALES.hr = {
     salesLabel: "Prodaja",
     supportLabel: "Servis i tehnička podrška",
     emailLabel: "E-mail",
+    privacyLink: "Politika privatnosti",
     copyright: "© {year} Adriarobotics d.o.o. Sva prava pridržana.",
   },
 };
@@ -508,6 +510,41 @@ window.AR_LOCALES.hr.pageMeta = {
     title: "Kontakt i demo | Adria Robotics",
     description: "Pošaljite upit Adria Robotics timu ili dogovorite procjenu i demonstraciju robota na lokaciji.",
   },
+  privacy: {
+    title: "Politika privatnosti | Adria Robotics",
+    description: "Saznajte kako Adria Robotics obrađuje podatke posjetitelja i kontaktne upite.",
+  },
+};
+
+window.AR_LOCALES.hr.privacy = {
+  kicker: "Vaši podaci",
+  title: "Politika privatnosti",
+  intro: "Kako obrađujemo podatke kada posjetite našu stranicu ili nam pošaljete upit.",
+  contents: "Na ovoj stranici",
+  controllerTitle: "Tko obrađuje vaše podatke",
+  controllerText: "Voditelj obrade je Adriarobotics d.o.o., Kovinska ulica 4, Zagreb. Za pitanja o obradi osobnih podataka i ostvarivanje svojih prava možete nam pisati na info@adriarobotics.hr. Ova politika odnosi se na mrežnu stranicu adriarobotics.hr, a ne na podatke koje pri radu obrađuju roboti ili njihove aplikacije.",
+  contactTitle: "Kontaktni upiti",
+  contactData: "Kada nam pošaljete obrazac, zaprimamo ime, prezime, e-mail adresu, telefonski broj i poruku te bilježimo vrijeme zaprimanja. Ako nam se javite e-poštom ili telefonom, obrađujemo podatke koje nam tada sami pružite. Koristimo ih za odgovor na upit, razgovor o vašim potrebama te dogovor procjene, demonstracije ili ponude. Ne koristimo podatke iz upita za slanje newslettera.",
+  contactBasis: "Ako upit šaljete u svoje ime radi moguće kupnje ili usluge, pravna osnova su radnje koje poduzimamo na vaš zahtjev prije sklapanja ugovora (članak 6. stavak 1. točka b GDPR-a). Kada nam se javite kao predstavnik tvrtke, osnova je naš legitimni interes za odgovor na poslovni upit i komunikaciju s poslovnim kontaktom (članak 6. stavak 1. točka f GDPR-a). Podatke niste zakonski obvezni dati, ali bez obaveznih polja ne možemo obraditi upit putem obrasca.",
+  retentionTitle: "Koliko dugo čuvamo upite",
+  retentionText: "Upite koji ne rezultiraju poslovnom suradnjom brišemo 24 mjeseca nakon posljednje komunikacije. Ako iz upita nastane poslovni odnos, podaci koji postanu dio ugovorne ili računovodstvene dokumentacije čuvaju se u skladu s primjenjivim zakonskim rokovima.",
+  servicesTitle: "Tehničke usluge i primatelji podataka",
+  servicesForm: "Kontaktni obrazac šalje upit putem Google Apps Scripta u našu internu evidenciju upita, a naš tim prima obavijest e-poštom. Upitima pristupaju osobe zadužene za njihovo rješavanje te pružatelji tehničkih usluga potrebnih za ovu obradu.",
+  servicesVisit: "Stranica se poslužuje putem GitHub Pagesa. GitHub pri posjetu bilježi IP adresu radi sigurnosti. Za prikaz fonta i dijela javnog sadržaja preglednik kontaktira Googleove poslužitelje. Ti pružatelji mogu zaprimiti IP adresu i tehničke podatke o zahtjevu. Poveznica na YouTube otvara se tek kada je odaberete. Pravna osnova za tehničko pružanje i zaštitu stranice naš je legitimni interes (članak 6. stavak 1. točka f GDPR-a).",
+  transfersTitle: "Prijenosi izvan Europskog gospodarskog prostora",
+  transfersText: "Google i GitHub mogu obrađivati podatke izvan Europskog gospodarskog prostora, uključujući SAD. U svojim obavijestima navode korištenje odluka o primjerenosti, uključujući EU–SAD okvir za zaštitu podataka kada je primjenjiv, te standardnih ugovornih klauzula za druge prijenose. Za informacije o zaštitnim mjerama koje se primjenjuju na našu uporabu tih usluga možete nam se obratiti e-poštom.",
+  googleTransfers: "Googleovi mehanizmi prijenosa",
+  githubPrivacy: "GitHubova izjava o privatnosti",
+  storageTitle: "Kolačići i lokalna pohrana",
+  storageText: "U vlastitom kodu ne postavljamo analitičke ni marketinške kolačiće. U lokalnu pohranu preglednika spremamo vaš odabir jezika i javne podatke koji omogućuju brži prikaz sadržaja kada se ne mogu učitati nove informacije. Odabir jezika ostaje do promjene ili brisanja. Javni podaci smatraju se aktualnima 15 minuta, ali mogu ostati dok ih stranica ne zamijeni ili ih ne izbrišete u postavkama preglednika.",
+  roiTitle: "ROI kalkulator i automatizirane odluke",
+  roiText: "Podaci koje unesete u ROI kalkulator obrađuju se u vašem pregledniku radi prikaza informativnog izračuna. Ne šalju se putem kontaktnog obrasca. Ne donosimo automatizirane odluke o posjetiteljima koje proizvode pravne ili slične značajne učinke.",
+  rightsTitle: "Vaša prava",
+  rightsText: "Ovisno o okolnostima, možete zatražiti pristup svojim podacima, ispravak, brisanje ili ograničenje obrade te uložiti prigovor. Kada su ispunjeni propisani uvjeti, možete zatražiti i prijenos podataka. Zahtjev pošaljite na info@adriarobotics.hr. Ako smatrate da su vam povrijeđena prava, možete se obratiti Agenciji za zaštitu osobnih podataka (AZOP).",
+  azopLink: "Kako podnijeti zahtjev AZOP-u",
+  updatesTitle: "Izmjene politike",
+  updatesText: "Ovu politiku ažurirat ćemo ako se promijeni način na koji obrađujemo podatke. Datum posljednje izmjene prikazat ćemo na ovoj stranici.",
+  updated: "Posljednja izmjena: 9. studenoga 2026.",
 };
 
 window.AR_LOCALES.hr.catalogPage = {

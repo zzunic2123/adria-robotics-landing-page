@@ -15,6 +15,7 @@ Google Sheets podatke i 15-minutni cache:
 | `roi.html` | ROI kalkulator i scenariji |
 | `service-plans.html` | Načini financiranja i usporedba paketa usluga |
 | `contact.html` | Kontaktna forma, telefoni i e-mail za procjenu i demo |
+| `privacy.html` | Dvojezična politika privatnosti |
 
 Industrijska kartica s naslovnice otvara filtrirani katalog preko parametra `industry`, a CTA iz
 modala robota otvara kontakt. Parametar `lang=hr|en` i spremljeni odabir jezika vrijede na svim
@@ -46,6 +47,11 @@ kataloškim spreadsheetom.
 Forma šalje samo: vrijeme zaprimanja, ime, prezime, e-mail, telefon i poruku. Javni `/exec` URL nije
 vjerodajnica, ali se prije korištenja validira kao HTTPS URL na domeni `script.google.com`. Nakon
 izmjene Apps Script koda potrebno je objaviti novu verziju preko **Deploy → Manage deployments**.
+
+`privacy.html` predviđa brisanje upita koji ne rezultiraju suradnjom 24 mjeseca nakon posljednje
+komunikacije. Prije javne objave politike treba provoditi taj rok u privatnom Sheetu i e-pošti te
+potvrditi primjenjive ugovorne mehanizme prijenosa podataka za Googleove usluge. Treba provjeriti i
+je li automatska pohrana javnog kataloga u `localStorage` izuzeta od privole ili zahtijeva promjenu.
 
 ## Javni Google Sheets podaci
 
@@ -138,6 +144,6 @@ Skripta čita samo konfiguriranih sedam javnih raspona i mehanički regenerira
 
 Repo nema build izlaz. U postavkama repozitorija odaberite GitHub Pages objavu iz željene grane i
 root direktorija. GitHub Pages će uz `index.html` automatski posluživati i `robots.html`, `roi.html`,
-`service-plans.html` te `contact.html`; nije potrebno konfigurirati rute ili redirects. Nakon objave
+`service-plans.html`, `contact.html` te `privacy.html`; nije potrebno konfigurirati rute ili redirects. Nakon objave
 provjerite sve glavne stranice, katalog, modal, ROI, industrijske filtre, servisne pakete, HR/EN
 prebacivanje i pravne stranice u anonimnom prozoru.
