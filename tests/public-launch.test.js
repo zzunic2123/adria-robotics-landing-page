@@ -12,8 +12,8 @@ test("public configuration exposes contacts, form endpoint and hides product pri
     { display: "+385 99 389 9783", href: "+385993899783" },
   ]);
   assert.deepEqual(global.AR_SITE.supportPhone, {
-    display: "+385 91 767 8433",
-    href: "+385917678433",
+    display: "+385 91 348 0620",
+    href: "+385913480620",
   });
   assert.equal(global.AR_SITE.email, "info@adriarobotics.hr");
   assert.equal(global.AR_SITE.bankName, "OTP banka d.d.");
