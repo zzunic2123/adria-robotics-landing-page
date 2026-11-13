@@ -256,10 +256,11 @@
     return financing;
   }
 
-  function normalizeSpecs(rows, productIds) {
+  function normalizeSpecs(rows, productIds, inactiveProductIds) {
     return rows
       .map((row) => {
         const productId = stringValue(row.product_id);
+        if (inactiveProductIds.has(productId)) return null;
         const sortOrder = numberValue(row.sort_order);
         if (!productIds.has(productId) || sortOrder === null) {
           warn(`Invalid product specification skipped: ${productId || "unknown"}`, row);
@@ -385,6 +386,12 @@
       if (!Array.isArray(rawSheets?.[sheet])) throw new Error(`Missing sheet data: ${sheet}`);
     });
     let products = normalizeProducts(rawSheets.Products);
+    const inactiveProductIds = new Set(
+      rawSheets.Products
+        .filter((row) => booleanValue(row.active) === false)
+        .map((row) => stringValue(row.id))
+        .filter(Boolean),
+    );
     const initialProductIds = new Set(products.map((product) => product.id));
     const financing = normalizeFinancing(rawSheets.Financing, initialProductIds);
     const financedIds = new Set(financing.map((row) => row.productId));
@@ -401,7 +408,7 @@
     );
     return {
       products,
-      specifications: normalizeSpecs(rawSheets.Product_Specs, productIds),
+      specifications: normalizeSpecs(rawSheets.Product_Specs, productIds, inactiveProductIds),
       financing: financing.filter((row) => productIds.has(row.productId)),
       roiConfig: normalizeRoiConfig(rawSheets.ROI_Config),
       industries,

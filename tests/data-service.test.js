@@ -40,7 +40,16 @@ test("rejects unsafe relative image paths", () => {
 });
 
 test("normalizes the generated public fallback to the official catalogue", () => {
-  const data = normalizeWebData(global.AR_FALLBACK_DATA.sheets);
+  const warnings = [];
+  const originalWarn = console.warn;
+  console.warn = (...values) => warnings.push(values);
+  let data;
+  try {
+    data = normalizeWebData(global.AR_FALLBACK_DATA.sheets);
+  } finally {
+    console.warn = originalWarn;
+  }
+  assert.equal(warnings.length, 0);
   assert.equal(data.products.length, 11);
   assert.equal(data.financing.length, 11);
   assert.equal(data.industries.length, 6);
