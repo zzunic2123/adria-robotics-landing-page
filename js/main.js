@@ -230,8 +230,10 @@ function renderFilters() {
   if (!manufacturerFilters || !taskFilters) return;
   const products = webData?.products || [];
   const manufacturers = [...new Set(products.map((product) => product.manufacturer).filter(Boolean))];
-  manufacturerFilters.closest(".filter-group").hidden = manufacturers.length <= 1;
-  if (manufacturers.length <= 1) catalogState.manufacturer = "all";
+  const singleBrand = manufacturers.length <= 1;
+  manufacturerFilters.closest(".filter-group").hidden = singleBrand;
+  manufacturerFilters.closest(".catalog-filters").classList.toggle("single-brand", singleBrand);
+  if (singleBrand) catalogState.manufacturer = "all";
   if (
     catalogState.manufacturer !== "all" &&
     !manufacturers.includes(catalogState.manufacturer)
@@ -372,7 +374,7 @@ function financingForProduct(productId) {
 function renderCatalogSkeleton() {
   if (!productsGrid) return;
   productsGrid.innerHTML = Array.from(
-    { length: 4 },
+    { length: 3 },
     (_, index) => `
       <div class="product-card catalog-skeleton" aria-hidden="true" data-skeleton="${index}">
         <div class="product-image"></div>
