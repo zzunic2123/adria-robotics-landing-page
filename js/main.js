@@ -197,21 +197,6 @@ function applyTextTranslations() {
   });
 }
 
-function renderBrands() {
-  const grid = document.querySelector("[data-brand-grid]");
-  if (!grid) return;
-  grid.innerHTML = activeLocale.brands
-    .map(
-      (brand) => `
-        <article>
-          <span>${escapeHtml(brand.name)}</span>
-          <p>${escapeHtml(brand.copy)}</p>
-        </article>
-      `,
-    )
-    .join("");
-}
-
 function createFilterButton(type, value, label, isActive) {
   return `
     <button
@@ -1513,7 +1498,6 @@ function setLanguage(language) {
 
 function applyLocale() {
   applyTextTranslations();
-  renderBrands();
   renderFilters();
   renderProducts();
   renderIndustries();

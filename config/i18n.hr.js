@@ -57,18 +57,6 @@ window.AR_LOCALES.hr = {
       service: "servis",
     },
   },
-  partners: {
-    kicker: "Gausium portfelj",
-    title: "Različiti prostori, jedan portfelj robota.",
-    copy:
-      "Kupac ne mora unaprijed znati koji mu model treba. Analiziramo prostor, zadatak i uvjete rada te izrađujemo uži izbor modela koji odgovaraju stvarnim potrebama objekta.",
-  },
-  brands: [
-    {
-      name: "Gausium",
-      copy: "Roboti za unutarnje i vanjske površine, skladišta, trgovine i industriju.",
-    },
-  ],
   products: {
     kicker: "Katalog robota",
     title: "Roboti prema zadatku, prostoru i načinu rada.",

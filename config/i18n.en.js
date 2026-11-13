@@ -57,18 +57,6 @@ window.AR_LOCALES.en = {
       service: "service",
     },
   },
-  partners: {
-    kicker: "Gausium portfolio",
-    title: "Different spaces, one robot portfolio.",
-    copy:
-      "Customers do not need to know the right model in advance. We assess the site, task and operating conditions, then prepare a focused selection of robots suited to the facility’s real needs.",
-  },
-  brands: [
-    {
-      name: "Gausium",
-      copy: "Robots for indoor and outdoor areas, warehouses, retail and industrial sites.",
-    },
-  ],
   products: {
     kicker: "Robot catalogue",
     title: "Robots by task, space and operating routine.",
