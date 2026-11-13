@@ -50,12 +50,13 @@ test("normalizes the generated public fallback to the official catalogue", () =>
     console.warn = originalWarn;
   }
   assert.equal(warnings.length, 0);
-  assert.equal(data.products.length, 11);
+  assert.equal(data.products.length, 16);
+  assert.equal(data.roiProducts.length, 11);
   assert.equal(data.financing.length, 11);
   assert.equal(data.industries.length, 6);
-  assert.equal(data.productIndustries.length, 23);
+  assert.equal(data.productIndustries.length, 32);
   assert.equal(data.servicePlans.length, 9);
-  assert.equal(data.specifications.length, 77);
+  assert.equal(data.specifications.length, 109);
   assert.deepEqual(
     data.products.map((product) => product.fullName),
     [
@@ -70,11 +71,42 @@ test("normalizes the generated public fallback to the official catalogue", () =>
       "Gausium MIRA+WS",
       "Gausium OMNIE+WS",
       "Gausium MARVEL+WS",
+      "Gausium Vacuum 40",
+      "Gausium Scrubber 75",
+      "Gausium PhanShop",
+      "Gausium Scrubber 50",
+      "Gausium MAX-SW",
     ],
   );
-  assert.equal(data.products.filter((product) => product.imageStatus === "ready").length, 11);
+  assert.equal(data.products.filter((product) => product.imageStatus === "ready").length, 16);
   assert.equal(data.products.filter((product) => product.imageStatus === "missing").length, 0);
   assert.equal(data.products.some((product) => product.id === "pudu-cc1"), false);
+});
+
+test("shows active products without prices in the catalogue but excludes them from ROI", () => {
+  const newIds = [
+    "gausium-vacuum-40",
+    "gausium-scrubber-75",
+    "gausium-phanshop",
+    "gausium-scrubber-50",
+    "gausium-max-sw",
+  ];
+  const warnings = [];
+  const originalWarn = console.warn;
+  console.warn = (...values) => warnings.push(values);
+  let data;
+  try {
+    data = normalizeWebData(global.AR_FALLBACK_DATA.sheets);
+  } finally {
+    console.warn = originalWarn;
+  }
+  assert.equal(warnings.length, 0);
+  assert.equal(data.roiProducts.length, 11);
+  assert.equal(data.financing.length, 11);
+  newIds.forEach((id) => {
+    assert.equal(data.products.find((product) => product.id === id)?.priceNetEur, null);
+    assert.equal(data.roiProducts.some((product) => product.id === id), false);
+  });
 });
 
 test("skips one invalid product row without losing valid public data", () => {
@@ -94,7 +126,7 @@ test("skips one invalid product row without losing valid public data", () => {
   } finally {
     console.warn = originalWarn;
   }
-  assert.equal(data.products.length, 11);
+  assert.equal(data.products.length, 16);
   assert.equal(data.products.some((product) => product.id === "unsafe-product"), false);
   assert.ok(warnings.length >= 1);
 });
@@ -121,7 +153,7 @@ test("uses the last valid stale cache when all public requests fail", async () =
     });
     assert.equal(result.meta.source, "stale-cache");
     assert.equal(result.meta.isStale, true);
-    assert.equal(result.data.products.length, 11);
+    assert.equal(result.data.products.length, 16);
   } finally {
     clearMemoryCache();
     console.warn = originalWarn;

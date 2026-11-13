@@ -452,7 +452,7 @@ function renderProducts() {
               showPricing
                 ? `<div class="product-commercial">
                     <p>
-                      <strong>${escapeHtml(formatCurrency(product.priceNetEur, 0))}</strong>
+                      ${product.priceNetEur === null ? "" : `<strong>${escapeHtml(formatCurrency(product.priceNetEur, 0))}</strong>`}
                       <span>${escapeHtml(localized(product.priceNote))}</span>
                     </p>
                     ${rentText ? `<small>${escapeHtml(rentText)}</small>` : ""}
@@ -896,7 +896,7 @@ function renderModal(product) {
           featureEnabled("showPricing")
             ? `<div class="modal-price">
                 <span>${escapeHtml(t("products.netPrice"))}</span>
-                <strong>${escapeHtml(formatCurrency(product.priceNetEur, 0))}</strong>
+                ${product.priceNetEur === null ? "" : `<strong>${escapeHtml(formatCurrency(product.priceNetEur, 0))}</strong>`}
                 <small>${escapeHtml(localized(product.priceNote))}</small>
               </div>`
             : ""
@@ -1034,9 +1034,9 @@ function initializeRoiState() {
     shiftHours: roiConfigNumber("shift_hours", 8),
     employeeCostPerHour: roiConfigNumber("employee_cost_per_hour_eur", 7.94),
     robotWorkShare: roiConfigNumber("robot_work_share", 0.7),
-    productId: webData.products.some((product) => product.id === defaultProductId)
+    productId: webData.roiProducts.some((product) => product.id === defaultProductId)
       ? defaultProductId
-      : webData.products[0]?.id,
+      : webData.roiProducts[0]?.id,
     financingMode: defaults.mode,
     period: defaults.period,
     manualRobotCount: "",
@@ -1150,7 +1150,7 @@ function renderRoi() {
           <div class="roi-field roi-field-product">
             <label for="roi-product">${escapeHtml(t("roi.model"))}</label>
             <select id="roi-product" data-roi-select="productId">
-              ${webData.products
+              ${webData.roiProducts
                 .map(
                   (product) => `<option value="${escapeHtml(product.id)}"${
                     roiState.productId === product.id ? " selected" : ""

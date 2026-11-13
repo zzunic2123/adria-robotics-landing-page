@@ -165,7 +165,10 @@
       if (active !== true) return;
       const sortOrder = numberValue(row.sort_order);
       const priceNetEur = numberValue(row.price_net_eur);
-      if (sortOrder === null || priceNetEur === null || priceNetEur < 0) {
+      if (
+        sortOrder === null ||
+        (isPresent(row.price_net_eur) && (priceNetEur === null || priceNetEur < 0))
+      ) {
         warn(`Product with invalid sort order or price skipped: ${id}`, row);
         return;
       }
@@ -385,22 +388,19 @@
     required.forEach((sheet) => {
       if (!Array.isArray(rawSheets?.[sheet])) throw new Error(`Missing sheet data: ${sheet}`);
     });
-    let products = normalizeProducts(rawSheets.Products);
+    const products = normalizeProducts(rawSheets.Products);
     const inactiveProductIds = new Set(
       rawSheets.Products
         .filter((row) => booleanValue(row.active) === false)
         .map((row) => stringValue(row.id))
         .filter(Boolean),
     );
-    const initialProductIds = new Set(products.map((product) => product.id));
-    const financing = normalizeFinancing(rawSheets.Financing, initialProductIds);
-    const financedIds = new Set(financing.map((row) => row.productId));
-    products = products.filter((product) => {
-      if (financedIds.has(product.id)) return true;
-      warn(`Active product without public financing skipped: ${product.id}`);
-      return false;
-    });
     const productIds = new Set(products.map((product) => product.id));
+    const financing = normalizeFinancing(rawSheets.Financing, productIds);
+    const financedIds = new Set(financing.map((row) => row.productId));
+    const roiProducts = products.filter(
+      (product) => product.priceNetEur !== null && financedIds.has(product.id),
+    );
     const industries = normalizeIndustries(rawSheets.Industries);
     const activeIndustryIds = new Set(industries.map((industry) => industry.id));
     const industryIds = new Set(
@@ -408,6 +408,7 @@
     );
     return {
       products,
+      roiProducts,
       specifications: normalizeSpecs(rawSheets.Product_Specs, productIds, inactiveProductIds),
       financing: financing.filter((row) => productIds.has(row.productId)),
       roiConfig: normalizeRoiConfig(rawSheets.ROI_Config),

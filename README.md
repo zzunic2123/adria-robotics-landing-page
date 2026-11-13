@@ -138,7 +138,8 @@ npm test
 
 Skripta čita samo konfiguriranih sedam javnih raspona i mehanički regenerira
 `config/fallback-data.js`. Datoteku ne uređujte ručno. Prije commita provjerite da snapshot sadrži
-11 službenih aktivnih proizvoda i da `git diff` ne sadrži interne ili osobne podatke.
+16 aktivnih proizvoda, od kojih 11 ima potvrđeno financiranje za ROI, i da `git diff` ne sadrži
+interne ili osobne podatke.
 
 ## GitHub Pages objava
 

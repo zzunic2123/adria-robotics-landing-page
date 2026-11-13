@@ -6,7 +6,7 @@
 (function registerFallbackSnapshot(global) {
   "use strict";
   global.AR_FALLBACK_DATA = {
-  "generatedAt": "2026-11-13T10:58:49.495Z",
+  "generatedAt": "2026-11-13T11:08:20.129Z",
   "spreadsheetId": "1YFBlMR4SUUCsW98MqSjVjHAnBmVZoXhxQzt3qshLelo",
   "sheets": {
     "Products": [
@@ -375,7 +375,7 @@
       },
       {
         "id": "gausium-vacuum-40",
-        "active": false,
+        "active": true,
         "sort_order": 120,
         "manufacturer": "Gausium",
         "model": "Vacuum 40",
@@ -408,7 +408,7 @@
       },
       {
         "id": "gausium-scrubber-75",
-        "active": false,
+        "active": true,
         "sort_order": 130,
         "manufacturer": "Gausium",
         "model": "Scrubber 75",
@@ -441,7 +441,7 @@
       },
       {
         "id": "gausium-phanshop",
-        "active": false,
+        "active": true,
         "sort_order": 140,
         "manufacturer": "Gausium",
         "model": "PhanShop",
@@ -474,7 +474,7 @@
       },
       {
         "id": "gausium-scrubber-50",
-        "active": false,
+        "active": true,
         "sort_order": 150,
         "manufacturer": "Gausium",
         "model": "Scrubber 50",
@@ -507,7 +507,7 @@
       },
       {
         "id": "gausium-max-sw",
-        "active": false,
+        "active": true,
         "sort_order": 160,
         "manufacturer": "Gausium",
         "model": "MAX-SW",
@@ -2374,6 +2374,90 @@
       },
       {
         "product_id": "gausium-marvel",
+        "industry_id": "logistics",
+        "priority": 3,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-vacuum-40",
+        "industry_id": "hospitality",
+        "priority": 1,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-vacuum-40",
+        "industry_id": "retail",
+        "priority": 2,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-vacuum-40",
+        "industry_id": "workspace-public",
+        "priority": 3,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-scrubber-75",
+        "industry_id": "shopping-centres",
+        "priority": 1,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-scrubber-75",
+        "industry_id": "transport",
+        "priority": 2,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-scrubber-75",
+        "industry_id": "parking",
+        "priority": 3,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-phanshop",
+        "industry_id": "retail",
+        "priority": 1,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-phanshop",
+        "industry_id": "shopping-centres",
+        "priority": 2,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-scrubber-50",
+        "industry_id": "retail",
+        "priority": 1,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-scrubber-50",
+        "industry_id": "workspace-public",
+        "priority": 2,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-scrubber-50",
+        "industry_id": "shopping-centres",
+        "priority": 3,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-max-sw",
+        "industry_id": "parking",
+        "priority": 1,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-max-sw",
+        "industry_id": "manufacturing",
+        "priority": 2,
+        "recommended": true
+      },
+      {
+        "product_id": "gausium-max-sw",
         "industry_id": "logistics",
         "priority": 3,
         "recommended": true
