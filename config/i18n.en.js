@@ -22,6 +22,7 @@ window.AR_LOCALES.en = {
     en: "English",
   },
   nav: {
+    distributorFor: "Distributor for",
     robots: "Robots",
     industries: "Industries",
     implementation: "Implementation",

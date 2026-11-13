@@ -22,6 +22,7 @@ window.AR_LOCALES.hr = {
     en: "Engleski",
   },
   nav: {
+    distributorFor: "Distributer za",
     robots: "Roboti",
     industries: "Industrije",
     implementation: "Implementacija",
