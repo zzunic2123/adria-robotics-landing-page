@@ -42,11 +42,11 @@ window.AR_LOCALES.hr = {
     eyebrow: "Globalna tehnologija. Lokalna implementacija.",
     title: "Autonomni roboti za profesionalno čišćenje.",
     lead:
-      "Od odabira i demonstracije do mapiranja, edukacije i servisa. Adria Robotics uvodi provjerena rješenja PUDU, OrionStar i Gausium u objekte diljem Adria regije.",
+      "Od odabira i demonstracije do mapiranja, edukacije i servisa. Adria Robotics uvodi Gausium robote u objekte diljem Adria regije.",
     actionsLabel: "Glavne akcije",
     metricsLabel: "Ključne prednosti",
     metrics: {
-      portfolios: "portfelja robota",
+      portfolios: "Gausium modela",
       steps: "koraka implementacije",
       partner: "lokalni partner",
     },
@@ -57,23 +57,15 @@ window.AR_LOCALES.hr = {
     },
   },
   partners: {
-    kicker: "Neovisna preporuka",
-    title: "Više portfelja, jedna odgovorna implementacija.",
+    kicker: "Gausium portfelj",
+    title: "Različiti prostori, jedan portfelj robota.",
     copy:
       "Kupac ne mora unaprijed znati koji mu model treba. Analiziramo prostor, zadatak i uvjete rada te izrađujemo uži izbor modela koji odgovaraju stvarnim potrebama objekta.",
   },
   brands: [
     {
-      name: "PUDU Robotics",
-      copy: "Širok portfelj za komercijalno čišćenje i dinamične uslužne prostore.",
-    },
-    {
-      name: "OrionStar",
-      copy: "Autonomni sustavi za objekte u kojima su važni pouzdano pranje, rubovi i prepreke.",
-    },
-    {
       name: "Gausium",
-      copy: "Specijalizirani roboti za velike površine, skladišta, maloprodaju i industriju.",
+      copy: "Roboti za unutarnje i vanjske površine, skladišta, trgovine i industriju.",
     },
   ],
   products: {
@@ -205,7 +197,7 @@ window.AR_LOCALES.hr = {
       {
         number: "02",
         title: "Preporuka modela",
-        copy: "Uspoređujemo prikladne opcije iz portfelja PUDU, OrionStar i Gausium.",
+        copy: "Uspoređujemo prikladne modele iz Gausium portfelja.",
       },
       {
         number: "03",

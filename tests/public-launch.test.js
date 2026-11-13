@@ -37,6 +37,15 @@ test("all public pages expose the configured bank and IBAN in the company footer
   );
 });
 
+test("public home copy and imagery reference only Gausium", () => {
+  ["index.html", "config/i18n.hr.js", "config/i18n.en.js", "css/styles.css"].forEach(
+    (fileName) => {
+      const content = fs.readFileSync(path.join(__dirname, "..", fileName), "utf8");
+      assert.doesNotMatch(content, /MOVA|OrionStar|PUDU/i);
+    },
+  );
+});
+
 test("contact form posts only the five requested fields through the Apps Script iframe", () => {
   const html = fs.readFileSync(path.join(__dirname, "..", "contact.html"), "utf8");
 

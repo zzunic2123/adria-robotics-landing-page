@@ -42,11 +42,11 @@ window.AR_LOCALES.en = {
     eyebrow: "Global technology. Local implementation.",
     title: "Autonomous robots for professional cleaning.",
     lead:
-      "From selection and demonstration to mapping, training and service. Adria Robotics brings proven PUDU, OrionStar and Gausium solutions to facilities across the Adriatic region.",
+      "From selection and demonstration to mapping, training and service. Adria Robotics brings Gausium robots to facilities across the Adriatic region.",
     actionsLabel: "Primary actions",
     metricsLabel: "Key advantages",
     metrics: {
-      portfolios: "robot portfolios",
+      portfolios: "Gausium models",
       steps: "implementation steps",
       partner: "local partner",
     },
@@ -57,23 +57,15 @@ window.AR_LOCALES.en = {
     },
   },
   partners: {
-    kicker: "Independent recommendation",
-    title: "Multiple portfolios. One accountable implementation partner.",
+    kicker: "Gausium portfolio",
+    title: "Different spaces, one robot portfolio.",
     copy:
       "Customers do not need to know the right model in advance. We assess the site, task and operating conditions, then prepare a focused selection of robots suited to the facility’s real needs.",
   },
   brands: [
     {
-      name: "PUDU Robotics",
-      copy: "A broad portfolio for commercial cleaning and dynamic service environments.",
-    },
-    {
-      name: "OrionStar",
-      copy: "Autonomous systems for facilities where reliable scrubbing, edges and obstacles matter.",
-    },
-    {
       name: "Gausium",
-      copy: "Specialist robots for large areas, warehouses, retail and industrial sites.",
+      copy: "Robots for indoor and outdoor areas, warehouses, retail and industrial sites.",
     },
   ],
   products: {
@@ -205,7 +197,7 @@ window.AR_LOCALES.en = {
       {
         number: "02",
         title: "Model recommendation",
-        copy: "We compare suitable options from the PUDU, OrionStar and Gausium portfolios.",
+        copy: "We compare suitable models from the Gausium portfolio.",
       },
       {
         number: "03",

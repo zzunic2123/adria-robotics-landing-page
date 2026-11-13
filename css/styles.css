@@ -374,7 +374,7 @@ h3 {
       rgba(14, 27, 43, 0.92) 45%,
       rgba(14, 27, 43, 0.3) 100%
     ),
-    url("../assets/hero/pudu-robot-lineup-original.webp");
+    url("../assets/industries/logistics-warehouse-gausium-1920x933.webp");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -522,7 +522,7 @@ h3 {
 
 .brand-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 16px;
   margin-top: 28px;
 }
@@ -1762,7 +1762,6 @@ input[readonly] {
     min-height: 170px;
   }
 
-  .brand-grid,
   .industry-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1888,7 +1887,7 @@ input[readonly] {
         rgba(14, 27, 43, 0.9) 55%,
         rgba(14, 27, 43, 0.58) 100%
       ),
-      url("../assets/hero/pudu-robot-lineup-original.webp");
+      url("../assets/industries/logistics-warehouse-gausium-1920x933.webp");
     background-position: 58% bottom;
   }
 
