@@ -50,13 +50,13 @@ test("normalizes the generated public fallback to the official catalogue", () =>
     console.warn = originalWarn;
   }
   assert.equal(warnings.length, 0);
-  assert.equal(data.products.length, 10);
+  assert.equal(data.products.length, 9);
   assert.equal(data.roiProducts.length, 5);
   assert.equal(data.financing.length, 5);
   assert.equal(data.industries.length, 6);
-  assert.equal(data.productIndustries.length, 19);
+  assert.equal(data.productIndustries.length, 16);
   assert.equal(data.servicePlans.length, 9);
-  assert.equal(data.specifications.length, 67);
+  assert.equal(data.specifications.length, 62);
   assert.deepEqual(
     data.products.map((product) => product.fullName),
     [
@@ -69,10 +69,9 @@ test("normalizes the generated public fallback to the official catalogue", () =>
       "Gausium Scrubber 75",
       "Gausium PhanShop",
       "Gausium Scrubber 50",
-      "Gausium MAX-SW",
     ],
   );
-  assert.equal(data.products.filter((product) => product.imageStatus === "ready").length, 10);
+  assert.equal(data.products.filter((product) => product.imageStatus === "ready").length, 9);
   assert.equal(data.products.filter((product) => product.imageStatus === "missing").length, 0);
   assert.ok(data.products.every((product) => product.manufacturer === "Gausium"));
 });
@@ -83,7 +82,6 @@ test("shows active products without prices in the catalogue but excludes them fr
     "gausium-scrubber-75",
     "gausium-phanshop",
     "gausium-scrubber-50",
-    "gausium-max-sw",
   ];
   const warnings = [];
   const originalWarn = console.warn;
@@ -120,7 +118,7 @@ test("skips one invalid product row without losing valid public data", () => {
   } finally {
     console.warn = originalWarn;
   }
-  assert.equal(data.products.length, 10);
+  assert.equal(data.products.length, 9);
   assert.equal(data.products.some((product) => product.id === "unsafe-product"), false);
   assert.ok(warnings.length >= 1);
 });
@@ -147,7 +145,7 @@ test("uses the last valid stale cache when all public requests fail", async () =
     });
     assert.equal(result.meta.source, "stale-cache");
     assert.equal(result.meta.isStale, true);
-    assert.equal(result.data.products.length, 10);
+    assert.equal(result.data.products.length, 9);
   } finally {
     clearMemoryCache();
     console.warn = originalWarn;

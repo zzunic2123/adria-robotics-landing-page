@@ -5,7 +5,7 @@
     spreadsheetId: "1YFBlMR4SUUCsW98MqSjVjHAnBmVZoXhxQzt3qshLelo",
     endpoint: "https://docs.google.com/spreadsheets/d",
     cacheKey: "ar-public-sheet-data-v1",
-    cacheVersion: 6,
+    cacheVersion: 7,
     cacheTtlMs: 15 * 60 * 1000,
     sheets: Object.freeze({
       Products: "A3:AE",

@@ -6,7 +6,7 @@
 (function registerFallbackSnapshot(global) {
   "use strict";
   global.AR_FALLBACK_DATA = {
-  "generatedAt": "2026-11-13T15:06:45.390Z",
+  "generatedAt": "2026-11-13T16:13:34.442Z",
   "spreadsheetId": "1YFBlMR4SUUCsW98MqSjVjHAnBmVZoXhxQzt3qshLelo",
   "sheets": {
     "Products": [
@@ -304,39 +304,6 @@
         "image_alt_en": "Gausium Scrubber 50 floor-scrubbing robot",
         "image_status": "ready",
         "source_url": "https://gausium.com/products/scrubber50/",
-        "featured": false,
-        "updated_at": "2026-11-13"
-      },
-      {
-        "id": "gausium-max-sw",
-        "active": true,
-        "sort_order": 160,
-        "manufacturer": "Gausium",
-        "model": "MAX-SW",
-        "full_name": "Gausium MAX-SW",
-        "segment_hr": "Velike vanjske površine; predstavljen 2026.",
-        "segment_en": "Large outdoor areas; introduced in 2026",
-        "cleaning_type_hr": "Autonomno vanjsko metenje",
-        "cleaning_type_en": "Autonomous outdoor sweeping",
-        "short_description_hr": "Vanjski autonomni čistač predstavljen 2026.; lokalna dostupnost treba se potvrditi.",
-        "short_description_en": "An outdoor autonomous sweeper introduced in 2026; local availability needs confirmation.",
-        "key_features_hr": "Širina metenja 1.200 mm; spremnik otpada 120 L; 360° vid; IP55; automatsko pražnjenje",
-        "key_features_en": "1,200 mm sweeping width; 120 L debris bin; 360° vision; IP55; automatic emptying",
-        "environments_hr": "Trgovi, industrijski parkovi, vanjske javne površine, parkirališta",
-        "environments_en": "Plazas, industrial parks, outdoor public spaces, parking lots",
-        "task_categories": "sweeping,large",
-        "weight": null,
-        "capacity": "6.480 m²/h teorijski",
-        "autonomy_hr": null,
-        "autonomy_en": null,
-        "price_net_eur": null,
-        "price_note_hr": "Cijena i dostupnost na upit",
-        "price_note_en": "Price and availability on request",
-        "image_path": "assets/products/gausium-max-sw.jpg",
-        "image_alt_hr": "Gausium MAX-SW vanjski robot, lijevo na sajamskoj fotografiji",
-        "image_alt_en": "Gausium MAX-SW outdoor sweeper, left in exhibition photo",
-        "image_status": "ready",
-        "source_url": "https://gausium.com/news/gausium-introduces-two-new-outdoor-sweepers-and-industrys-largest-cleaning-robot-lineup-at-interclean-amsterdam-2026/",
         "featured": false,
         "updated_at": "2026-11-13"
       }
@@ -961,56 +928,6 @@
         "value_hr": "Do 3 h ribanje / 6–8 h suho brisanje",
         "value_en": "Up to 3 h scrubbing / 6–8 h dust mopping",
         "sort_order": 70
-      },
-      {
-        "product_id": "gausium-max-sw",
-        "group_id": "purpose",
-        "label_key": "segment",
-        "label_hr": "Segment / namjena",
-        "label_en": "Segment / purpose",
-        "value_hr": "Velike vanjske površine; predstavljen 2026.",
-        "value_en": "Large outdoor areas; introduced in 2026",
-        "sort_order": 10
-      },
-      {
-        "product_id": "gausium-max-sw",
-        "group_id": "cleaning",
-        "label_key": "cleaning_modes",
-        "label_hr": "Tip čišćenja",
-        "label_en": "Cleaning type",
-        "value_hr": "Autonomno vanjsko metenje",
-        "value_en": "Autonomous outdoor sweeping",
-        "sort_order": 20
-      },
-      {
-        "product_id": "gausium-max-sw",
-        "group_id": "cleaning",
-        "label_key": "key_features",
-        "label_hr": "Ključne značajke",
-        "label_en": "Key features",
-        "value_hr": "Širina metenja 1.200 mm; spremnik otpada 120 L; 360° vid; IP55; automatsko pražnjenje",
-        "value_en": "1,200 mm sweeping width; 120 L debris bin; 360° vision; IP55; automatic emptying",
-        "sort_order": 30
-      },
-      {
-        "product_id": "gausium-max-sw",
-        "group_id": "purpose",
-        "label_key": "environments",
-        "label_hr": "Preporučena okruženja",
-        "label_en": "Recommended environments",
-        "value_hr": "Trgovi, industrijski parkovi, vanjske javne površine, parkirališta",
-        "value_en": "Plazas, industrial parks, outdoor public spaces, parking lots",
-        "sort_order": 40
-      },
-      {
-        "product_id": "gausium-max-sw",
-        "group_id": "performance",
-        "label_key": "capacity",
-        "label_hr": "Kapacitet",
-        "label_en": "Capacity",
-        "value_hr": "6.480 m²/h teorijski",
-        "value_en": "6.480 m²/h teorijski",
-        "sort_order": 60
       }
     ],
     "Financing": [
@@ -1583,24 +1500,6 @@
       {
         "product_id": "gausium-scrubber-50",
         "industry_id": "shopping-centres",
-        "priority": 3,
-        "recommended": true
-      },
-      {
-        "product_id": "gausium-max-sw",
-        "industry_id": "parking",
-        "priority": 1,
-        "recommended": true
-      },
-      {
-        "product_id": "gausium-max-sw",
-        "industry_id": "manufacturing",
-        "priority": 2,
-        "recommended": true
-      },
-      {
-        "product_id": "gausium-max-sw",
-        "industry_id": "logistics",
         "priority": 3,
         "recommended": true
       }
